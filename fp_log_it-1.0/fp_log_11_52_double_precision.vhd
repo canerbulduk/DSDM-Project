@@ -38,13 +38,6 @@ package pkg_fp_log is
 end package;
 
 
-
-
-
-
-
-
-
 package body pkg_fp_log is
 
 
@@ -67,7 +60,7 @@ package body pkg_fp_log is
     end if;
   end function;
 
-  
+  -- log-base2 operation, int output. ex: intlog2(15)=3   intlog2(19)=4, intlog2(62)=4 ...  
   function intlog2 ( x : positive ) return integer is
     variable n : natural := 0;
     variable p2 : natural := 1;
@@ -155,6 +148,9 @@ end architecture; -------------------------------------------------------------
 
 
 
+
+-- why dont we use rol/ror commands????
+-- is this more efficient? 
 
 
 -------------------------------------------------------------------------------

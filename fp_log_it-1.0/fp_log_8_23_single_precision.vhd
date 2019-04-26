@@ -31,10 +31,10 @@ package pkg_fp_log is
 
   function max ( x, y : integer )
     return integer;
-  
+
   function intlog2 ( x : positive )
     return integer;
- 
+
 end package;
 
 
@@ -57,7 +57,7 @@ package body pkg_fp_log is
     end if;
   end function;
 
-  
+
   function max ( x, y : integer ) return integer is
   begin
     if x >= y then
@@ -67,7 +67,7 @@ package body pkg_fp_log is
     end if;
   end function;
 
-  
+
   function intlog2 ( x : positive ) return integer is
     variable n : natural := 0;
     variable p2 : natural := 1;
@@ -136,7 +136,7 @@ begin
         i(w-2**(n-1)-1 downto 0) & (2**(n-1)-1 downto 0 => '0');
 
   zo(n-1) <= z0;
-  
+
 
   ------------------------------------------------------------- Recursive stage
 
@@ -204,7 +204,7 @@ begin
     o0 <= i   when s(n-1) = '0' else
           i(w-2**(n-1)-1 downto 0) & (2**(n-1)-1 downto 0 => '0');
   end generate;
-  
+
   ------------------------------------------------------------- Recursive stage
 
   recursive : if n > 1 generate
@@ -277,7 +277,7 @@ begin
   o0 <= i   when s(n-1) = '0' else
            (w-1 downto w-2**(n-1) => '0')  &  i(w-1 downto 2**(n-1));
   end generate;
-  
+
   ------------------------------------------------------------- Recursive stage
 
   recursive : if n > 1 generate
@@ -382,14 +382,14 @@ library work;
 use work.pkg_fp_log.all;
 
 -- Entity fp_log defined here
- 
-entity fp_log_8_23 is 
+
+entity fp_log_8_23 is
   generic ( wE : positive := 8;
             wF : positive := 23);
   port ( fpX : in  std_logic_vector(2+wE+wF downto 0);
          fpR : out std_logic_vector(2+wE+wF downto 0)  );
 end entity;
-architecture arch of fp_log_8_23 is 
+architecture arch of fp_log_8_23 is
 
   component lzoc is
     generic ( w : positive;
@@ -432,12 +432,12 @@ architecture arch of fp_log_8_23 is
   end component;
   constant g   : positive := 4;
   constant a0 : positive := 5;
-  constant log2wF : positive := 5;
+  constant log2wF : positive := 5; -- ~4.5
   constant targetprec : positive := 39;
   constant sfinal : positive := 26;
   constant pfinal : positive := 13;
   signal log2 : std_logic_vector(wF+g-1 downto 0) := "101100010111001000011000000";
-  signal E0offset : std_logic_vector(wE-1 downto 0) := "10000110"; -- E0 + wE 
+  signal E0offset : std_logic_vector(wE-1 downto 0) := "10000110"; -- E0 + wE
   signal pfinal_s : std_logic_vector(log2wF -1 downto 0) := "01101";
   constant lzc_size : positive := max(log2wF, intlog2(wE+pfinal+1));
   signal FirstBit : std_logic;
@@ -457,7 +457,7 @@ architecture arch of fp_log_8_23 is
   signal Z2o2_full: std_logic_vector(2*(sfinal-pfinal) -1 downto 0);
   signal squarerIn: std_logic_vector(sfinal-pfinal-1 downto 0);
   signal Z2o2_small_s, Z2o2: std_logic_vector(sfinal-pfinal downto 0);
-  signal Log_small, Z_small, Z2o2_small: std_logic_vector(wF+g+1 downto 0);  
+  signal Log_small, Z_small, Z2o2_small: std_logic_vector(wF+g+1 downto 0);
   signal almostLog, logF_normal : std_logic_vector(targetprec-1 downto 0);
   signal E0_sub : std_logic_vector(1 downto 0);
   signal sR, small, doRR, ufl, sticky, round: std_logic;
@@ -476,12 +476,12 @@ begin
           else E;
 
   absELog2 <= absE * log2;
-  
+
   lzoc1 : lzoc
     generic map (w => wF,  n => log2wF)
     port map (  i => Y0(wF downto 1), ozb => FirstBit,  zo => lzo);
 
-  shiftval <= ('0' & lzo) - ('0' & pfinal_s); 
+  shiftval <= ('0' & lzo) - ('0' & pfinal_s);
 
   doRR <= shiftval(log2wF);             -- sign of the result
 
@@ -497,30 +497,30 @@ begin
 
 --  absZ0 <=   Y0(wF-pfinal downto 0)   xor (wF-pfinal downto 0 => sR);
 
-  lshiftsmall: lshift          
-    generic map (w => wF-pfinal+2,  n => log2wF)    
+  lshiftsmall: lshift
+    generic map (w => wF-pfinal+2,  n => log2wF)
     port map (  i => absZ0, s => shiftval(log2wF-1 downto 0), o => absZ0s );
 
   -- Z2o2 will be of size sfinal-pfinal, set squarer input size to that
   sqintest: if sfinal > wf+2 generate
     squarerIn <= Zfinal(sfinal-1 downto pfinal) when doRR='1'
-                 else (absZ0s &  (sfinal-wF-3 downto 0 => '0'));  
+                 else (absZ0s &  (sfinal-wF-3 downto 0 => '0'));
   end generate sqintest;
   sqintest2: if sfinal <= wf+2 generate
     squarerIn <= Zfinal(sfinal-1 downto pfinal) when doRR='1'
-                 else absZ0s(wF-pfinal+1 downto wf+2-sfinal);  
+                 else absZ0s(wF-pfinal+1 downto wf+2-sfinal);
   end generate sqintest2;
 
   -- Z2o2 will be of size sfinal - pfinal -1, set squarer input size to that
 --  sqintest: if sfinal >= wf+3 generate
 --    squarerIn <= Zfinal(sfinal-1 downto pfinal+1) when doRR='1'
---                 else (absZ0s &  (sfinal-wF-4 downto 0 => '0'));  
+--                 else (absZ0s &  (sfinal-wF-4 downto 0 => '0'));
 --  end generate sqintest;
 --  sqintest2: if sfinal < wf+3 generate
 --    squarerIn <= Zfinal(sfinal-1 downto pfinal+1) when doRR='1'
---                 else absZ0s(wF-pfinal+1 downto wf+3-sfinal);  
+--                 else absZ0s(wF-pfinal+1 downto wf+3-sfinal);
 --  end generate sqintest2;
- 
+
   Z2o2_full <= (squarerIn * squarerIn);
   Z2o2 <= Z2o2_full (2*(sfinal-pfinal)-1  downto sfinal-pfinal-1);
 
@@ -528,10 +528,10 @@ begin
 
   LogF_normal <=   almostLog + ((targetprec-1 downto sfinal => '0') & Log1p_normal);
 
-  absELog2_pad <=   absELog2 & (targetprec-wF-g-1 downto 0 => '0');       
+  absELog2_pad <=   absELog2 & (targetprec-wF-g-1 downto 0 => '0');
   LogF_normal_pad <= (wE-1  downto 0 => LogF_normal(targetprec-1))  & LogF_normal;
-  
-  Log_normal <=  absELog2_pad  + LogF_normal_pad when sR='0'  
+
+  Log_normal <=  absELog2_pad  + LogF_normal_pad when sR='0'
                 else absELog2_pad - LogF_normal_pad;
 
   lzc_norm_0 : lzc_norm
@@ -540,7 +540,7 @@ begin
 
 
   rshiftsmall: rshift
-    generic map (w => sfinal-pfinal+1,  n => log2wF) 
+    generic map (w => sfinal-pfinal+1,  n => log2wF)
     port map (i => Z2o2,
               s => shiftval(log2wF-1 downto 0),
               o => Z2o2_small_s);
@@ -548,7 +548,7 @@ begin
   -- send the MSB to position pfinal
   Z2o2_small <=  (pfinal-1 downto 0  => '0') & Z2o2_small_s & (wF+g-sfinal downto 0  => '0') ;
 
-  -- mantissa will be either Y0-z^2/2  or  -Y0+z^2/2,  depending on sR  
+  -- mantissa will be either Y0-z^2/2  or  -Y0+z^2/2,  depending on sR
 
   Z_small <= (absZ0s & (pfinal+g-1 downto 0 => '0'));
   Log_small  <=       Z_small -  Z2o2_small when (sR='0')
@@ -565,7 +565,7 @@ begin
   Log_small_normd <= Log_small(wF+g+1 downto 2) when Log_small(wF+g+1)='1'
              else Log_small(wF+g downto 1)  when Log_small(wF+g)='1'  -- remove the first zero
              else Log_small(wF+g-1 downto 0)  ; -- remove two zeroes (extremely rare, 001000000 only)
-                                               
+
   ER <= E_small when small='1'
         else E0offset - ((wE-1 downto lzc_size => '0') & E_normal);
   -- works only if wE > lzc_size approx log2wF, OK for usual exp/prec
@@ -579,12 +579,12 @@ begin
 
   -- use a trick: if round leads to a change of binade, the carry propagation
   -- magically updates both mantissa and exponent
-  EFR <= (ER & Log_g(wF+g-1 downto g)) + ((wE+wF-1 downto 1 => '0') & round); 
+  EFR <= (ER & Log_g(wF+g-1 downto g)) + ((wE+wF-1 downto 1 => '0') & round);
 
 
   -- The smallest log will be log(1+2^{-wF}) \approx 2^{-wF}
-  -- The smallest representable number is 2^{-2^(wE-1)} 
-  -- Therefore, if 
+  -- The smallest representable number is 2^{-2^(wE-1)}
+  -- Therefore, if
 --    underflow : if max(wE, log2(wF)+1) > wE generate
 --      ufl <=      '1' when (eR2(wE0-1) = '1') or (eR = (wE-1 downto 0 => '0'))
 --             else '0';
@@ -633,7 +633,7 @@ entity range_red is port (
   almostLog  : out std_logic_vector(38 downto 0)  );
 end entity;
 
-architecture arch of  range_red is 
+architecture arch of  range_red is
 
   component invtable0_8_23 is
     port ( x : in  std_logic_vector(4 downto 0);
@@ -695,7 +695,7 @@ begin
    A0 <= A;
    it0:invtable0_8_23 port map (x=>A0, y=>InvA0);
    lt0:logtable0_8_23 port map (x=>A0, y=>L0);
-   P0 <= InvA0 * Y0;
+   P0 <= InvA0 * Y0; -- P0(30 downto 0)
 
    Z1_d <= P0(24 downto 0);
    S1_d <= L0;
@@ -953,4 +953,3 @@ begin
          "11101000000110100100101111111" when "1111",
          "-----------------------------" when others;
 end architecture;
-

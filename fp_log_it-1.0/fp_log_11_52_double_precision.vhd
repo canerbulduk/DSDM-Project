@@ -152,6 +152,11 @@ end architecture; -------------------------------------------------------------
 -- why dont we use rol/ror commands????
 -- is this more efficient? 
 
+-- or is it 2^n shifter rather than n shifter?
+
+-- also it's not like a barrel shifter, it's more likely a shift left operation
+-- SLL: shift left, right most bits replaced with zeros
+
 
 -------------------------------------------------------------------------------
 -- Left barrel shifter
@@ -382,8 +387,8 @@ use work.pkg_fp_log.all;
 entity fp_log_11_52 is 
   generic ( wE : positive := 11;
             wF : positive := 52);
-  port ( fpX : in  std_logic_vector(2+wE+wF downto 0);
-         fpR : out std_logic_vector(2+wE+wF downto 0)  );
+  port ( fpX : in  std_logic_vector(2+wE+wF downto 0); -- IEEE-likely FP number
+         fpR : out std_logic_vector(2+wE+wF downto 0)  ); -- 66bit = 2bit exn + 1 bit sign + 11bit exp + 52bit fraction
 end entity;
 architecture arch of fp_log_11_52 is 
 
@@ -420,24 +425,25 @@ architecture arch of fp_log_11_52 is
   end component;
 
   -- def of component range_red, and many constants and signals,  here
+  -- range_reduction : 2.1.1 @paper 
   component range_red is port (
-            Y0 : in  std_logic_vector(53 downto 0);
-            A  : in std_logic_vector(4 downto 0);
+            Y0 : in  std_logic_vector(53 downto 0); -- Y0 => Y0,
+            A  : in std_logic_vector(4 downto 0);   -- A => fpX(wF-1 downto wF-a0) --what's that a0 how did we decide that?
             Z  : out std_logic_vector(54 downto 0);
     almostLog  : out std_logic_vector(82 downto 0)  );
   end component;
-  constant g   : positive := 5;
-  constant a0 : positive := 5;
-  constant log2wF : positive := 6;
+  constant g   : positive := 5; -- g=g1, what about g0 ?? 
+  constant a0 : positive := 5; -- ?  g0??
+  constant log2wF : positive := 6; -- ~5.7
   constant targetprec : positive := 83;
-  constant sfinal : positive := 55;
-  constant pfinal : positive := 28;
-  signal log2 : std_logic_vector(wF+g-1 downto 0) := "101100010111001000010111111101111101000111001111011110011";
-  signal E0offset : std_logic_vector(wE-1 downto 0) := "10000001001"; -- E0 + wE 
-  signal pfinal_s : std_logic_vector(log2wF -1 downto 0) := "011100";
+  constant sfinal : positive := 55; -- wF+3 -- sum_final?
+  constant pfinal : positive := 28; -- product_final?
+  signal log2 : std_logic_vector(wF+g-1 downto 0) := "101100010111001000010111111101111101000111001111011110011"; -- to calculate exp part 
+  signal E0offset : std_logic_vector(wE-1 downto 0) := "10000001001"; -- E0 + wE  --  ==1033 why not 1023 which is decimal offset value.
+  signal pfinal_s : std_logic_vector(log2wF -1 downto 0) := "011100"; -- 28? 
   constant lzc_size : positive := max(log2wF, intlog2(wE+pfinal+1));
   signal FirstBit : std_logic;
-  signal Y0 : std_logic_vector(wF+1 downto 0);
+  signal Y0 : std_logic_vector(wF+1 downto 0); -- in paper it's M ?
   signal E  : std_logic_vector(wE-1 downto 0);
   signal absE  : std_logic_vector(wE-1 downto 0);
   signal absELog2  : std_logic_vector(wF+wE+g-1 downto 0);
@@ -460,28 +466,29 @@ architecture arch of fp_log_11_52 is
 begin
 
   FirstBit <=  fpX(wF-1);
-  Y0 <=      "1"  & fpX(wF-1 downto 0) & "0" when FirstBit = '0'
-        else "01" & fpX(wF-1 downto 0);
+  Y0 <=      "1"  & fpX(wF-1 downto 0) & "0" when FirstBit = '0' -- Y0 is Fx or Fx/2
+        else "01" & fpX(wF-1 downto 0);							 -- why wf+2 bits ?
 
-  E  <= (fpX(wE+wF-1 downto wF)) - ("0" & (wE-2 downto 1 => '1') & (not FirstBit));
+  E  <= (fpX(wE+wF-1 downto wF)) - ("0" & (wE-2 downto 1 => '1') & (not FirstBit));  -- exponent offset part. OR biased exponent?
 
+  -- sR is sign bit of biased exponent
   sR <= '0'   when    fpX(wE+wF-1 downto wF)   =   '0' &(wE-2 downto 0 => '1')  -- binade [1..2)
         else not fpX(wE+wF-1);                -- MSB of exponent
 
-  absE <= ((wE-1 downto 0 => '0') - E)   when sR = '1'
+  absE <= ((wE-1 downto 0 => '0') - E)   when sR = '1' -- abs of biased exponent
           else E;
 
-  absELog2 <= absE * log2;
+  absELog2 <= absE * log2; -- exponent part of our final result 
   
-  lzoc1 : lzoc
+  lzoc1 : lzoc  -- leading zero/one count
     generic map (w => wF,  n => log2wF)
-    port map (  i => Y0(wF downto 1), ozb => FirstBit,  zo => lzo);
+    port map (  i => Y0(wF downto 1), ozb => FirstBit,  zo => lzo); -- lzo = #leading zeros/ones depens FirstBit
 
   shiftval <= ('0' & lzo) - ('0' & pfinal_s); 
 
   doRR <= shiftval(log2wF);             -- sign of the result
 
-  small <= '1' when ((E=(wE-1 downto 0 => '0')) and (doRR='0'))
+  small <= '1' when ((E=(wE-1 downto 0 => '0')) and (doRR='0')) -- if biased exponent == +0
           else '0';
 
 -- The range reduction instance
@@ -498,11 +505,11 @@ begin
     port map (  i => absZ0, s => shiftval(log2wF-1 downto 0), o => absZ0s );
 
   -- Z2o2 will be of size sfinal-pfinal, set squarer input size to that
-  sqintest: if sfinal > wf+2 generate
+  sqintest: if sfinal > wf+2 generate    
     squarerIn <= Zfinal(sfinal-1 downto pfinal) when doRR='1'
                  else (absZ0s &  (sfinal-wF-3 downto 0 => '0'));  
   end generate sqintest;
-  sqintest2: if sfinal <= wf+2 generate
+  sqintest2: if sfinal <= wf+2 generate--why the second part is needed? always sfinal > wf+2
     squarerIn <= Zfinal(sfinal-1 downto pfinal) when doRR='1'
                  else absZ0s(wF-pfinal+1 downto wf+2-sfinal);  
   end generate sqintest2;

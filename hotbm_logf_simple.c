@@ -64,6 +64,21 @@ typedef union {
 } float_uint_converter;
 
 
+/*
+#define SELECT_BIT(VAR, bit) (((VAR)>>(bit))&1)
+#define SET_BIT(VAR, bit, value) VAR = \
+   ((UDATATYPE) ((VAR)&~(BOOST_PP_CAT(POW2(bit),ULL)))) | \
+   ((UDATATYPE) ((((UDATATYPE)(value)) & 1ULL) << (bit)))
+#define SELECT_RANGE(var, high, low) VAL_RESIZE(((UDATATYPE)(var))>>(low), BOOST_PP_ADD(BOOST_PP_SUB(high,low),1))
+#define SET_RANGE(VAR, val, high, low) VAR = \
+   BOOST_PP_IF( \
+      BOOST_PP_LESS(BITSIZE(high, low), UDATATYPE_BITSIZE), \
+      (VAR & ~(UDATATYPE)((BOOST_PP_CAT(POW2(BITSIZE(high, low)),ULL)-1) << low)) | \
+         ((VAL_RESIZE(val, BITSIZE(high, low))) << low), \
+      val \
+   )
+*/
+
 
 __attribute__((always_inline))
 static inline

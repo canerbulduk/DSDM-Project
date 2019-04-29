@@ -52,7 +52,7 @@
 #define PRINT 0
 
 #define LOG2 0x2C5C860
-
+// CE_MACRO32(cond, a, b) = cond[0] && a || ~cond[0] && b  =  c.a + c'b 
 #define CE_MACRO32(cond, a, b) ((((unsigned int) ((((int)(cond))<<31)>>31))&(a))|((~((unsigned int) ((((int)(cond))<<31)>>31)))&(b)))
 
 #define PRECISION 200
@@ -65,10 +65,11 @@ typedef union {
 
 
 /*
-#define SELECT_BIT(VAR, bit) (((VAR)>>(bit))&1)
+#define SELECT_BIT(VAR, bit) (((VAR)>>(bit))&1) 
+//choose selected bit, shift and AND 
 #define SET_BIT(VAR, bit, value) VAR = \
-   ((UDATATYPE) ((VAR)&~(BOOST_PP_CAT(POW2(bit),ULL)))) | \
-   ((UDATATYPE) ((((UDATATYPE)(value)) & 1ULL) << (bit)))
+   ((UDATATYPE) ((VAR)&~(BOOST_PP_CAT(POW2(bit),ULL)))) | \         -- take variable AND with NOT of ULL of POW2(bit)
+   ((UDATATYPE) ((((UDATATYPE)(value)) & 1ULL) << (bit)))           -- select bit?
 #define SELECT_RANGE(var, high, low) VAL_RESIZE(((UDATATYPE)(var))>>(low), BOOST_PP_ADD(BOOST_PP_SUB(high,low),1))
 #define SET_RANGE(VAR, val, high, low) VAR = \
    BOOST_PP_IF( \
@@ -176,23 +177,34 @@ unsigned short int hotbm_t2_pow(unsigned short int x)
 
 __attribute__((always_inline))
 static inline
-unsigned int hotbm_log_log_t1(unsigned char a, unsigned short int b)
+unsigned int hotbm_log_log_t1(unsigned char a, unsigned short int b) //(8bit,16bit)
 {
     static const unsigned int log_t1_t1_hotbm_table[] = {1280732 ,1268286 ,1256048 ,1244013 ,1232176 ,1220531 ,1209076 ,1197805 ,1186714 ,1175799 ,1165056 ,1154481 ,1144071 ,1133821 ,1123729 ,1113790 ,1104002 ,1094361 ,1084864 ,1075508 ,1066290 ,1057207 ,1048256 ,1039435 ,1030740 ,1022170 ,1013722 ,1005392 ,997180 ,989082 ,981096 ,973221 ,965453 ,957791 ,950232 ,942775 ,935418 ,928159 ,920996 ,913927 ,906950 ,900064 ,893267 ,886558 ,879934 ,873395 ,866938 ,860562 ,854266 ,848049 ,841908 ,835843 ,829852 ,823935 ,818088 ,812313 ,806606 ,800968 ,795397 ,789891 ,784450 ,779073 ,773758 ,768505 ,763312 ,758179 ,753104 ,748087 ,743127 ,738222 ,733372 ,728576 ,723834 ,719143 ,714504 ,709916 ,705378 ,700888 ,696447 ,692054 ,687708 ,683408 ,679153 ,674943 ,670777 ,666655 ,662575 ,658538 ,654542 ,650588 ,646673 ,642799 ,638963 ,635167 ,631408 ,627687 ,624003 ,620356 ,616744 ,613168 ,609627 ,606120 ,602648 ,599209 ,595803 ,592430 ,589089 ,585780 ,582502 ,579255 ,576038 ,572852 ,569695 ,566568 ,563469 ,560399 ,557357 ,554343 ,551357 ,548397 ,545465 ,542558 ,539678 ,536824 ,533995 ,531190 ,528411 ,525656 ,522926 ,520219 ,517536 ,514876 ,512239 ,509624 ,507032 ,504463 ,501915 ,499388 ,496884 ,494400 ,491937 ,489494 ,487072 ,484671 ,482289 ,479926 ,477583 ,475260 ,472955 ,470669 ,468401 ,466152 ,463921 ,461708 ,459513 ,457335 ,455174 ,453030 ,450904 ,448794 ,446701 ,444624 ,442563 ,440518 ,438489 ,436476 ,434478 ,432496 ,430528 ,428576 ,426638 ,424715 ,422807 ,420913 ,419033 ,417167 ,415315 ,413477 ,411653 ,409842 ,408044 ,406259 ,404488 ,402729 ,400983 ,399250 ,397530 ,395821 ,394125 ,392442 ,390770 ,389110 ,387462 ,385825 ,384200 ,382587 ,380985 ,379394 ,377814 ,376245 ,374687 ,373140 ,371603 ,370077 ,368561 ,367056 ,365561 ,364077 ,362602 ,361137 ,359682 ,358237 ,356802 ,355376 ,353959 ,352552 ,351155 ,349766 ,348387 ,347017 ,345656 ,344304 ,342960 ,341625 ,340299 ,338982 ,337673 ,336372 ,335080 ,333796 ,332520 ,331252 ,329993 ,328741 ,327497 ,326262 ,325033 ,323813 ,322600 ,321395 ,320197 ,319007 ,317824 ,316648 ,315480 ,314318 ,313164 ,312017 ,310877 ,309744 ,308617 ,307498 ,306385 ,305279 ,304179 ,303087};
 
-    _Bool sign = !(SELECT_BIT(b, 15));
+    _Bool sign = !(SELECT_BIT(b, 15)); //  ~MSB(b)
     unsigned short int b0 = SELECT_RANGE(b,14,0) ^ VAL_RESIZE(CE_MACRO32(sign,0xfffff,0),15);
     unsigned short int s_1 = b0;
+	
+	// SELECT_RANGE(var,high,low) = var[high:low]
+	// SELECT_BIT(a,b) = (a >> b) && 0x0001
+	// CE_MACRO32(cond, a, b) = cond[0] && a || ~cond[0] && b  =  c.a + c'b 
+	// VAL_RESIZE(var,nbit) = var = var[nbit:0]  -- reduces number of bits 
+	
 
-    unsigned char a_1 = SELECT_RANGE(a,7,0);
+	// unsigned char: 8bit
+	unsigned char a_1 = SELECT_RANGE(a,7,0);
     unsigned int k_1 = log_t1_t1_hotbm_table[a_1];
     BIT_RESIZE(k_1,21);
     unsigned long int r0_1 = (((unsigned long long int) k_1) * ((((unsigned long long int) s_1) << 1)|1)) >> 17;
-    BIT_RESIZE(r0_1 ,21);
-
+	//														    (     Shift left put one instead of 0  )     
+	BIT_RESIZE(r0_1 ,21);
+	//choose LSB 21 bit
+	
+	// if sign=0 : r_1 = NOT r0_1[20:0]   -- LSB 21 bit 
     unsigned int r_1 = r0_1 ^ VAL_RESIZE(CE_MACRO32(!sign,0xffffff,0), 21);
     r_1 = r_1 | ((VAL_RESIZE(CE_MACRO32(!sign,0xff,0),8))<< 21);
-
+	// if sign=0 :  r_1 = ff & r_1
+	
     return r_1;
 
 }

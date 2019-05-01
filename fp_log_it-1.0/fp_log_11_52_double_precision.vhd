@@ -915,7 +915,7 @@ end entity;
 architecture arch of invtable0_11_52 is
 begin
   with x select
-    y <= "100000" when "00000",
+    y <= "100000" when "00000",   --32
          "100000" when "00001",
          "011111" when "00010",
          "011110" when "00011",

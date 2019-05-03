@@ -49,9 +49,6 @@ void range_red(unsigned long long int Y0, unsigned char A, unsigned long long in
 	Z0 : Z9 ; //53-69-54 bits
 	Z0_d : Z9_d ; //53-69-54 bits
 	epsz1 : epsZ8 ; //59-84bits
-	L0 : L9; // 57:82bits
-	S1 : S9; //82bits
-	S1_d : S9_d; //82bits
   unsigned char InvA0;
   A0 = A;
   InvA0 = invtable0[A0];
@@ -89,7 +86,7 @@ void range_red(unsigned long long int Y0, unsigned char A, unsigned long long in
 
 
 	//Sum part is splitted to 2 part , also the tables are splitted to 2 part
-	//Less significant part of the tables are 60bits and the rest assigned to more significant tables. 
+	//Less significant part of the tables are 60bits and the rest assigned to more significant tables.
 	// 13bits MS part - 60bits LS part
 	// Least significant part never exceed 64 bits. So we don't have any overflow problem.
 	unsigned long long int  L0_0, L1_0, L2_0, L3_0, L4_0, L5_0, L6, L7, L8;

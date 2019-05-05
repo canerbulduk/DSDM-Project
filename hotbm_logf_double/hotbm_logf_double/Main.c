@@ -12,6 +12,7 @@
 #include <gmp.h>
 #endif
 
+#define CE_MACRO64(cond, a, b) ((((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63))&(a))|((~((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63)))&(b)))
 #define CE_MACRO32(cond, a, b) ((((unsigned int) ((((int)(cond))<<31)>>31))&(a))|((~((unsigned int) ((((int)(cond))<<31)>>31)))&(b)))
 
 #define MAX(x, y) (((x) > (y)) ? (x) : (y));
@@ -25,13 +26,34 @@ typedef union {
 	float f;
 } float_uint_converter;
 
+typedef union{
+	unsigned long long int b;
+	double f;
+} double_uint_converter;
 
-static inline
-void range_red(unsigned char A, unsigned long long int Y0, unsigned long long int out[3])
+
+void print_binary(unsigned long long int x) {
+	for (int c = 63; c >= 0; c--)
+	{
+		int k;
+		k = x >> c;
+		if (k & 1)
+			printf("1");
+		else
+			printf("0");
+	}
+	printf("\n");
+	return;
+}
+
+
+
+unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 {
   //Z = out[0]
   //almostLog = out[1] & out[2]
   //static unsigned long long int out[3];
+	unsigned long long int out[3];
 	unsigned char invtable0[] = { 32,32,31,30,29,28,27,27,26,25,25,24,24,23,23,22,43,42,41,41,40,39,38,38,37,36,36,35,35,34,34,33 };
 	unsigned long int logtable0_1[] = { 0,0,266327,541388,825775,1120142,1425216,1425216,1741805,2070812,2070812,2413252,2413252,2770268,2770268,3143156,5910074,6107462,6309607,6309607,6516744,6729125,6947023,6947023,7170733,7400572,7400572,7636886,7636886,7880051,7880051,8130476 };
 	unsigned long int logtable1_1[] = { 0,16400,49296,82322,115479,148767,182188,215742,232570,266327,300220,334251,368421,402730,437180,471772 };
@@ -85,11 +107,12 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	epsZ1 = SELECT_RANGE(A1, 3, 2) == 0 ? 0 : (SELECT_BIT(A1, 2) == 0 ? 0 : ((((unsigned long long)1 << 58) | Z1_d)));
 	epsZ1 = SELECT_BIT(A1, 3) == 0 ? epsZ1 : epsZ1 << 1;
 
-	Z2 = (B1<<8) - (P1<<1) + epsZ1;
+	Z2_d = (B1<<8) - (P1<<1) + epsZ1;
 
 	A2 = SELECT_RANGE(Z2_d, 59, 56);
 	B2 = SELECT_RANGE(Z2_d, 55, 0);
-	ZM2 = Z2_d;  //this variable is removable but let it stay
+	ZM2 = Z2_d;  
+
 	//P2 = A2 * ZM2 ; 68bits
 	//while Amax=1b1111=15, we can split ZM and P as 60bits and rest
 	P2_0=ZM2*A2;
@@ -97,8 +120,8 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	BIT_RESIZE(P2_0,60);
 	epsZ2_0 = A2==0 ? 0 : Z2_d;
 	epsZ2_1 = A2==0 ? 0 : 1<<7;
-	Z3_0 =
-	Z3_1 =
+	Z3_0 = 0;
+	Z3_1 = 0;
 
 	Z3_d_0 = Z3_0;
 	Z3_d_1 = Z3_1;
@@ -110,11 +133,11 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	ZM3 = (SELECT_RANGE(Z3_d_1,8,0)<<54) | SELECT_RANGE(Z3_d_0,59,6);
 	P3_0 = ZM3 * A3;
 	P3_1=(ZM3*A3)+SELECT_RANGE(P3_0,63,60);
-	BIT_RESIZE(P4_0, 60);
+	BIT_RESIZE(P3_0, 60);
 	epsZ3_0 = A3 == 0 ? 0 : Z3_d_0;
 	epsZ3_1 = A3 == 0 ? 0 : (1 << 19) | Z3_d_1;
-	Z4_0 = NULL;
-	Z4_1 = NULL ;
+	Z4_0 = 0;
+	Z4_1 = 0 ;
 
 	Z4_d_0 = Z4_0;
 	Z4_d_1 = Z4_1;
@@ -129,8 +152,8 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	BIT_RESIZE(P4_0, 60);
 	epsZ4_0 = A4 == 0 ? 0 : Z4_d_0;
 	epsZ4_1 = A4 == 0 ? 0 : (1 << 22) | Z4_d_1;
-	Z5_0 = NULL;
-	Z5_1 = NULL;
+	Z5_0 = 0;
+	Z5_1 = 0;
 
 	Z5_d_0 = Z5_0;
 	Z5_d_1 = Z5_1;
@@ -143,8 +166,8 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	P5 = ZM5 * A5; //55bits - no need to split
 	epsZ5_0 = A5 == 0 ? 0 : Z5_d_0;
 	epsZ5_1 = A5 == 0 ? 0 : (1 << 25) | Z5_d_1;
-	Z6_0 = NULL;
-	Z6_1 = NULL;
+	Z6_0 = 0;
+	Z6_1 = 0;
 
 	Z6_d = (SELECT_RANGE(Z6_1, 3, 0) << 60) | Z6_0;
 
@@ -155,10 +178,10 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	P6 = A6 * ZM6;
 	epsZ6_0 = A6 == 0 ? 0 : SELECT_RANGE(Z6_d, 59, 0);
 	epsZ6_1 = A6 == 0 ? 0 : (1 << 23) | SELECT_RANGE(Z6_d, 63, 60);
-	Z7_0 = NULL;
-	Z7_1 = NULL;
+	Z7_0 = 0;
+	Z7_1 = 0;
 
-	Z7_d = (SELECT_BIT(Z7_1, 0) << 60) | Z7_0;
+	Z7_d = (((unsigned long long int)SELECT_BIT(Z7_1, 0)) << 60) | Z7_0;
 
 	A7 = SELECT_RANGE(Z7_d, 60, 57);
 	B7 = SELECT_RANGE(Z7_d, 56, 0);
@@ -167,8 +190,8 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	P7 = A7 * ZM7;
 	epsZ7_0 = A7 == 0 ? 0 : SELECT_RANGE(Z7_d, 59, 0);
 	epsZ7_1 = A7 == 0 ? 0 : (1 << 23) | SELECT_BIT(Z7_d, 60);
-	Z8_0 = NULL;
-	Z8_1 = NULL;
+	Z8_0 = 0;
+	Z8_1 = 0;
 
 	Z8_d = Z8_0;
 
@@ -179,7 +202,7 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	P8 = A8 * ZM8;
 	epsZ8_0 = A8 == 0 ? 0 : Z8_d;
 	epsZ8_1 = A8 == 0 ? 0 : (1 << 23);
-	Z9 = NULL;
+	Z9 = 0;
 
 	Z = Z9;
 
@@ -217,18 +240,26 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	out[1] = SUM_MS;
 	out[2] = SUM_LS;
 
+//	test*****************************
+//	out[0] = 0b0000000100101111111111111111111000000000000000000000000000000000;
+//	out[1] = 0b0100000100101111111111111111111000000000000000000000000000000000;
+//	out[2] = 0b1100000100101111111111111111111000000000000000000000000000000000;
+//	test*****************************
 
+	return out;
 }
 
 
 
-float ADD_BUILTIN_PREFIX(logf)(float x)
+double logf(double x)
 {
 
     _Bool s;
     unsigned char wE=11;
     unsigned char wF=52;
-    // fpX = 66bit
+	double_uint_converter func_in;
+	unsigned long long int fpX;
+    unsigned char exn;   //at VHDL, fpX has +2bit for exn part 
     unsigned char g=5;
     unsigned char a0=5;
     unsigned char log2wF = 6;
@@ -240,87 +271,132 @@ float ADD_BUILTIN_PREFIX(logf)(float x)
     unsigned char pfinal_s = 0b011100;
     unsigned char lzc_size = 6;
     _Bool FirstBit, sR, small, doRR, ufl, sticky, round;
-    unsigned long long Y0, Log_small_normd, Log_g, EFR, Zfinal, Log1p_normal, Z2o2_full, Log_small, Z_small, Z2o2_small ;
-		unsigned short int E, absE, E_small, ER, E_normal, lzo, shiftval;
-		unsigned int absZ0, absZ0s, squarerIn, Z2o2_small_s, Z2o2;
+    unsigned long long Y0, Log_small_normd, Log_g, EFR, Zfinal, Log1p_normal, Z2o2_full, Log_small, Z_small, Z2o2_small,ER;
+	unsigned short int E, absE, E_small, E_normal, lzo, shiftval, E_normal_M, E_normal_L;
+	unsigned int absZ0, absZ0s, squarerIn, Z2o2_small_s, Z2o2;
     unsigned char E0_sub;
-
-    signal absELog2  : std_logic_vector(wF+wE+g-1 downto 0);
-    signal absELog2_pad, LogF_normal_pad, Log_normal, Log_normal_normd  : std_logic_vector(wE+targetprec-1 downto 0);
-		unsigned long long int almostLog_M, almostLog_L, logF_normal;// : std_logic_vector(targetprec - 1 downto 0);
-
+	unsigned long long int  Log_normal_normd_M, Log_normal_normd_L;//  : std_logic_vector(wE+targetprec-1 downto 0);
+	unsigned long long int 	almostLog_M, almostLog_L,
+							absELog2_M, absELog2_L,
+							absELog2_pad_M, absELog2_pad_L,
+							LogF_normal_M, LogF_normal_L, // : std_logic_vector(targetprec - 1 downto 0);
+							LogF_normal_pad_M, LogF_normal_pad_L,
+							Log_normal_M, Log_normal_L;
+    
     func_in.f = x;
-    fpX = func_in.b;
-
-    unsigned long long fpX;
-    unsigned char exn;
-    //fpx = exn & fpx_0;
+	fpX = func_in.b;
 
     FirstBit = SELECT_BIT(fpX,51);
 
-	Y0 = FirstBit == 0 ? (((1 << 52) | SELECT_RANGE(fpX, 51, 0)) << 1) : (((unsigned long long)1 << 52) | SELECT_RANGE(fpx, 51, 0));
+	Y0 = FirstBit == 0 ? (((((unsigned long long int)1) << (int)52) | SELECT_RANGE(fpX, 51, 0)) << 1) : (((unsigned long long)1 << 52) | SELECT_RANGE(fpX, 51, 0));
 	E = SELECT_RANGE(fpX, 62, 52) - ((0b1111111111 << 1) | FirstBit);
     sR = SELECT_RANGE(fpX,62,52)==0b11111111111 ? 0 : !SELECT_BIT(fpX,62);
     absE = sR == 0 ? -E : E;
-    absELog2 = absE * log2;
+	
+	//fix needed for absELog2
+    absELog2_L = absE * log2;
+	absELog2_M = 0;
 
-    lzoc1 : lzoc  -- leading zero/one count
-      generic map (w => wF,  n => log2wF)
-      port map (  i => Y0(wF downto 1), ozb => FirstBit,  zo => lzo); -- lzo = #leading zeros/ones depens FirstBit
+
+	//TEST IT!
+	//lzoc1 : lzoc  -- leading zero/one count
+	//generic map (w => wF,  n => log2wF)
+	//port map (  i => Y0(wF downto 1), ozb => FirstBit,  zo => lzo); -- lzo = #leading zeros/ones depens FirstBit
+
+	if(FirstBit){ count_leading_zero_macro(52, 0xffffffffffffff & ~SELECT_RANGE(Y0, 52, 1), lzo); }
+	else if (!FirstBit) { count_leading_zero_macro(52, SELECT_RANGE(Y0, 52, 1), lzo); }
+	RESIZE_BIT(lzo, 6);
+
+
+
 
     shiftval = lzo - pfinal_s;
     doRR = SELECT_BIT(shiftval,log2wF);
     small = ((E==0) & (doRR==0)) ? 1 : 0;
-    absZ0 = sR==0 ? SELECT_RANGE(Y0,(wF-pfinal+1),0) : (0-SELECT_RANGE(Y0,(wF-pfinal+1),0));
+    absZ0 = sR==0 ? SELECT_RANGE(Y0,25,0) : (0-SELECT_RANGE(Y0,25,0)); // wF-pfinal+1 = 25
+
+	// Test Needed
+	//	rr: range_red
+	//	port map ( A => fpX(wF-1 downto wF-a0), Y0 => Y0,
+	//	Z => Zfinal, almostLog => almostLog);*/
 
 
-//	rr: range_red
-//	port map ( A => fpX(wF-1 downto wF-a0), Y0 => Y0,
-//	Z => Zfinal, almostLog => almostLog);*/
-
-
-	unsigned long long int out[3];
 	unsigned char A = SELECT_RANGE(fpX, 51, 47);
-	range_red(A, Y0, out[3]);
+	unsigned long long int *out;
+	out = range_red(A, Y0);
+
 	Zfinal = out[0];
 	almostLog_M = out[1];
 	almostLog_L = out[2];
 
+//	******test***********************
+//
+//	print_binary(Zfinal);
+//	print_binary(almostLog_M);
+//	print_binary(almostLog_L);
+//
+//	******test***********************
 
+	
 
-    lshiftsmall: lshift
-      generic map (w => wF-pfinal+2,  n => log2wF)
-      port map (  i => absZ0, s => shiftval(log2wF-1 downto 0), o => absZ0s );
+	//DONE!
+	//lshiftsmall: lshift
+	//generic map (w => wF-pfinal+2,  n => log2wF)
+	//port map (  i => absZ0, s => shiftval(log2wF-1 downto 0), o => absZ0s );
 
-    squarerIn = doRR==1 ? SELECT_RANGE(Zfinal,(sfinal-1),pfinal) : absZ0 <<(sfinal-wF-3);
+	BIT_RESIZE(shiftval, 6); 
+	absZ0s = absZ0 >> (shiftval);
+	squarerIn = doRR == 1 ? SELECT_RANGE(Zfinal, 54, 28) : ((unsigned long long int)absZ0); // << (sfinal - wF - 3); // SELECT_RANGE(Zfinal, sfinal - 1, pfinal) 
 
     Z2o2_full = squarerIn * squarerIn;
     Z2o2 = SELECT_RANGE(Z2o2_full,53,26);
 
     Log1p_normal = Zfinal - SELECT_RANGE(Z2o2,27,2);
 
-    absELog2_pad = absELog2 << 26; // targetprec-wF-g = 26
-    LogF_normal_pad = SELECT_BIT(logF_normal,(targetprec-1)) ? (0b11111111111<<56) : LogF_normal;
+  	LogF_normal_L = almostLog_L + Log1p_normal;
+	LogF_normal_M = SELECT_RANGE(almostLog_L, 63, 60);
 
-    Log_normal = sR==0 ? (absELog2_pad + LogF_normal_pad) : (absELog2_pad - LogF_normal_pad);
+    absELog2_pad_M = (absELog2_M << 26) | (SELECT_RANGE(absELog2_L,59,34)); // targetprec-wF-g = 26
+	absELog2_pad_L = SELECT_RANGE(absELog2_L,33,0)<<26;
+	
+    //LogF_normal_pad = SELECT_BIT(logF_normal,(targetprec-1)) ? (0b11111111111<<56) : LogF_normal;
+	LogF_normal_pad_L = SELECT_BIT(LogF_normal_M, 23) ? ((unsigned long long int)0b1111 << (int)56) : LogF_normal_L;
+	LogF_normal_pad_M = SELECT_BIT(LogF_normal_M,23) ? (0b1111111) : LogF_normal_M;
+	
+	
+	//subtraction part need to be fixed. its not correct now.
+    //Log_normal = sR==0 ? (absELog2_pad + LogF_normal_pad) : (absELog2_pad - LogF_normal_pad);
+	Log_normal_L = sR == 0 ? (absELog2_pad_L + LogF_normal_pad_L) : (absELog2_pad_L - LogF_normal_pad_L);
+	Log_normal_M = sR == 0 ? (absELog2_pad_M + LogF_normal_pad_M + SELECT_RANGE(Log_normal_L, 63, 60)) : (absELog2_pad_M - LogF_normal_pad_M);
+	BIT_RESIZE(Log_normal_L,60);
+	
+	
+	////need to translate these 2 to C
+	//   lzc_norm_0 : lzc_norm
+	//     generic map (w => wE+targetprec, n => lzc_size)
+	//     port map (i => Log_normal, z => E_normal, o => Log_normal_normd);
+
+	count_leading_zero_macro(60, Log_normal_L, E_normal_L);
+	count_leading_zero_macro(34, Log_normal_M, E_normal_M);
+	E_normal = E_normal_L + E_normal_M;
+	Log_normal_normd_L = E_normal < 34 ? 1 : 0;
+	Log_normal_normd_M = E_normal < 34 ? 1 : 0;
 
 
-	//need to translate these 2 to C
-    lzc_norm_0 : lzc_norm
-      generic map (w => wE+targetprec, n => lzc_size)
-      port map (i => Log_normal, z => E_normal, o => Log_normal_normd);
-
-
-    rshiftsmall: rshift
-      generic map (w => sfinal-pfinal+1,  n => log2wF)
-      port map (i => Z2o2,
-                s => shiftval(log2wF-1 downto 0),
-                o => Z2o2_small_s);
-
+	//DONE
+	//   rshiftsmall: rshift
+	//     generic map (w => sfinal-pfinal+1,  n => log2wF)
+	//     port map (i => Z2o2,
+	//               s => shiftval(log2wF-1 downto 0),
+	//               o => Z2o2_small_s);
+	
+	Z2o2_small_s = Z2o2 << 6;  //log2wf
+	BIT_RESIZE(Z2o2_small_s, 64);
     // send the MSB to position pfinal
-    Z2o2_small = Z2o2_small_s<< 30 ;  // & wF+g-sfinal downto 0 => '0'
+	Z2o2_small = Z2o2_small_s << (int)30;   // & wF+g-sfinal downto 0 => '0'
 
     //mantissa will be either Y0-z^2/2  or  -Y0+z^2/2,  depending on sR
+	BIT_RESIZE(absZ0s, 64);
     Z_small = absZ0s << 33; // absZ0s & (pfinal+g-1 downto 0 => '0')
     Log_small = sR==0 ? (Z_small - Z2o2_small) : (Z_small + Z2o2_small);
 
@@ -344,149 +420,50 @@ float ADD_BUILTIN_PREFIX(logf)(float x)
     //Log_small_normd
     if(SELECT_BIT(Log_small,(wF+g+1))==1)
     {
-      Log_small_normd = SELECT_RANGE(Log_small,(wF+g+1),2);
+		Log_small_normd = SELECT_RANGE(Log_small, 58, 2); //(wF+g+1)=58
     }
     else if(SELECT_BIT(Log_small,(wF+g))==1)
     {
-      Log_small_normd = SELECT_RANGE(Log_small,(wF+g),1);
+		Log_small_normd = SELECT_RANGE(Log_small, 57, 1); //(wF+g)=57
     }
     else
     {
-      Log_small_normd = SELECT_RANGE(Log_small,(wF+g-1),0);
+		Log_small_normd = SELECT_RANGE(Log_small, 56, 0); //(wF+g-1)=57
     }
 
     ER = small==1 ? E_small : (E0offset-E_normal);
-    Log_g = small==1 ? SELECT_RANGE(Log_small_normd,(wF+g-2),0)<<1 : SELECT_RANGE(Log_normal_normd,(wE+targetprec-2), (wE+targetprec-wF-g-1)) ;
-    sticky = SELECT_RANGE(Log_g, (g-2), 0) == 0 ? 0b0 : 0b1 ;
+	//Log_g = small==1 ? SELECT_RANGE(Log_small_normd,(wF+g-2),0)<<1 : SELECT_RANGE(Log_normal_normd,(wE+targetprec-2), (wE+targetprec-wF-g-1)) ;
+	Log_g = small == 1 ? SELECT_RANGE(Log_small_normd, 56, 0) << 1 : (SELECT_RANGE(Log_normal_normd_M, 32, 0) << 24) | (SELECT_RANGE(Log_normal_normd_L, 59, 36));
+	sticky = SELECT_RANGE(Log_g, 3, 0) == 0 ? 0b0 : 0b1; // (g-2)=3
     round = SELECT_BIT(Log_g,(g-1))&(SELECT_BIT(Log_g,g)|sticky);
 
-    EFR = ((ER<<52)|SELECT_RANGE(Log_g,(wF+g-1),g)) + round;
+	EFR = ((ER << 52) | SELECT_RANGE(Log_g, 56, 5)) + round; //SELECT_RANGE(Log_g,(wF+g-1),g))
 
-    /*
-    fpR(wE+wF+2 downto wE+wF) <= "110" when ((fpX(wE+wF+2) and (fpX(wE+wF+1) or fpX(wE+wF))) or (fpX(wE+wF+1) and fpX(wE+wF))) = '1' else
-                                 "101" when fpX(wE+wF+2 downto wE+wF+1) = "00"                                                       else
-                                 "100" when fpX(wE+wF+2 downto wE+wF+1) = "10"                                                       else
-                                 "00" & sR when (((Log_normal_normd(wE+targetprec-1)='0') and (small='0')) or ( (Log_small_normd (wF+g-1)='0') and (small='1'))) or (ufl = '1') else
-                                 "01" & sR;
 
-    fpR(wE+wF-1 downto 0) <=  EFR;
-    */
+	double_uint_converter res_fp;
+	res_fp.b = EFR;
 
-//////////////////////////////////////
-//	SINGLE PRECISION - dont care
-///////////////////////////////////////
-//    return fpR;
-//
-//    unsigned int m;
-//    unsigned long long nELog2,nY0,nY,nZ;
-//    unsigned int fpX, fpR;
-//    unsigned int  nX0, nX1, nX;
-//    unsigned short int nE0;
-//    unsigned char nE, eR0, eR1, eR2, eR, n_leading_zeros;
-//    unsigned char sqrt2 = 26;
-//    _Bool cmpSqrt2;
-//    _Bool sR;
-//    unsigned int fR0, fR1, fR ;
-//    float_uint_converter func_in;
-//    _Bool LSB_bit, guard_bit,round_bit, sticky_bit, _round;
-//    unsigned char nZextension;
-//
-//
-//    func_in.f = x;
-//    fpX = func_in.b;
-//
-//    s = (fpX>>31)&1;
-//    e = SELECT_RANGE(fpX,30,23);
-//    m = fpX & 0x007fffff;
-//
-//#ifndef NO_SUBNORMALS
-//    if ((fpX & 0x7fffffff) == 0) return -__builtin_inff();
-//#else
-//    if (e == 0) return -__builtin_inff();
-//#endif
-//    if (fpX == 0x7F800000) return __builtin_inff();
-//    if (fpX == 0xFF800000) return __builtin_nanf("");
-//    if (e==255)
-//    {
-//        func_in.b |= ( 0x7FC << 20 );
-//        return func_in.f;
-//    }
-//    if (s==1) return __builtin_nanf("");
-//    if(fpX == 0x3F800000) return 0;
-//
-//#ifndef NO_SUBNORMALS
-//    if(e==0)
-//    {
-//      unsigned int subnormal_lz, mshifted;
-//      count_leading_zero_macro_lshift(23, m, subnormal_lz,mshifted);
-//      e = -subnormal_lz;
-//      m = SELECT_RANGE(mshifted, 21, 0)<<1;
-//    }
-//#endif
-//
-//
-//    cmpSqrt2 = (m>>17) >= sqrt2;
-//
-//
-//
-//    nE0 = e - (126|((!cmpSqrt2)&1));
-//    BIT_RESIZE(nE0,9);
-//    sR = nE0==0 ? cmpSqrt2 : SELECT_BIT(nE0,8);
-//    nE= sR==1 ? -nE0 : SELECT_RANGE(nE0,7,0); //AbsE
-//    nELog2 = (unsigned long long)nE * (unsigned long long)LOG2; //AbsE*log2
-//
-//    nX0 = cmpSqrt2==0 ? ((1<<22|SELECT_RANGE(m,21,0))<<1): m; // Y0
-//    nX1 = (((!SELECT_BIT(nX0,23))&1)<<23)|SELECT_RANGE(nX0,22,0);   //m-1
-//    nX = sR==1 ? -nX1 : nX1; //AbsZ0 ??
-//    BIT_RESIZE(nX,24);
-//
-//    unsigned int nLogX = hotbm_log_log(nX0);
-//
-//    nY0 = ((unsigned long long)SELECT_RANGE(nX,22,0))*((unsigned long long) nLogX);
-//    nY =  ((SELECT_BIT(nX,23))==1) ? ((unsigned long long)nY0-((unsigned long long)nLogX<<23)): nY0;
-//    BIT_RESIZE(nY,53);
-//    nZextension = SELECT_BIT(nY,51)?0xff:0;
-//
-//    nZ = (((unsigned long long)nZextension<<53)|nY) + (((unsigned long long)nELog2)<<26);
-//
-//
-//#if 1
-//    unsigned int upper_nZ = nZ >> (60-32);
-//    count_leading_zero_macro(32, upper_nZ, n_leading_zeros);
-//    BIT_RESIZE(n_leading_zeros,5);
-//    nZ <<= 4;
-//    nZ <<= n_leading_zeros;
-//    nZ >>=4;
-//#else
-//    count_leading_zero_macro_lshift(60, nZ, n_leading_zeros,nZ);
-//    BIT_RESIZE(n_leading_zeros,5);
-//#endif
-//    fR0 = SELECT_RANGE(nZ, 58, 30);
-//    eR0 = n_leading_zeros;
-//
-//    //rounding whattttttt????
-//    float_uint_converter res_fp;
-//
-//    eR1 = 134 - eR0;
-//    sticky_bit = (SELECT_RANGE(nZ,33,0) == 0) ? 0 : 1;
-//    round_bit = SELECT_BIT(fR0, 4);
-//    guard_bit = SELECT_BIT(fR0, 5);
-//    LSB_bit = SELECT_BIT(fR0, 6);
-//    _round = guard_bit&(LSB_bit|round_bit|sticky_bit);
-//
-//
-//    fR1 = (fR0 >> 6) + _round;
-//    fR= SELECT_RANGE(fR1,22,0);
-//    eR2 = eR1 + SELECT_BIT(fR1, 23);
-//    eR = eR2 & 255;
-//
-//    res_fp.b=(eR<<23)|fR;
-//    res_fp.b |=(sR<<31);
-//
-//	return res_fp.f;
+	return res_fp.f;
 }
 
-float __hide_ieee754_logf (float x)
+//float __hide_ieee754_logf (float x)
+//{
+//    return ADD_BUILTIN_PREFIX(logf)(x);
+//}
+
+int main()
 {
-    return ADD_BUILTIN_PREFIX(logf)(x);
+	printf("*** main ***\n");
+	double_uint_converter test_in,test_out;
+	test_in.f = 0xfffff;
+	test_out.f = logf(test_in.f);
+	printf("Test Input:\t");
+	print_binary(test_in.b);
+	printf("\t\t%f", test_in.f);
+	printf("\nTest Output:\t");
+	print_binary(test_out.b);
+	printf("\t\t%f", test_out.f);
+
+	return 0;
+
 }

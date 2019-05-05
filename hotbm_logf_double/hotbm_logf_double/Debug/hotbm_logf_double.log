@@ -1,72 +1,22 @@
 ﻿  Main.c
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(58): error C2065: 'Z9': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(59): error C2065: 'Z9_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(60): error C2065: 'epsZ8': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(66): error C2065: 'Z1_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(68): error C2065: 'Z1_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(69): error C2065: 'Z1_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(70): error C2065: 'ZM1': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(70): error C2065: 'Z1_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(71): error C2065: 'ZM1': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(79): error C2065: 'epsZ1': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(79): error C2065: 'Z1_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(79): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(80): error C2065: 'epsZ1': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(80): error C2106: '=': left operand must be l-value
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(80): error C2143: syntax error: missing ';' before ':'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(82): error C2065: 'Z2': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(82): error C2065: 'epsZ1': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(82): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(84): error C2065: 'Z2_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(85): error C2065: 'Z2_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(86): error C2065: 'ZM2': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(86): error C2065: 'Z2_d': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(87): error C2065: 'ZM2': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(89): error C2065: 'epsZ2': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(89): error C2059: syntax error: ';'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(129): error C2091: function returns function
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(151): error C2065: 'signal': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(151): error C2146: syntax error: missing ';' before identifier 'absELog2'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(151): warning C4013: 'std_logic_vector' undefined; assuming extern returning int
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(151): error C2146: syntax error: missing ')' before identifier 'downto'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(151): error C2059: syntax error: ')'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(152): error C2065: 'signal': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(152): error C2146: syntax error: missing ';' before identifier 'absELog2_pad'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(152): error C2065: 'absELog2_pad': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(152): error C2065: 'LogF_normal_pad': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(152): error C2065: 'Log_normal': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(152): error C2065: 'Log_normal_normd': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(152): error C2143: syntax error: missing ';' before ':'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(155): error C2065: 'func_in': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(155): error C2224: left of '.f' must have struct/union type
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(155): error C2065: 'x': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(156): error C2065: 'fpX': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(156): error C2065: 'func_in': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(156): error C2224: left of '.b' must have struct/union type
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(164): warning C4293: '<<': shift count negative or too big, undefined behavior
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(164): error C2065: 'fpx': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(168): error C2065: 'absELog2': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(168): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(170): error C2065: 'lzoc': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(170): error C2146: syntax error: missing ';' before identifier 'leading'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(170): error C2065: 'leading': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(170): error C2146: syntax error: missing ';' before identifier 'zero'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(170): error C2065: 'zero': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(170): error C2065: 'one': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(170): error C2146: syntax error: missing ';' before identifier 'count'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(170): warning C4552: '/': result of expression not used
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(171): error C2065: 'count': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(171): error C2146: syntax error: missing ';' before identifier 'generic'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(171): error C2065: 'generic': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(171): error C2146: syntax error: missing ';' before identifier 'map'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(171): warning C4013: 'map' undefined; assuming extern returning int
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(171): error C2065: 'w': undeclared identifier
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(171): error C2059: syntax error: '>'
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(172): error C2014: preprocessor command must start as first nonwhite space
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(174): error C2106: '=': left operand must be l-value
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(177): warning C4013: 'BOOST_PP_IIF_BOOST_PP_BOOL_BOOST_PP_IIF_BOOST_PP_NOT_EQUAL_CHECK_BOOST_PP_NOT_EQUAL_BOOST_PP_INC_' undefined; assuming extern returning int
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(177): error C2064: term does not evaluate to a function taking 341 arguments
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(177): fatal error C1903: unable to recover from previous error(s); stopping compilation
-  INTERNAL COMPILER ERROR in 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.20.27508\bin\HostX86\x86\CL.exe'
-      Please choose the Technical Support command on the Visual C++
-      Help menu, or open the Technical Support help file for more information
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(39): warning C4244: '=': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(118): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(134): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(150): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(77): warning C4101: 'B0': unreferenced local variable
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(81): warning C4101: 'ZM0': unreferenced local variable
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(84): warning C4101: 'Z1': unreferenced local variable
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(84): warning C4101: 'Z2': unreferenced local variable
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(307): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(308): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(324): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(336): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(337): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(413): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(414): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(434): warning C4293: '<<': shift count negative or too big, undefined behavior
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(256): warning C4101: 's': unreferenced local variable
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(272): warning C4101: 'ufl': unreferenced local variable
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(261): warning C4101: 'exn': unreferenced local variable
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(248): warning C4172: returning address of local variable or temporary: out
+  hotbm_logf_double.vcxproj -> C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\Debug\hotbm_logf_double.exe

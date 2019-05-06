@@ -124,7 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.c" />
+    <ClCompile Include="hotbm_logf_double.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bambu_macros.h" />

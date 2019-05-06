@@ -1,13 +1,11 @@
-﻿  Main.c
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(120): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(146): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(155): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(167): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(172): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(187): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(335): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(336): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(414): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(415): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\Main.c(269): warning C4172: returning address of local variable or temporary: out
+﻿  hotbm_logf_double.c
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(118): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned int', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(147): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(167): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(182): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(313): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(314): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(367): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(368): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logf_double.c(256): warning C4172: returning address of local variable or temporary: out
   hotbm_logf_double.vcxproj -> C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\Debug\hotbm_logf_double.exe

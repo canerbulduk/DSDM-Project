@@ -530,10 +530,11 @@ begin
   Log1p_normal  <=   Zfinal  -  ((sfinal-1 downto sfinal-pfinal-1  => '0') & (Z2o2(sfinal-pfinal downto 2)));
 
   LogF_normal <=   almostLog + ((targetprec-1 downto sfinal => '0') & Log1p_normal);
-
+  
+  
   absELog2_pad <=   absELog2 & (targetprec-wF-g-1 downto 0 => '0');       
   LogF_normal_pad <= (wE-1  downto 0 => LogF_normal(targetprec-1))  & LogF_normal;
-  
+
   Log_normal <=  absELog2_pad  + LogF_normal_pad when sR='0'  
                 else absELog2_pad - LogF_normal_pad;
 
@@ -606,12 +607,6 @@ begin
   fpR(wE+wF-1 downto 0) <=  EFR;
 
 end architecture;
-
-
-
-
-
-
 
 
 
@@ -767,7 +762,7 @@ begin
 
    Z1_d <= P0(53 downto 0);
    S1_d <= L0;
-
+  
    A1 <= Z1_d(53 downto 50);
    B1 <= Z1_d(49 downto 0 );
    lt1:logtable1_11_52 port map (x=>A1, y=>L1);
@@ -800,6 +795,7 @@ begin
    Z3_d <=   Z3;
    S3_d <=   S3;
 
+   
 
    A3 <= Z3_d(68 downto 65);
    B3 <= Z3_d(64 downto 0 );

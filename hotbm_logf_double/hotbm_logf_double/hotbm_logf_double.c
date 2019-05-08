@@ -4,6 +4,8 @@
 #define SUPPORT_SUBNORMALS
 #define LOG2 0x2C5C860
 
+#define getName(var)  #var
+
 #ifdef CHECK_LOG_FUNCTION
 #include <math.h>
 #include <stdio.h>
@@ -107,7 +109,7 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	epsZ1 = SELECT_BIT(A1, 3) == 0 ? epsZ1 : epsZ1 << 1;
 
 	Z2_d = (B1<<9) - (P1<<1) + epsZ1;
-	
+	//Z2_d is correct!
 	
 	A2 = SELECT_RANGE(Z2_d, 59, 56);
 	B2 = SELECT_RANGE(Z2_d, 55, 0);
@@ -115,18 +117,21 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	//P2 = A2 * ZM2 ; 68bits
 	//while Amax=1b1111=15, we can split ZM and P as 60bits and rest
 	P2_0=ZM2*A2;
-	P2_1 = (ZM2 * A2) + SELECT_RANGE(P2_0, 63, 60);
+	P2_1 = SELECT_RANGE(P2_0, 63, 60);
 	BIT_RESIZE(P2_0,60);
 	epsZ2_0 = A2==0 ? 0 : Z2_d;
-	epsZ2_1 = A2==0 ? 0 : 1<<7;
+	epsZ2_1 = A2==0 ? 0 : 1<<7;	
 	Z3_0 = SELECT_RANGE(epsZ2_0,59,0) + (SELECT_RANGE(B2,47,0)<<12) - (SELECT_RANGE(P2_0,58,0)<<1);
-	Z3_1 = epsZ2_1 + SELECT_RANGE(B2, 55, 48) - SELECT_BIT(P2_0, 59) - P2_1; // SELECT_BIT(Z3_0, 60);
+	Z3_1 = SELECT_RANGE(epsZ2_1,8,0) + SELECT_RANGE(B2, 55, 48) - SELECT_BIT(P2_0, 59) - (P2_1<<1); // SELECT_BIT(Z3_0, 60);
 	Z3_1 = SELECT_RANGE(Z3_0, 63, 60) == 0b1111 ? Z3_1 - 1 : Z3_1 + SELECT_BIT(Z3_0, 60);
 	BIT_RESIZE(Z3_0,60);
 	BIT_RESIZE(Z3_1, 9);
 
 	Z3_d_0 = Z3_0;
 	Z3_d_1 = Z3_1;
+	//Z3_d_0 is correct!
+	//Z3_d_1 is correct!
+	
 
 	A3 = SELECT_RANGE(Z3_d_1,8,5); // 68:60-59:0
 	B3_1 = SELECT_RANGE(Z3_d_1,4,0);
@@ -144,23 +149,28 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 		 - SELECT_RANGE(P3_0,59,4) - (SELECT_RANGE(P3_1,3,0)<<56);
 	Z4_1 = SELECT_RANGE(B3_0, 59, 56) + (B3_1 << 4)
 		+ SELECT_RANGE(epsZ3_1, 20, 11)
-		- SELECT_RANGE(P3_1, 6, 4) - SELECT_BIT(Z4_0, 60);
+		- SELECT_RANGE(P3_1, 6, 4);
 	Z4_1 = SELECT_RANGE(Z4_0, 63, 60) == 0b1111 ? Z4_1 - 1 : Z4_1 + SELECT_BIT(Z4_0, 60);
 	BIT_RESIZE(Z4_0,60);
 	
 	Z4_d_0 = Z4_0;
 	Z4_d_1 = Z4_1;
+	//Z2_d_0 is not correct!
+	//Z2_d_1 is not correct!
+	//FIX P3
+	
+	
+	
 
 	A4 = SELECT_RANGE(Z4_d_1, 9, 6);
 	B4_1 = SELECT_RANGE(Z4_d_1, 5, 0);
 	B4_0 = Z4_d_0;
 	ZM4 = (SELECT_RANGE(Z4_d_1, 9, 0) << 47) | SELECT_RANGE(Z4_d_0, 59, 13);
 	P4_0 = ZM4 * A4;
-	P4_1 = SELECT_RANGE(P4_0, 63, 60);
+	P4_1 = SELECT_BIT(P4_0, 60);
 	BIT_RESIZE(P4_0, 60);
 	epsZ4_0 = A4 == 0 ? 0 : Z4_d_0;
-	epsZ4_1 = A4 == 0 ? 0 : (1 << 22) | Z4_d_1;
-	print_binary(epsZ4_1);
+	epsZ4_1 = A4 == 0 ? 0 : (1 << 23) | Z4_d_1;
 	Z5_0 = B4_0 
 		 + SELECT_RANGE(epsZ4_0,59,18) + (SELECT_RANGE(epsZ4_1,17,0)<<42) 
 		 - SELECT_RANGE(P4_0,59,4) - ((unsigned long long)SELECT_BIT(P4_1,0)<<56);
@@ -170,6 +180,8 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	
 	Z5_d_0 = Z5_0;
 	Z5_d_1 = Z5_1;
+	//Z5_d_0 is correct!
+	//Z5_d_1 is correct!
 	
 	A5 = SELECT_RANGE(Z5_d_1, 6, 3);
 	B5_1 = SELECT_RANGE(Z5_d_1, 2, 0);
@@ -184,6 +196,13 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	BIT_RESIZE(Z6_0, 60);
 	Z6_d = (SELECT_RANGE(Z6_1, 3, 0) << 60) | Z6_0;	
 
+	//Looks correct, check again if needed.
+
+	//printf("\n*****test*****\n");
+	//print_binary(epsZ4_1);
+	//print_binary(epsZ4_0);
+	//print_binary(Z5_0);
+	//print_binary(Z5_1);
 	
 	A6 = SELECT_RANGE(Z6_d, 63, 60);
 	B6 = SELECT_RANGE(Z6_d, 59, 0);//60bits
@@ -253,6 +272,15 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	out[1] = SUM_MS;
 	out[2] = SUM_LS;
 
+	//printf("*********range_red out*********\n");
+	//printf("%s \t\n", getName(Z));
+	//print_binary(Z);
+	//printf("%s \t\n", getName(SUM_MS));
+	//print_binary(SUM_MS);
+	//printf("%s \t\n", getName(SUM_LS));
+	//print_binary(SUM_LS);
+
+
 	return out;
 }
 
@@ -320,6 +348,8 @@ double logf(double x)
     absZ0 = sR==0 ? SELECT_RANGE(Y0,25,0) : (0-SELECT_RANGE(Y0,25,0)); // wF-pfinal+1 = 25
 	BIT_RESIZE(absZ0,26);
 
+
+
 	//	rr: range_red
 	unsigned char A = SELECT_RANGE(fpX, 51, 47);
 	unsigned long long int *out;
@@ -330,8 +360,9 @@ double logf(double x)
 	almostLog_L = out[2];
 	
 	//lshiftsmall: lshift
-	BIT_RESIZE(shiftval, 6); 
-	absZ0s = absZ0 >> (shiftval);
+	BIT_RESIZE(shiftval, 7); 
+	absZ0s = (unsigned long long)absZ0 << (shiftval);
+	BIT_RESIZE(absZ0s, 25);
 	squarerIn = doRR == 1 ? SELECT_RANGE(Zfinal, 54, 28) :(unsigned long long) absZ0<<1; // << (sfinal - wF - 3); // SELECT_RANGE(Zfinal, sfinal - 1, pfinal) 
 	BIT_RESIZE(squarerIn, 27);
     Z2o2_full = squarerIn * squarerIn;
@@ -357,6 +388,7 @@ double logf(double x)
 	//Log_normal = sR==0 ? (absELog2_pad + LogF_normal_pad) : (absELog2_pad - LogF_normal_pad
 	Log_normal_L = sR == 0 ? (absELog2_pad_L + LogF_normal_pad_L) : absELog2_pad_L - LogF_normal_pad_L;
 	Log_normal_H = sR == 0 ? (absELog2_pad_H + LogF_normal_pad_H + SELECT_BIT(Log_normal_L, 60)) : absELog2_pad_H - LogF_normal_pad_H - SELECT_BIT(Log_normal_L,60);
+	BIT_RESIZE(Log_normal_L,60);
 	
 	////ACTION NEEDED!!!!
 	// not fully completed!
@@ -367,12 +399,22 @@ double logf(double x)
 	count_leading_zero_macro(60, Log_normal_L, E_normal_L);
 	count_leading_zero_macro(34, Log_normal_H, E_normal_H);
 	E_normal = E_normal_H > 33 ? E_normal_L + E_normal_H : E_normal_H;
-
-	Log_normal_normd_H = E_normal < 34 ? (Log_normal_H << E_normal)| (Log_normal_L>>(60-E_normal))  : 0;
+	Log_normal_normd_H = E_normal < 34 ? (Log_normal_H << E_normal)| ((unsigned long long)Log_normal_L>>(60-E_normal))  : 0;
 	BIT_RESIZE(Log_normal_normd_H, 34);
 	Log_normal_normd_L = E_normal < 34 ? Log_normal_L << ((int)E_normal) : 0;
 	BIT_RESIZE(Log_normal_normd_L, 60);
 
+	////////
+	//printf("\n **** test ****\n");	
+	//print_binary(Log_normal_H);
+	//print_binary(Log_normal_L);
+	//print_binary(Log_normal_normd_H);
+	//print_binary(Log_normal_normd_L);
+	//print_binary((unsigned long long)Log_normal_L>>(60-E_normal));
+	////////
+	
+	
+	
 
 	//   rshiftsmall: rshift
 	Z2o2_small_s = Z2o2 >> 6;  //log2wf
@@ -442,14 +484,16 @@ int main()
 {
 	printf("*** main ***\n");
 	double_uint_converter test_in,test_out;
-	test_in.f = 30	;
+	test_in.f = 2;
 	test_out.f = logf(test_in.f);
 	printf("\nTest Input:\t");
 	print_binary(test_in.b);
-	printf("\t\t%f", test_in.f);
+	printf("\t\t%.15f", test_in.f);
 	printf("\nTest Output:\t");
 	print_binary(test_out.b);
-	printf("\t\t%.15f\n", test_out.f);
+	printf("\t\t%.60f\n", test_out.f);
+	printf("MATLAB result:\t0.69314718055994528622676398299518041312694549560546875");
+	printf("\n\n\n");
 
 	return 0;
 

@@ -762,7 +762,8 @@ begin
 
    Z1_d <= P0(53 downto 0);
    S1_d <= L0;
-  
+
+   
    A1 <= Z1_d(53 downto 50);
    B1 <= Z1_d(49 downto 0 );
    lt1:logtable1_11_52 port map (x=>A1, y=>L1);

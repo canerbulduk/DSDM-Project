@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <C:\Users\caner\CLionProjects\untitled1\bambu_macros.h>
 #include "bambu_macros.h"
 #define SUPPORT_SUBNORMALS
 #define LOG2 0x2C5C860
@@ -12,6 +11,12 @@
 #include <stdlib.h>
 #include <mpfr.h>
 #include <gmp.h>
+#endif
+
+#ifdef CHECK_LOG_FUNCTION
+#define ADD_BUILTIN_PREFIX(fname) local_ ## fname
+#else
+#define ADD_BUILTIN_PREFIX(fname) __builtin_ ## fname
 #endif
 
 #define CE_MACRO64(cond, a, b) ((((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63))&(a))|((~((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63)))&(b)))
@@ -122,7 +127,7 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	epsZ2_0 = A2==0 ? 0 : Z2_d;
 	epsZ2_1 = A2==0 ? 0 : 1<<7;	
 	Z3_0 = SELECT_RANGE(epsZ2_0,59,0) + (SELECT_RANGE(B2,47,0)<<12) - (SELECT_RANGE(P2_0,58,0)<<1);
-	Z3_1 = SELECT_RANGE(epsZ2_1,8,0) + SELECT_RANGE(B2, 55, 48) - SELECT_BIT(P2_0, 59) - (P2_1<<1); // SELECT_BIT(Z3_0, 60);
+	Z3_1 = SELECT_RANGE(epsZ2_1,8,0) + SELECT_RANGE(B2, 55, 48) - SELECT_BIT(P2_0, 59) - ((unsigned long long)P2_1<<1); // SELECT_BIT(Z3_0, 60);
 	Z3_1 = SELECT_RANGE(Z3_0, 63, 60) == 0b1111 ? Z3_1 - 1 : Z3_1 + SELECT_BIT(Z3_0, 60);
 	BIT_RESIZE(Z3_0,60);
 	BIT_RESIZE(Z3_1, 9);
@@ -132,15 +137,15 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	//Z3_d_0 is correct!
 	//Z3_d_1 is correct!
 	
-
 	A3 = SELECT_RANGE(Z3_d_1,8,5); // 68:60-59:0
 	B3_1 = SELECT_RANGE(Z3_d_1,4,0);
 	B3_0 = Z3_d_0;
 	ZM3 = (SELECT_RANGE(Z3_d_1,8,0)<<54) | SELECT_RANGE(Z3_d_0,59,6);
+	//FIXED!!
 	//FIX is needed. 
 	//P3_1 and P3_0 are not correct!
-	P3_0 = ZM3 * A3;
-	P3_1 = SELECT_RANGE(P3_0, 63, 60);
+	P3_0 = SELECT_RANGE(ZM3,59,0) * A3;  
+	P3_1 = SELECT_RANGE(ZM3,62,60) * A3 + SELECT_RANGE(P3_0,63,60);
 	BIT_RESIZE(P3_0, 60);
 	epsZ3_0 = A3 == 0 ? 0 : Z3_d_0;
 	epsZ3_1 = A3 == 0 ? 0 : (1 << 19) | Z3_d_1;
@@ -304,10 +309,10 @@ double logf(double x)
 	unsigned short int E0offset = 0b10000001001;
 	unsigned char pfinal_s = 0b011100;
 	unsigned char lzc_size = 6;
-	_Bool FirstBit, sR, small, doRR, ufl, sticky, round;
-	unsigned long long int Y0, Log_small_normd, Log_g, EFR, Zfinal, Log1p_normal, Z2o2_full, Log_small, Z_small, Z2o2_small, ER, squarerIn;
+	_Bool s, FirstBit, sR, small, doRR, ufl, sticky, round;
+	unsigned long long int Y0, Log_small_normd, Log_g, EFR, Zfinal, Log1p_normal, Z2o2_full, Log_small, Z_small, Z2o2_small, ER, squarerIn, Z2o2_small_s, Z2o2;
 	unsigned short int E, absE, E_small, E_normal, lzo, shiftval, E_normal_H, E_normal_L;
-	unsigned int absZ0, absZ0s, Z2o2_small_s, Z2o2;
+	unsigned int absZ0, absZ0s;
 	unsigned char E0_sub;
 	unsigned int absELog2_H;
 	unsigned long long int absELog2_L;
@@ -319,17 +324,34 @@ double logf(double x)
 							Log_normal_H, Log_normal_L;
 
 	func_in.f = x;
-	fpX = func_in.b;
-
+	fpX = func_in.b;	
+	
+	s = SELECT_BIT(fpX,63);
 	FirstBit = SELECT_BIT(fpX, 51);
 
 	Y0 = FirstBit == 0 ? (((((unsigned long long)1) << (int)52) | SELECT_RANGE(fpX, 51, 0)) << 1) : (((unsigned long long)1 << 52) | SELECT_RANGE(fpX, 51, 0));
 	E = SELECT_RANGE(fpX, 62, 52) - ((0b111111111 << 1) | !FirstBit);
 	BIT_RESIZE(E, 11);
-	sR = SELECT_RANGE(fpX, 62, 52) == 0b11111111111 ? 0 : !SELECT_BIT(fpX, 62);
+	sR = SELECT_RANGE(fpX, 62, 52) == 0b1111111111 ? 0 : !SELECT_BIT(fpX, 62);
 	absE = sR == 1 ? -E : E;
 	BIT_RESIZE(absE,11);
-
+	print_binary(sR);
+	
+//#ifndef NO_SUBNORMALS
+//    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inff();	// 0 -> -inf
+//#else
+//    if (E == 0) return -__builtin_inff();	// -0 -> -inf
+//#endif
+//    if (fpX == 0x7FF0000000000000) return __builtin_inff();		//+inf -> inf
+//    if (fpX == 0xFFF0000000000000) return __builtin_nanf("");	//-inf -> NaN
+//    if (E==2047)
+//    {
+//        func_in.b |= ( 0xFFF << 51 ); //NaN -> NaN
+//        return func_in.f;
+//    }
+//    if (s==1) return __builtin_nanf(""); //negative -> NaN
+//    if(fpX == 0x3FF0000000000000) return 0; // +1 -> 0
+//
 
 	//to calculate AbsELog
 	unsigned long int m1 = (log2 >> 49) * absE;            // middle 19 bits at offset 49;
@@ -388,6 +410,8 @@ double logf(double x)
 	//Log_normal = sR==0 ? (absELog2_pad + LogF_normal_pad) : (absELog2_pad - LogF_normal_pad
 	Log_normal_L = sR == 0 ? (absELog2_pad_L + LogF_normal_pad_L) : absELog2_pad_L - LogF_normal_pad_L;
 	Log_normal_H = sR == 0 ? (absELog2_pad_H + LogF_normal_pad_H + SELECT_BIT(Log_normal_L, 60)) : absELog2_pad_H - LogF_normal_pad_H - SELECT_BIT(Log_normal_L,60);
+	print_binary(absELog2_pad_L);
+	print_binary(absELog2_pad_H);
 	BIT_RESIZE(Log_normal_L,60);
 	
 	////ACTION NEEDED!!!!
@@ -404,21 +428,11 @@ double logf(double x)
 	Log_normal_normd_L = E_normal < 34 ? Log_normal_L << ((int)E_normal) : 0;
 	BIT_RESIZE(Log_normal_normd_L, 60);
 
-	////////
-	//printf("\n **** test ****\n");	
-	//print_binary(Log_normal_H);
-	//print_binary(Log_normal_L);
-	//print_binary(Log_normal_normd_H);
-	//print_binary(Log_normal_normd_L);
-	//print_binary((unsigned long long)Log_normal_L>>(60-E_normal));
-	////////
 	
-	
-	
-
 	//   rshiftsmall: rshift
-	Z2o2_small_s = Z2o2 >> 6;  //log2wf
+	Z2o2_small_s = shiftval>58 ? 0 : Z2o2 >> ((unsigned char) shiftval);  //log2wf
 	BIT_RESIZE(Z2o2_small_s, 28);
+
 
 	Z2o2_small = ((unsigned long long)Z2o2_small_s) <<3;   // & wF+g-sfinal downto 0 => '0'
 	
@@ -484,7 +498,7 @@ int main()
 {
 	printf("*** main ***\n");
 	double_uint_converter test_in,test_out;
-	test_in.f = 2;
+	test_in.f = 1.1;
 	test_out.f = logf(test_in.f);
 	printf("\nTest Input:\t");
 	print_binary(test_in.b);
@@ -492,7 +506,7 @@ int main()
 	printf("\nTest Output:\t");
 	print_binary(test_out.b);
 	printf("\t\t%.60f\n", test_out.f);
-	printf("MATLAB result:\t0.69314718055994528622676398299518041312694549560546875");
+	printf("MATLAB result:\t-1.1711829815029450863050897169159725308418273925781250000000000000000000000000000000000000000000000000");
 	printf("\n\n\n");
 
 	return 0;

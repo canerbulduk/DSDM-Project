@@ -498,7 +498,7 @@ int main()
 {
 	printf("*** main ***\n");
 	double_uint_converter test_in,test_out;
-	test_in.f = 1.1;
+	test_in.f = 0.31;
 	test_out.f = logf(test_in.f);
 	printf("\nTest Input:\t");
 	print_binary(test_in.b);

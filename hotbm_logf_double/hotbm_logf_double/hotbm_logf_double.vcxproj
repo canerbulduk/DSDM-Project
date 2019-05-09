@@ -23,6 +23,7 @@
     <ProjectGuid>{BD3AC7EB-7E5E-4B60-8D49-AB6554CFD62F}</ProjectGuid>
     <RootNamespace>hotbmlogfdouble</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>hotbm_logd</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -124,7 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="hotbm_logf_double.c" />
+    <ClCompile Include="hotbm_logd.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bambu_macros.h" />

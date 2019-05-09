@@ -20,7 +20,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="hotbm_logf_double.c">
+    <ClCompile Include="hotbm_logd.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

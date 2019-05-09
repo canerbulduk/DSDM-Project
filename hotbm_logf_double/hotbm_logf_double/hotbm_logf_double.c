@@ -410,10 +410,9 @@ double logf(double x)
 	//Log_normal = sR==0 ? (absELog2_pad + LogF_normal_pad) : (absELog2_pad - LogF_normal_pad
 	Log_normal_L = sR == 0 ? (absELog2_pad_L + LogF_normal_pad_L) : absELog2_pad_L - LogF_normal_pad_L;
 	Log_normal_H = sR == 0 ? (absELog2_pad_H + LogF_normal_pad_H + SELECT_BIT(Log_normal_L, 60)) : absELog2_pad_H - LogF_normal_pad_H - SELECT_BIT(Log_normal_L,60);
-	print_binary(absELog2_pad_L);
-	print_binary(absELog2_pad_H);
 	BIT_RESIZE(Log_normal_L,60);
 	
+	//FIXED!
 	////ACTION NEEDED!!!!
 	// not fully completed!
 	//   lzc_norm_0 : lzc_norm
@@ -423,9 +422,9 @@ double logf(double x)
 	count_leading_zero_macro(60, Log_normal_L, E_normal_L);
 	count_leading_zero_macro(34, Log_normal_H, E_normal_H);
 	E_normal = E_normal_H > 33 ? E_normal_L + E_normal_H : E_normal_H;
-	Log_normal_normd_H = E_normal < 34 ? (Log_normal_H << E_normal)| ((unsigned long long)Log_normal_L>>(60-E_normal))  : 0;
+	Log_normal_normd_H = E_normal < 34 ? (Log_normal_H << E_normal)| ((unsigned long long)Log_normal_L>>(60-E_normal))  : ((Log_normal_L<<E_normal_L)&MASK(34)); 
 	BIT_RESIZE(Log_normal_normd_H, 34);
-	Log_normal_normd_L = E_normal < 34 ? Log_normal_L << ((int)E_normal) : 0;
+	Log_normal_normd_L = E_normal < 34 ? Log_normal_L << ((int)E_normal) : (Log_normal_L<<E_normal);
 	BIT_RESIZE(Log_normal_normd_L, 60);
 
 	

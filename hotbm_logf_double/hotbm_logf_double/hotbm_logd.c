@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "bambu_macros.h"
+#include <math.h>
 #define SUPPORT_SUBNORMALS
 
 
@@ -17,15 +18,11 @@
 #define ADD_BUILTIN_PREFIX(fname) __builtin_ ## fname
 #endif
 
-#define CE_MACRO64(cond, a, b) ((((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63))&(a))|((~((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63)))&(b)))
-#define CE_MACRO32(cond, a, b) ((((unsigned int) ((((int)(cond))<<31)>>31))&(a))|((~((unsigned int) ((((int)(cond))<<31)>>31)))&(b)))
-
-#define MAX(x, y) (((x) > (y)) ? (x) : (y))
-#define MIN(x, y) (((x) < (y)) ? (x) : (y))
+//#define CE_MACRO64(cond, a, b) ((((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63))&(a))|((~((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63)))&(b)))
 #define MASK(n)  ((1ULL << (n)) - 1)
 
-#define PRECISION 200
-#define SZ 64
+//#define PRECISION 200
+//#define SZ 64
 
 
 typedef union{
@@ -99,11 +96,12 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	B1 = SELECT_RANGE(Z1_d, 49, 0);
 	ZM1 = Z1_d;
 	P1 = A1 * ZM1;
-
+	//***********
 	//	epsZ1 = SELECT_BIT(A1,3)==0 ? (SELECT_BIT(A1,2)==0 ? 0 : ((1<<58) | Z1_d)) : ;
 	//	0000 : 0
 	//  0XXX : 01 0000 Z1_d
 	//  else : 1 0000 Z1_d 0
+	//***********
 	epsZ1 = A1 == 0 ? 0 : (((unsigned long long)1 << 58) | Z1_d);
 	epsZ1 = SELECT_BIT(A1, 3) == 0 ? epsZ1 : epsZ1 << 1;
 
@@ -157,9 +155,6 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	//Z2_d_0 is not correct!
 	//Z2_d_1 is not correct!
 	//FIX P3
-	
-	
-	
 
 	A4 = SELECT_RANGE(Z4_d_1, 9, 6);
 	B4_1 = SELECT_RANGE(Z4_d_1, 5, 0);
@@ -271,13 +266,11 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	out[1] = SUM_MS;
 	out[2] = SUM_LS;
 
-	//printf("*********range_red out*********\n");
-	//printf("%s \t\n", getName(Z));
-	//print_binary(Z);
-	//printf("%s \t\n", getName(SUM_MS));
-	//print_binary(SUM_MS);
-	//printf("%s \t\n", getName(SUM_LS));
-	//print_binary(SUM_LS);
+	printf("*********range_red out*********\n");
+
+	print_binary(Z);
+	print_binary(SUM_MS);
+	print_binary(SUM_LS);
 
 
 	return out;
@@ -329,7 +322,6 @@ double logd(double x)
 	sR = SELECT_RANGE(fpX, 62, 52) == 0b1111111111 ? 0 : !SELECT_BIT(fpX, 62);
 	absE = sR == 1 ? -E : E;
 	BIT_RESIZE(absE,11);
-	print_binary(sR);
 	
 //#ifndef NO_SUBNORMALS
 //    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inff();	// 0 -> -inf
@@ -345,8 +337,9 @@ double logd(double x)
 //    }
 //    if (s==1) return __builtin_nanf(""); //negative -> NaN
 //    if(fpX == 0x3FF0000000000000) return 0; // +1 -> 0
-//
+//	
 
+	//absELog2 <= absE * log2;
 	//to calculate AbsELog
 	unsigned long int m1 = (log2 >> 49) * absE;            // middle 19 bits at offset 49;
 	unsigned long long int m0 = (log2 & MASK(49)) * absE + ((m1 & MASK(11)) << 49); // low 61 bits
@@ -358,6 +351,8 @@ double logd(double x)
 	else if (!FirstBit) { count_leading_zero_macro(52, SELECT_RANGE(Y0, 52, 1), lzo); }
 	BIT_RESIZE(lzo, 6);
 
+
+
     shiftval = lzo - pfinal_s;
     doRR = SELECT_BIT(shiftval,log2wF);
     small = ((E==0) & (doRR==0)) ? 1 : 0;
@@ -367,7 +362,7 @@ double logd(double x)
 
 
 	//	rr: range_red
-	unsigned char A = SELECT_RANGE(fpX, 51, 47);
+	unsigned char A = SELECT_RANGE(fpX, 51, 47); //first 4 bit of fraction part
 	unsigned long long int *out;
 	out = range_red(A, Y0);
 
@@ -379,7 +374,7 @@ double logd(double x)
 	BIT_RESIZE(shiftval, 7); 
 	absZ0s = (unsigned long long)absZ0 << (shiftval);
 	BIT_RESIZE(absZ0s, 25);
-	squarerIn = doRR == 1 ? SELECT_RANGE(Zfinal, 54, 28) :(unsigned long long) absZ0<<1; // << (sfinal - wF - 3); // SELECT_RANGE(Zfinal, sfinal - 1, pfinal) 
+	squarerIn = doRR == 1 ? SELECT_RANGE(Zfinal, 54, 28) :(unsigned long long) absZ0s<<1; // << (sfinal - wF - 3); // SELECT_RANGE(Zfinal, sfinal - 1, pfinal) 
 	BIT_RESIZE(squarerIn, 27);
     Z2o2_full = squarerIn * squarerIn;
     Z2o2 = SELECT_RANGE(Z2o2_full,53,26);
@@ -390,6 +385,17 @@ double logd(double x)
   	LogF_normal_L = almostLog_L + Log1p_normal;
 	LogF_normal_H = almostLog_H + SELECT_BIT(LogF_normal_L,60);
 	BIT_RESIZE(LogF_normal_L,60);
+	
+	////
+	//print_binary(shiftval);
+	//print_binary(absZ0);
+	//print_binary(doRR);
+	//print_binary(squarerIn);
+	//print_binary(Z2o2);
+	//print_binary(LogF_normal_L);
+	//print_binary(LogF_normal_H);
+
+
 
 	absELog2_pad_H = ((unsigned long long)absELog2_H << 26) | (SELECT_RANGE(absELog2_L,59,34)); // targetprec-wF-g = 26
 	absELog2_pad_L = SELECT_RANGE(absELog2_L,33,0)<<26;
@@ -502,16 +508,17 @@ double logd(double x)
 //			unsigned long int x=0;
 //			#pragma omp critical
 //			printf("E=%d\n",E);
-//			for(x=0; x < ((unsigned long long) 1 << 52); x++)
+//			for(unsigned long int x=0; x < ((unsigned long long) 1 << 52); ++x)
 //			{
+//				//printf("%d\n", x);
 //				double_uint_converter func_in, func_out, func_golden_libm;
 //				func_in.b = ((unsigned long long)s)<<63 | E << 52 | x;
-//				func_out.f = ADD_BUILTIN_PREFIX(logd)(func_in.f);
+//				func_out.f = logd(func_in.f);
 //				func_golden_libm.f = logd(func_in.f);
 //				if((func_golden_libm.b>>63) != (func_out.b>>63))
 //				{
 //					double_uint_converter func_golden;
-//					func_golden.f = golden_reference_log(func_in.f);
+//					func_golden.f = log(func_in.f);
 //					printf("Opposite sign\n");
 //                    printf("s=%d\n",s);
 //                    printf("e=%d\n",E);
@@ -527,7 +534,7 @@ double logd(double x)
 //				if(abs(func_golden_libm.b - func_out.b) > 1)
 //				{
 //					double_uint_converter func_golden;
-//                    func_golden.f = golden_reference_log(func_in.f);
+//                    func_golden.f = log(func_in.f);
 //                    printf("NO PASS\n");
 //                    printf("s=%d\n",s);
 //                    printf("e=%d\n",E);
@@ -555,16 +562,17 @@ double logd(double x)
 //    return 0;
 //			
 //}
-//	
-//	
-//	
+	
+	
+	
 
 
 int main()
 {
 	printf("*** main ***\n");
 	double_uint_converter test_in,test_out;
-	test_in.f = 0.31;
+	test_in.f =
+		0.00000000001111111111222222222200000000000000000000;
 	test_out.f = logd(test_in.f);
 	printf("\nTest Input:\t");
 	print_binary(test_in.b);
@@ -572,10 +580,45 @@ int main()
 	printf("\nTest Output:\t");
 	print_binary(test_out.b);
 	printf("\t\t%.60f\n", test_out.f);
-	printf("MATLAB result:\t-1.1711829815029450863050897169159725308418273925781250000000");
-	printf("\n\n\n");
+	printf("\t\t%.60f\n", log(test_in.f));
+		printf("\n\n\n");
 	
 	//main_test_log();
+
+
+	//unsigned long int correct_count = 0;
+	//unsigned long int wrong_count = 0;
+	//unsigned long int wrong_count_alot = 0;
+	//double_uint_converter caner;
+	//for (unsigned long long int i = 0x3FF0000000000000; i <
+	//	0x408F400000000000; i++)
+	//{	
+	//	caner.b = i;
+	//	test_in.f = logd(caner.f);
+	//	test_out.f = log(caner.f);
+	//	unsigned long long int test_out_shift = test_in.b >> 2;
+	//	unsigned long long int test_in_shift = test_out.b >> 2;
+
+
+	//	 if (test_out_shift != test_in_shift) {
+	//		//printf("wrong\n");
+	//		printf("%.60f \n%.60f \n%.60f\n", logd(caner.f), log(caner.f), caner.f);
+
+	//		print_binary(test_in.b);
+	//		print_binary(test_out.b);
+	//		wrong_count_alot++;
+	//		printf("wrong count alot: %d\n", wrong_count_alot);
+	//	} 
+	//	else if (test_in.b != test_out.b) {
+	//		wrong_count++;
+	//		printf("wrong count: %d\n", wrong_count);
+	//	}
+	//	else {
+	//		printf("correct count: %d\n",correct_count);
+	//		correct_count++;
+	//	}
+
+	//}
 
 	return 0;
 

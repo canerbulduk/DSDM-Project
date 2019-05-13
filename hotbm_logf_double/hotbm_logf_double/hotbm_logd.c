@@ -539,20 +539,20 @@ int main()
 
 	//dummy test.
 	//suggestion needed. 
-	unsigned long int correct_count = 0;
-	unsigned long int false_count = 0;
-	unsigned long int false_count_alot = 0;
+	unsigned long long int correct_count = 0;
+	unsigned long long int false_count = 0;
+	unsigned long long int false_count_alot = 0;
+	unsigned long long int percent_count = 0;
+	unsigned long long int count = 0;
 	double_uint_converter test_for,test_logd,test_log;
-	for (unsigned long long int i = 0x3FF0000000000000; i <
-		0x408F400000000000; i++)
+	for (unsigned long long int i = 0x10000000000000; i < 0x7FF0000000000000; i++) //starts from E=1,M=0
 	{	
 		test_for.b = i;
 		test_logd.f = logd(test_for.f);
 		test_log.f = log(test_for.f);
 		unsigned long long int test_logd_shift = test_logd.b >> 3;
 		unsigned long long int test_log_shift = test_log.b >> 3;
-		unsigned long long int count = 0;
-		unsigned long long int percent_count = 0;
+		
 		percent_count++;
 		count++;
 		unsigned int progress = 0x408F400000000000 / 10000;

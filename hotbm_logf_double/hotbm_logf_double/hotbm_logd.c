@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "bambu_macros.h"
 #include <math.h>
+
+//support subnormals not asked
 #define SUPPORT_SUBNORMALS
 
 
@@ -31,6 +33,7 @@ typedef union{
 } double_uint_converter;
 
 
+#ifdef CHECK_LOG_FUNCTION
 void print_binary(unsigned long long int x) {
 	for (int c = 63; c >= 0; c--)
 	{
@@ -44,13 +47,14 @@ void print_binary(unsigned long long int x) {
 	printf("\n");
 	return;
 }
+#endif
 
+//__attribute__((always_inline))
 static inline
 void range_red(unsigned char A, unsigned long long int Y0, unsigned long long int* Zfinal, unsigned long long int* almostLog_H, unsigned long long int* almostLog_L)
 {
-	//Zfinal = out[0]
-	//almostLog = out[1] & out[2]
-	//unsigned long long int out[3];
+	//make them all static const
+	//change long with long long 
 	unsigned char invtable0[] = { 32,32,31,30,29,28,27,27,26,25,25,24,24,23,23,22,43,42,41,41,40,39,38,38,37,36,36,35,35,34,34,33 };
 	unsigned long int logtable0_1[] = { 0,0,266327,541388,825775,1120142,1425216,1425216,1741805,2070812,2070812,2413252,2413252,2770268,2770268,3143156,5910074,6107462,6309607,6309607,6516744,6729125,6947023,6947023,7170733,7400572,7400572,7636886,7636886,7880051,7880051,8130476 };
 	unsigned long int logtable1_1[] = { 0,16400,49296,82322,115479,148767,182188,215742,232570,266327,300220,334251,368421,402730,437180,471772 };
@@ -65,6 +69,7 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	unsigned long long int logtable3_0[] = {0, 4503691255436680, 40534870717378714, 112601445241265087, 220707814484637524, 364858378910835840, 545057539789194721, 761309699195240573, 1013619260010888437, 149069121317791972, 473506696824928394, 834014887227713707, 77676594028740779, 510339233358517480, 979085708334582096, 330998922882241584};
 	unsigned long long int logtable4_0[] = {0, 70368923135146, 633323529478656, 1759240974382938, 3448129848175812, 5699998741381724, 8514856244721744, 11892710949113582, 15833571445671586, 20337446325706751, 25404344180726727, 31034273602435821, 37227243182735006, 43983261513721926, 51302337187690902, 59184478797132936};
 	unsigned long long int logtable5_0[] = {0, 1099511977301, 9895614087178, 27487834385144, 53876189648513, 89060696654644, 133041372180944, 185818233004871, 247391295903928, 317760577655666, 396926095037687, 484887864827638, 581645903803215, 687200228742161, 801550856422270, 924697803621381};
+	//0,576460769483293354ULL SO ON..
 	unsigned long long int logtable6[] = {0,576460769483293354,1729382411529111552,2882304191013932373,4035226107937788586,5188148162300712960,6341070354102738261,7493992683343897259,8646915150024222721,9799837754143747415,10952760495702504110,12105683374700525573,13258606391137844573,14411529545014493878,15564452836330506256,16717376265085914474};
 	unsigned long long int logtable7[] = {0,72057594306363393,216172784529702948,360287976900526246,504403171418833353,648518368084624332,792633566897899246,936748767858658161,1080863970966901140,1224979176222628246,1369094383625839545,1513209593176535100,1657324804874714974,1801440018720379233,1945555234713527940,2089670452854161158};
 	unsigned long long int logtable8[] = {0,9007199258935296,27021597801971712,45035996378562560,63050394988707840,81064793632407553,99079192309661699,117093591020470277,135107989764833288,153122388542750732,171136787354222609,189151186199248920,207165585077829663,225179983989964840,243194382935654451,261208781914898495};
@@ -256,6 +261,7 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 double logd(double x)
 {
 
+	//make them all const
 	unsigned char wE = 11;
 	unsigned char wF = 52;
 	double_uint_converter func_in;
@@ -299,18 +305,18 @@ double logd(double x)
 	BIT_RESIZE(absE,11);
 	
 //#ifndef NO_SUBNORMALS
-//    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inff();	// 0 -> -inf
+//    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inf();	// 0 -> -inf
 //#else
 //    if (E == 0) return -__builtin_inff();	// -0 -> -inf
 //#endif
-//    if (fpX == 0x7FF0000000000000) return __builtin_inff();		//+inf -> inf
-//    if (fpX == 0xFFF0000000000000) return __builtin_nanf("");	//-inf -> NaN
+//    if (fpX == 0x7FF0000000000000) return __builtin_inf();		//+inf -> inf
+//    if (fpX == 0xFFF0000000000000) return __builtin_nan("");	//-inf -> NaN
 //    if (E==2047)
 //    {
 //        func_in.b |= ( 0xFFF << 51 ); //NaN -> NaN
 //        return func_in.f;
 //    }
-//    if (s==1) return __builtin_nanf(""); //negative -> NaN
+//    if (s==1) return __builtin_nan(""); //negative -> NaN
 //    if(fpX == 0x3FF0000000000000) return 0; // +1 -> 0
 //	
 
@@ -516,7 +522,7 @@ double logd(double x)
 //			
 //}
 	
-
+#ifdef CHECK_LOG_FUNCTION
 int main()
 {
 	printf("*** main ***\n");
@@ -591,3 +597,4 @@ int main()
 	return 0;
 
 }
+#endif

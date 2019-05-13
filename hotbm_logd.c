@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include "bambu_macros.h"
+#include <math.h>
 #define SUPPORT_SUBNORMALS
-#define LOG2 0x2C5C860
 
-#define getName(var)  #var
 
 #ifdef CHECK_LOG_FUNCTION
 #include <math.h>
@@ -19,20 +18,12 @@
 #define ADD_BUILTIN_PREFIX(fname) __builtin_ ## fname
 #endif
 
-#define CE_MACRO64(cond, a, b) ((((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63))&(a))|((~((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63)))&(b)))
-#define CE_MACRO32(cond, a, b) ((((unsigned int) ((((int)(cond))<<31)>>31))&(a))|((~((unsigned int) ((((int)(cond))<<31)>>31)))&(b)))
-
-#define MAX(x, y) (((x) > (y)) ? (x) : (y))
-#define MIN(x, y) (((x) < (y)) ? (x) : (y))
+//#define CE_MACRO64(cond, a, b) ((((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63))&(a))|((~((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63)))&(b)))
 #define MASK(n)  ((1ULL << (n)) - 1)
 
-#define PRECISION 200
-#define SZ 64
+//#define PRECISION 200
+//#define SZ 64
 
-typedef union {
-	unsigned int b;
-	float f;
-} float_uint_converter;
 
 typedef union{
 	unsigned long long int b;
@@ -54,14 +45,12 @@ void print_binary(unsigned long long int x) {
 	return;
 }
 
-
-
-unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
+static inline
+void range_red(unsigned char A, unsigned long long int Y0, unsigned long long int* Zfinal, unsigned long long int* almostLog_H, unsigned long long int* almostLog_L)
 {
-  //Z = out[0]
-  //almostLog = out[1] & out[2]
-  //static unsigned long long int out[3];
-	unsigned long long int out[3];
+	//Zfinal = out[0]
+	//almostLog = out[1] & out[2]
+	//unsigned long long int out[3];
 	unsigned char invtable0[] = { 32,32,31,30,29,28,27,27,26,25,25,24,24,23,23,22,43,42,41,41,40,39,38,38,37,36,36,35,35,34,34,33 };
 	unsigned long int logtable0_1[] = { 0,0,266327,541388,825775,1120142,1425216,1425216,1741805,2070812,2070812,2413252,2413252,2770268,2770268,3143156,5910074,6107462,6309607,6309607,6516744,6729125,6947023,6947023,7170733,7400572,7400572,7636886,7636886,7880051,7880051,8130476 };
 	unsigned long int logtable1_1[] = { 0,16400,49296,82322,115479,148767,182188,215742,232570,266327,300220,334251,368421,402730,437180,471772 };
@@ -105,16 +94,16 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	B1 = SELECT_RANGE(Z1_d, 49, 0);
 	ZM1 = Z1_d;
 	P1 = A1 * ZM1;
-
+	//***********
 	//	epsZ1 = SELECT_BIT(A1,3)==0 ? (SELECT_BIT(A1,2)==0 ? 0 : ((1<<58) | Z1_d)) : ;
 	//	0000 : 0
 	//  0XXX : 01 0000 Z1_d
 	//  else : 1 0000 Z1_d 0
+	//***********
 	epsZ1 = A1 == 0 ? 0 : (((unsigned long long)1 << 58) | Z1_d);
 	epsZ1 = SELECT_BIT(A1, 3) == 0 ? epsZ1 : epsZ1 << 1;
 
 	Z2_d = (B1<<9) - (P1<<1) + epsZ1;
-	//Z2_d is correct!
 	
 	A2 = SELECT_RANGE(Z2_d, 59, 56);
 	B2 = SELECT_RANGE(Z2_d, 55, 0);
@@ -134,16 +123,11 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 
 	Z3_d_0 = Z3_0;
 	Z3_d_1 = Z3_1;
-	//Z3_d_0 is correct!
-	//Z3_d_1 is correct!
 	
 	A3 = SELECT_RANGE(Z3_d_1,8,5); // 68:60-59:0
 	B3_1 = SELECT_RANGE(Z3_d_1,4,0);
 	B3_0 = Z3_d_0;
 	ZM3 = (SELECT_RANGE(Z3_d_1,8,0)<<54) | SELECT_RANGE(Z3_d_0,59,6);
-	//FIXED!!
-	//FIX is needed. 
-	//P3_1 and P3_0 are not correct!
 	P3_0 = SELECT_RANGE(ZM3,59,0) * A3;  
 	P3_1 = SELECT_RANGE(ZM3,62,60) * A3 + SELECT_RANGE(P3_0,63,60);
 	BIT_RESIZE(P3_0, 60);
@@ -160,13 +144,7 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	
 	Z4_d_0 = Z4_0;
 	Z4_d_1 = Z4_1;
-	//Z2_d_0 is not correct!
-	//Z2_d_1 is not correct!
-	//FIX P3
 	
-	
-	
-
 	A4 = SELECT_RANGE(Z4_d_1, 9, 6);
 	B4_1 = SELECT_RANGE(Z4_d_1, 5, 0);
 	B4_0 = Z4_d_0;
@@ -185,8 +163,6 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	
 	Z5_d_0 = Z5_0;
 	Z5_d_1 = Z5_1;
-	//Z5_d_0 is correct!
-	//Z5_d_1 is correct!
 	
 	A5 = SELECT_RANGE(Z5_d_1, 6, 3);
 	B5_1 = SELECT_RANGE(Z5_d_1, 2, 0);
@@ -201,14 +177,6 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	BIT_RESIZE(Z6_0, 60);
 	Z6_d = (SELECT_RANGE(Z6_1, 3, 0) << 60) | Z6_0;	
 
-	//Looks correct, check again if needed.
-
-	//printf("\n*****test*****\n");
-	//print_binary(epsZ4_1);
-	//print_binary(epsZ4_0);
-	//print_binary(Z5_0);
-	//print_binary(Z5_1);
-	
 	A6 = SELECT_RANGE(Z6_d, 63, 60);
 	B6 = SELECT_RANGE(Z6_d, 59, 0);//60bits
 	ZM6 = SELECT_RANGE(Z6_d, 63, 19);
@@ -273,20 +241,14 @@ unsigned long long int *range_red(unsigned char A, unsigned long long int Y0)
 	SUM_MS = SELECT_RANGE(SUM_LS,63,60) + SELECT_RANGE(L7,63,60) + SELECT_RANGE(L6,63,60) + L5_1 + L4_1 + L3_1 + L2_1 + L1_1 + L0_1;
 	BIT_RESIZE(SUM_LS, 60); //
 
-	out[0] = Z;
-	out[1] = SUM_MS;
-	out[2] = SUM_LS;
+	*Zfinal = Z;
+	*almostLog_H = SUM_MS;
+	*almostLog_L = SUM_LS;
 
-	//printf("*********range_red out*********\n");
-	//printf("%s \t\n", getName(Z));
-	//print_binary(Z);
-	//printf("%s \t\n", getName(SUM_MS));
-	//print_binary(SUM_MS);
-	//printf("%s \t\n", getName(SUM_LS));
-	//print_binary(SUM_LS);
-
-
-	return out;
+	//out[0] = Z;
+	//out[1] = SUM_MS;
+	//out[2] = SUM_LS;
+	//return out;
 }
 
 
@@ -335,7 +297,6 @@ double logd(double x)
 	sR = SELECT_RANGE(fpX, 62, 52) == 0b1111111111 ? 0 : !SELECT_BIT(fpX, 62);
 	absE = sR == 1 ? -E : E;
 	BIT_RESIZE(absE,11);
-	print_binary(sR);
 	
 //#ifndef NO_SUBNORMALS
 //    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inff();	// 0 -> -inf
@@ -351,8 +312,9 @@ double logd(double x)
 //    }
 //    if (s==1) return __builtin_nanf(""); //negative -> NaN
 //    if(fpX == 0x3FF0000000000000) return 0; // +1 -> 0
-//
+//	
 
+	//absELog2 <= absE * log2;
 	//to calculate AbsELog
 	unsigned long int m1 = (log2 >> 49) * absE;            // middle 19 bits at offset 49;
 	unsigned long long int m0 = (log2 & MASK(49)) * absE + ((m1 & MASK(11)) << 49); // low 61 bits
@@ -364,28 +326,29 @@ double logd(double x)
 	else if (!FirstBit) { count_leading_zero_macro(52, SELECT_RANGE(Y0, 52, 1), lzo); }
 	BIT_RESIZE(lzo, 6);
 
+
+
     shiftval = lzo - pfinal_s;
     doRR = SELECT_BIT(shiftval,log2wF);
     small = ((E==0) & (doRR==0)) ? 1 : 0;
     absZ0 = sR==0 ? SELECT_RANGE(Y0,25,0) : (0-SELECT_RANGE(Y0,25,0)); // wF-pfinal+1 = 25
 	BIT_RESIZE(absZ0,26);
 
-
-
 	//	rr: range_red
-	unsigned char A = SELECT_RANGE(fpX, 51, 47);
-	unsigned long long int *out;
-	out = range_red(A, Y0);
-
-	Zfinal = out[0];
-	almostLog_H = out[1];
-	almostLog_L = out[2];
+	unsigned char A = SELECT_RANGE(fpX, 51, 47); //first 4 bit of fraction part
+	range_red(A, Y0, &Zfinal, &almostLog_H, &almostLog_L);
+	
+	//unsigned long long int *out;
+	//out = range_red(A, Y0);
+	//Zfinal = out[0];
+	//almostLog_H = out[1];
+	//almostLog_L = out[2];
 	
 	//lshiftsmall: lshift
 	BIT_RESIZE(shiftval, 7); 
 	absZ0s = (unsigned long long)absZ0 << (shiftval);
 	BIT_RESIZE(absZ0s, 25);
-	squarerIn = doRR == 1 ? SELECT_RANGE(Zfinal, 54, 28) :(unsigned long long) absZ0<<1; // << (sfinal - wF - 3); // SELECT_RANGE(Zfinal, sfinal - 1, pfinal) 
+	squarerIn = doRR == 1 ? SELECT_RANGE(Zfinal, 54, 28) :(unsigned long long) absZ0s<<1; // << (sfinal - wF - 3); // SELECT_RANGE(Zfinal, sfinal - 1, pfinal) 
 	BIT_RESIZE(squarerIn, 27);
     Z2o2_full = squarerIn * squarerIn;
     Z2o2 = SELECT_RANGE(Z2o2_full,53,26);
@@ -396,35 +359,24 @@ double logd(double x)
   	LogF_normal_L = almostLog_L + Log1p_normal;
 	LogF_normal_H = almostLog_H + SELECT_BIT(LogF_normal_L,60);
 	BIT_RESIZE(LogF_normal_L,60);
-
+	
 	absELog2_pad_H = ((unsigned long long)absELog2_H << 26) | (SELECT_RANGE(absELog2_L,59,34)); // targetprec-wF-g = 26
 	absELog2_pad_L = SELECT_RANGE(absELog2_L,33,0)<<26;
 		
-    //LogF_normal_pad = SELECT_BIT(logF_normal,(targetprec-1)) ? (0b11111111111<<56) : LogF_normal;
-	//LogF_normal_pad_L = SELECT_BIT(LogF_normal_H, 23) ? ((unsigned long long int)0b1111 << (int)56) : LogF_normal_L;
-	//LogF_normal_pad_H = SELECT_BIT(LogF_normal_H,23) ? (0b1111111) : LogF_normal_H;
-	LogF_normal_pad_L = LogF_normal_L;
+    LogF_normal_pad_L = LogF_normal_L;
 	LogF_normal_pad_H = SELECT_BIT(LogF_normal_H,22) ? ((unsigned long long)(0b11111111111)<<23) | LogF_normal_H : LogF_normal_H;
 	
-
-	//Log_normal = sR==0 ? (absELog2_pad + LogF_normal_pad) : (absELog2_pad - LogF_normal_pad
 	Log_normal_L = sR == 0 ? (absELog2_pad_L + LogF_normal_pad_L) : absELog2_pad_L - LogF_normal_pad_L;
 	Log_normal_H = sR == 0 ? (absELog2_pad_H + LogF_normal_pad_H + SELECT_BIT(Log_normal_L, 60)) : absELog2_pad_H - LogF_normal_pad_H - SELECT_BIT(Log_normal_L,60);
 	BIT_RESIZE(Log_normal_L,60);
 	
-	//FIXED!
-	////ACTION NEEDED!!!!
-	// not fully completed!
 	//   lzc_norm_0 : lzc_norm
-	//     generic map (w => wE+targetprec, n => lzc_size)
-	//     port map (i => Log_normal, z => E_normal, o => Log_normal_normd);
-	// not fully completed!
 	count_leading_zero_macro(60, Log_normal_L, E_normal_L);
 	count_leading_zero_macro(34, Log_normal_H, E_normal_H);
-	E_normal = E_normal_H > 33 ? E_normal_L + E_normal_H : E_normal_H;
-	Log_normal_normd_H = E_normal < 34 ? (Log_normal_H << E_normal)| ((unsigned long long)Log_normal_L>>(60-E_normal))  : ((Log_normal_L<<E_normal_L)&MASK(34)); 
+	E_normal = E_normal_H > 33 ? E_normal_L + 34 : E_normal_H;
+	Log_normal_normd_H = E_normal < 34 ? (Log_normal_H << E_normal)| ((unsigned long long)Log_normal_L>>(60-E_normal))  : (Log_normal_L>>(60-E_normal)); 
 	BIT_RESIZE(Log_normal_normd_H, 34);
-	Log_normal_normd_L = E_normal < 34 ? Log_normal_L << ((int)E_normal) : (Log_normal_L<<E_normal);
+	Log_normal_normd_L = E_normal < 34 ? Log_normal_L << (E_normal) : (Log_normal_L<<E_normal);
 	BIT_RESIZE(Log_normal_normd_L, 60);
 
 	
@@ -439,7 +391,8 @@ double logd(double x)
 	Z_small = ((unsigned long long)absZ0s) << 33; // absZ0s & (pfinal+g-1 downto 0 => '0')
     Log_small = sR==0 ? (Z_small - Z2o2_small) : (Z_small + Z2o2_small);
 	BIT_RESIZE(Log_small,59);
-    //Possibly subtract 1 or 2 to the exponent, depending on the LZC of Log_small
+    
+	//Possibly subtract 1 or 2 to the exponent, depending on the LZC of Log_small
     //E0_sub
     if (SELECT_BIT(Log_small,(wF+g+1))==1)
     {
@@ -493,84 +446,83 @@ double logd(double x)
 //    return ADD_BUILTIN_PREFIX(logd)(x);
 //}
 
-int main_test_log()
-{
-	_Bool s=0;
-	unsigned long long int E = 1022 ;
-	unsigned long int n_ones_pos = 0;
-	unsigned long int n_ones_neg = 0;
+//int main_test_log()
+//{
+//	_Bool s=0;
+//	unsigned long long int E = 1022 ;
+//	unsigned long int n_ones_pos = 0;
+//	unsigned long int n_ones_neg = 0;
+//	
+//	for(s=0; s<2; s++)
+//	{
+//		#pragma omp parallel for reduction (+ : n_ones_pos,n_ones_neg) schedule(dynamic)
+//		for(E=0; E<2048; E++)
+//		{
+//			unsigned long long int x=0;
+//			#pragma omp critical
+//			printf("E=%d\n",E);
+//			for(unsigned long int x=0; x < ((unsigned long long) 1 << 52); ++x)
+//			{
+//				//printf("%d\n", x);
+//				double_uint_converter func_in, func_out, func_golden_libm;
+//				func_in.b = ((unsigned long long)s)<<63 | E << 52 | x;
+//				func_out.f = logd(func_in.f);
+//				func_golden_libm.f = log(func_in.f);
+//				if((func_golden_libm.b>>63) != (func_out.b>>63))
+//				{
+//					double_uint_converter func_golden;
+//					func_golden.f = log(func_in.f);
+//					printf("Opposite sign\n");
+//                    printf("s=%d\n",s);
+//                    printf("e=%d\n",E);
+//                    printf("x=%x\n",x);
+//                    printf("log golden=%.60f\n",func_golden.f);
+//                    printf("golden=%x\n", func_golden.b);
+//                    printf("my log=%.60f\n", func_out.f);
+//                    printf("binary=%x\n", func_out.b);
+//                    printf("log libm=%.60f\n", func_golden_libm.f);
+//                    printf("libm=%x\n", func_golden_libm.b);
+//                    abort();
+//				}
+//				if(abs(func_golden_libm.b - func_out.b) > 1)
+//				{
+//					double_uint_converter func_golden;
+//                    func_golden.f = log(func_in.f);
+//                    printf("NO PASS\n");
+//                    printf("s=%d\n",s);
+//                    printf("e=%d\n",E);
+//                    printf("x=%x\n",x);
+//                    printf("log golden=%.60f\n",func_golden.f);
+//                    printf("golden=%x\n", func_golden.b);
+//                    printf("my log=%.60f\n", func_out.f);
+//                    printf("binary=%x\n", func_out.b);
+//                    printf("log libm=%.60f\n", func_golden_libm.f);
+//                    printf("libm=%x\n", func_golden_libm.b);
+//                    abort();
+//                }
+//                else if (abs(func_golden_libm.b-func_out.b)==1)
+//                {
+//                    if(func_golden_libm.b>func_out.b)
+//                        n_ones_pos++;
+//                    else
+//                        n_ones_neg++;
+//                }
+//            }
+//        }
+//    }
+//    printf("n_ones_pos=%d\n", n_ones_pos);
+//    printf("n_ones_neg=%d\n", n_ones_neg);
+//    return 0;
+//			
+//}
 	
-	for(s=0; s<2; s++)
-	{
-		#pragma omp parallel for reduction (+ : n_ones_pos,n_ones_neg) schedule(dynamic)
-		for(E=0; E<2048; E++)
-		{
-			unsigned long int x=0;
-			#pragma omp critical
-			printf("E=%d\n",E);
-			for(x=0; x < ((unsigned long long) 1 << 52); x++)
-			{
-				double_uint_converter func_in, func_out, func_golden_libm;
-				func_in.b = ((unsigned long long)s)<<63 | E << 52 | x;
-				func_out.f = ADD_BUILTIN_PREFIX(logd)(func_in.f);
-				func_golden_libm.f = logd(func_in.f);
-				if((func_golden_libm.b>>63) != (func_out.b>>63))
-				{
-					double_uint_converter func_golden;
-					func_golden.f = golden_reference_log(func_in.f);
-					printf("Opposite sign\n");
-                    printf("s=%d\n",s);
-                    printf("e=%d\n",E);
-                    printf("x=%x\n",x);
-                    printf("log golden=%.60f\n",func_golden.f);
-                    printf("golden=%x\n", func_golden.b);
-                    printf("my log=%.60f\n", func_out.f);
-                    printf("binary=%x\n", func_out.b);
-                    printf("log libm=%.60f\n", func_golden_libm.f);
-                    printf("libm=%x\n", func_golden_libm.b);
-                    abort();
-				}
-				if(abs(func_golden_libm.b - func_out.b) > 1)
-				{
-					double_uint_converter func_golden;
-                    func_golden.f = golden_reference_log(func_in.f);
-                    printf("NO PASS\n");
-                    printf("s=%d\n",s);
-                    printf("e=%d\n",E);
-                    printf("x=%x\n",x);
-                    printf("log golden=%.60f\n",func_golden.f);
-                    printf("golden=%x\n", func_golden.b);
-                    printf("my log=%.60f\n", func_out.f);
-                    printf("binary=%x\n", func_out.b);
-                    printf("log libm=%.60f\n", func_golden_libm.f);
-                    printf("libm=%x\n", func_golden_libm.b);
-                    abort();
-                }
-                else if (abs(func_golden_libm.b-func_out.b)==1)
-                {
-                    if(func_golden_libm.b>func_out.b)
-                        n_ones_pos++;
-                    else
-                        n_ones_neg++;
-                }
-            }
-        }
-    }
-    printf("n_ones_pos=%d\n", n_ones_pos);
-    printf("n_ones_neg=%d\n", n_ones_neg);
-    return 0;
-			
-}
-	
-	
-	
-
 
 int main()
 {
 	printf("*** main ***\n");
 	double_uint_converter test_in,test_out;
-	test_in.f = 0.31;
+	test_in.f =
+		0.00000000001111111111222222222200000000000000000000;
 	test_out.f = logd(test_in.f);
 	printf("\nTest Input:\t");
 	print_binary(test_in.b);
@@ -578,10 +530,63 @@ int main()
 	printf("\nTest Output:\t");
 	print_binary(test_out.b);
 	printf("\t\t%.60f\n", test_out.f);
-	printf("MATLAB result:\t-1.1711829815029450863050897169159725308418273925781250000000000000000000000000000000000000000000000000");
-	printf("\n\n\n");
+	printf("\t\t%.60f\n", log(test_in.f));
+		printf("\n\n\n");
 	
-	main_test_log();
+	//main_test_log();
+	//logf-wise test, couldn't tested. 
+	//func_golden is missing.
+
+	//dummy test.
+	//suggestion needed. 
+	unsigned long int correct_count = 0;
+	unsigned long int false_count = 0;
+	unsigned long int false_count_alot = 0;
+	double_uint_converter test_for,test_logd,test_log;
+	for (unsigned long long int i = 0x3FF0000000000000; i <
+		0x408F400000000000; i++)
+	{	
+		test_for.b = i;
+		test_logd.f = logd(test_for.f);
+		test_log.f = log(test_for.f);
+		unsigned long long int test_logd_shift = test_logd.b >> 3;
+		unsigned long long int test_log_shift = test_log.b >> 3;
+		unsigned long long int count = 0;
+		unsigned long long int percent_count = 0;
+		percent_count++;
+		count++;
+		unsigned int progress = 0x408F400000000000 / 10000;
+		if (count == progress) {
+			percent_count = 0;
+			double percent = 0;
+			percent = percent + 0.01;
+			printf("Up to now: %f%%",percent/100);
+		}
+
+		if ((test_logd.b == test_log.b+1)|(test_logd.b +1 == test_log.b )) {
+			correct_count++;
+		}
+		else if (test_log_shift != test_logd_shift) {
+			//printf("false\n");
+			printf("%.60f \n%.60f \n%.60f\n", logd(test_for.f), log(test_for.f), test_for.f);
+			print_binary(test_for.b);
+			print_binary(test_logd.b);
+			print_binary(test_log.b);
+			false_count_alot++;
+			printf("false for more than last 2-bit: %d\n", false_count_alot);
+			printf("correct count: %d\n", correct_count);
+		} 
+		else if (test_logd.b != test_log.b) {
+			false_count++;
+			printf("false count: %d\n", false_count);
+			printf("correct count: %d\n", correct_count);
+		}
+		else if(test_logd.b == test_log.b){
+			//printf("correct count: %d\n",correct_count);
+			correct_count++;
+		}
+
+	}
 
 	return 0;
 

@@ -458,7 +458,7 @@ double logd(double x)
 //		#pragma omp parallel for reduction (+ : n_ones_pos,n_ones_neg) schedule(dynamic)
 //		for(E=0; E<2048; E++)
 //		{
-//			unsigned long int x=0;
+//			unsigned long long int x=0;
 //			#pragma omp critical
 //			printf("E=%d\n",E);
 //			for(unsigned long int x=0; x < ((unsigned long long) 1 << 52); ++x)
@@ -467,7 +467,7 @@ double logd(double x)
 //				double_uint_converter func_in, func_out, func_golden_libm;
 //				func_in.b = ((unsigned long long)s)<<63 | E << 52 | x;
 //				func_out.f = logd(func_in.f);
-//				func_golden_libm.f = logd(func_in.f);
+//				func_golden_libm.f = log(func_in.f);
 //				if((func_golden_libm.b>>63) != (func_out.b>>63))
 //				{
 //					double_uint_converter func_golden;
@@ -534,20 +534,23 @@ int main()
 		printf("\n\n\n");
 	
 	//main_test_log();
+	//logf-wise test, couldn't tested. 
+	//func_golden is missing.
 
-
+	//dummy test.
+	//suggestion needed. 
 	unsigned long int correct_count = 0;
-	unsigned long int wrong_count = 0;
-	unsigned long int wrong_count_alot = 0;
-	double_uint_converter caner;
+	unsigned long int false_count = 0;
+	unsigned long int false_count_alot = 0;
+	double_uint_converter test_for,test_logd,test_log;
 	for (unsigned long long int i = 0x3FF0000000000000; i <
 		0x408F400000000000; i++)
 	{	
-		caner.b = i;
-		test_in.f = logd(caner.f);
-		test_out.f = log(caner.f);
-		unsigned long long int test_out_shift = test_in.b >> 3;
-		unsigned long long int test_in_shift = test_out.b >> 3;
+		test_for.b = i;
+		test_logd.f = logd(test_for.f);
+		test_log.f = log(test_for.f);
+		unsigned long long int test_logd_shift = test_logd.b >> 3;
+		unsigned long long int test_log_shift = test_log.b >> 3;
 		unsigned long long int count = 0;
 		unsigned long long int percent_count = 0;
 		percent_count++;
@@ -560,25 +563,25 @@ int main()
 			printf("Up to now: %f%%",percent/100);
 		}
 
-		if ((test_in.b == test_out.b+1)|(test_in.b +1 == test_out.b )) {
+		if ((test_logd.b == test_log.b+1)|(test_logd.b +1 == test_log.b )) {
 			correct_count++;
 		}
-		else if (test_out_shift != test_in_shift) {
-			//printf("wrong\n");
-			printf("%.60f \n%.60f \n%.60f\n", logd(caner.f), log(caner.f), caner.f);
-			print_binary(caner.b);
-			print_binary(test_in.b);
-			print_binary(test_out.b);
-			wrong_count_alot++;
-			printf("wrong count alot: %d\n", wrong_count_alot);
+		else if (test_log_shift != test_logd_shift) {
+			//printf("false\n");
+			printf("%.60f \n%.60f \n%.60f\n", logd(test_for.f), log(test_for.f), test_for.f);
+			print_binary(test_for.b);
+			print_binary(test_logd.b);
+			print_binary(test_log.b);
+			false_count_alot++;
+			printf("false for more than last 2-bit: %d\n", false_count_alot);
 			printf("correct count: %d\n", correct_count);
 		} 
-		else if (test_in.b != test_out.b) {
-			wrong_count++;
-			printf("wrong count: %d\n", wrong_count);
+		else if (test_logd.b != test_log.b) {
+			false_count++;
+			printf("false count: %d\n", false_count);
 			printf("correct count: %d\n", correct_count);
 		}
-		else if(test_in.b == test_out.b){
+		else if(test_logd.b == test_log.b){
 			//printf("correct count: %d\n",correct_count);
 			correct_count++;
 		}

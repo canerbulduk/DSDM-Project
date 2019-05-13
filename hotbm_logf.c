@@ -430,19 +430,22 @@ float ADD_BUILTIN_PREFIX(logf)(float x)
     e = SELECT_RANGE(fpX,30,23);
     m = fpX & 0x007fffff;
 
+	
+	
 #ifndef NO_SUBNORMALS
-    if ((fpX & 0x7fffffff) == 0) return -__builtin_inff();
+    if ((fpX & 0x7fffffff) == 0) return -__builtin_inff(); // 0 -> -inf
 #else
-    if (e == 0) return -__builtin_inff();
+    if (e == 0) return -__builtin_inff(); // -0 -> -inf
 #endif
-    if (fpX == 0x7F800000) return __builtin_inff();
-    if (fpX == 0xFF800000) return __builtin_nanf("");
+    if (fpX == 0x7F800000) return __builtin_inff(); //+inf -> inf
+    if (fpX == 0xFF800000) return __builtin_nanf(""); //-inf -> NaN
     if (e==255)
     {
-        func_in.b |= ( 0x7FC << 20 );
+	
+        func_in.b |= ( 0x7FC << 20 ); //NaN -> NaN
         return func_in.f;
     }
-    if (s==1) return __builtin_nanf("");
+    if (s==1) return __builtin_nanf(""); //negative -> NaN
     if(fpX == 0x3F800000) return 0;
 
 #ifndef NO_SUBNORMALS

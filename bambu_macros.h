@@ -472,6 +472,8 @@
       ((VAR)&((UDATATYPE)(BOOST_PP_CAT(POW2(nbit),ULL)-1))),\
       VAR)))
 
+	  // var && (nbit^2)'
+	  
 #define MACRO_BIT_RESIZE(VAR, nbit) VAR=VAL_RESIZE(VAR, nbit)
 #define BIT_RESIZE(VAR, nbit) WHEN(BOOST_PP_NOT(IS_CONSTANT(VAR)))(MACRO_BIT_RESIZE(VAR, nbit))
 #define SELECT_BIT(VAR, bit) (((VAR)>>(bit))&1)
@@ -497,7 +499,7 @@
 #define MACRO_VECTORIZE_DECL(z, n, text) _Bool BOOST_PP_CAT(text,BOOST_PP_CAT(_,n));
 #define VECTORIZE_DECL(var, nbits) BOOST_PP_REPEAT_FROM_TO(0, nbits, MACRO_VECTORIZE_DECL, var)
 
-
+// check 
 #define count_leading_zero_macro(man_bits,MAN_IN_ORIG,SHIFT)\
 {\
   BOOLTYPE _result_5=0;\
@@ -534,7 +536,7 @@
   }\
   BIT_RESIZE(SHIFT,CEIL_LOG2(man_bits));\
 }
-
+//// check  also shiftin left 
 #define count_leading_zero_macro_lshift(man_bits,MAN_IN_ORIG,COUNT,SHIFTED)\
 {\
   BOOLTYPE _result_5=0;\

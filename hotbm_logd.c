@@ -1,16 +1,18 @@
-#include <stdio.h>
 #include "bambu_macros.h"
-#include <math.h>
+
+
+
+//support subnormals not asked
 #define SUPPORT_SUBNORMALS
 
 
-#ifdef CHECK_LOG_FUNCTION
+//#ifdef CHECK_LOG_FUNCTION
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <mpfr.h>
-#include <gmp.h>
-#endif
+//#include <mpfr.h>
+//#include <gmp.h>
+//#endif
 
 #ifdef CHECK_LOG_FUNCTION
 #define ADD_BUILTIN_PREFIX(fname) local_ ## fname
@@ -31,6 +33,7 @@ typedef union{
 } double_uint_converter;
 
 
+//#ifdef CHECK_LOG_FUNCTION
 void print_binary(unsigned long long int x) {
 	for (int c = 63; c >= 0; c--)
 	{
@@ -44,30 +47,32 @@ void print_binary(unsigned long long int x) {
 	printf("\n");
 	return;
 }
+//#endif
+
 
 static inline
 void range_red(unsigned char A, unsigned long long int Y0, unsigned long long int* Zfinal, unsigned long long int* almostLog_H, unsigned long long int* almostLog_L)
 {
-	//Zfinal = out[0]
-	//almostLog = out[1] & out[2]
-	//unsigned long long int out[3];
-	unsigned char invtable0[] = { 32,32,31,30,29,28,27,27,26,25,25,24,24,23,23,22,43,42,41,41,40,39,38,38,37,36,36,35,35,34,34,33 };
-	unsigned long int logtable0_1[] = { 0,0,266327,541388,825775,1120142,1425216,1425216,1741805,2070812,2070812,2413252,2413252,2770268,2770268,3143156,5910074,6107462,6309607,6309607,6516744,6729125,6947023,6947023,7170733,7400572,7400572,7636886,7636886,7880051,7880051,8130476 };
-	unsigned long int logtable1_1[] = { 0,16400,49296,82322,115479,148767,182188,215742,232570,266327,300220,334251,368421,402730,437180,471772 };
-	unsigned long int logtable2_1[] = { 0,2048,6146,10246,14348,18452,22558,26666,30776,34888,39002,43118,47236,51356,55479,59603 };
-	unsigned long int logtable3_1[] = { 0,256,768,1280,1792,2304,2816,3328,3840,4353,4865,5377,5890,6402,6914,7427 };
-	unsigned long int logtable4_1[] = {0,32,96,160,224,288,352,416,480,544,608,672,736,800,864,928};
-	unsigned long int logtable5_1[] = { 0,4,12,20,28,36,44,52,60,68,76,84,92,100,108,116 };
+	//make them all static const
+	//change long with long long 
+	static const unsigned char invtable0[] = { 32,32,31,30,29,28,27,27,26,25,25,24,24,23,23,22,43,42,41,41,40,39,38,38,37,36,36,35,35,34,34,33 };
+	static const unsigned long int logtable0_1[] = { 0,0,266327,541388,825775,1120142,1425216,1425216,1741805,2070812,2070812,2413252,2413252,2770268,2770268,3143156,5910074,6107462,6309607,6309607,6516744,6729125,6947023,6947023,7170733,7400572,7400572,7636886,7636886,7880051,7880051,8130476 };
+	static const unsigned long int logtable1_1[] = { 0,16400,49296,82322,115479,148767,182188,215742,232570,266327,300220,334251,368421,402730,437180,471772 };
+	static const unsigned long int logtable2_1[] = { 0,2048,6146,10246,14348,18452,22558,26666,30776,34888,39002,43118,47236,51356,55479,59603 };
+	static const unsigned long int logtable3_1[] = { 0,256,768,1280,1792,2304,2816,3328,3840,4353,4865,5377,5890,6402,6914,7427 };
+	static const unsigned long int logtable4_1[] = {0,32,96,160,224,288,352,416,480,544,608,672,736,800,864,928};
+	static const unsigned long int logtable5_1[] = { 0,4,12,20,28,36,44,52,60,68,76,84,92,100,108,116 };
 
-	unsigned long long int logtable0_0[] = {0, 0, 443495784957107441, 408967542716309484, 210202761557502709, 586169748105148596, 483367143421258030, 483367143421258030, 272658672494231207, 489550094456689689, 489550094456689689, 154982152445328750, 154982152445328750, 65043238028969363, 65043238028969363, 539027481613361078, 622583452284905181, 759572586635749126, 660371207705242522, 660371207705242522, 253985390270980735, 446061511024831737, 645570292658782688, 645570292658782688, 35466593504830009, 328384990975929281, 328384990975929281, 840155138376129331, 840155138376129331, 936672260909567195, 936672260909567195, 712430320143961608};
-	unsigned long long int logtable1_0[] = {0, 24054437449941404, 651381705105933614, 718720183519062944, 253546689982371970, 450311980697035046, 211900181597358425, 761543230352098123, 421132014018166394, 443495784957107441, 918228965153013894, 815353360150571272, 273403381874430950, 599681119542337355, 811752134397187310, 1096475649311993935};
-	unsigned long long int logtable2_0[] = {0, 288277297239442841, 289497709739546985, 294099812123855996, 304342014990976339, 322486043632438145, 350796944522549847, 391543091824143748, 446996193910259219, 519431299901810434, 611126806221285649, 724364463162525236, 861429381476625838, 1024610038974018153, 63276782535919071, 285567853176287860};
-	unsigned long long int logtable3_0[] = {0, 4503691255436680, 40534870717378714, 112601445241265087, 220707814484637524, 364858378910835840, 545057539789194721, 761309699195240573, 1013619260010888437, 149069121317791972, 473506696824928394, 834014887227713707, 77676594028740779, 510339233358517480, 979085708334582096, 330998922882241584};
-	unsigned long long int logtable4_0[] = {0, 70368923135146, 633323529478656, 1759240974382938, 3448129848175812, 5699998741381724, 8514856244721744, 11892710949113582, 15833571445671586, 20337446325706751, 25404344180726727, 31034273602435821, 37227243182735006, 43983261513721926, 51302337187690902, 59184478797132936};
-	unsigned long long int logtable5_0[] = {0, 1099511977301, 9895614087178, 27487834385144, 53876189648513, 89060696654644, 133041372180944, 185818233004871, 247391295903928, 317760577655666, 396926095037687, 484887864827638, 581645903803215, 687200228742161, 801550856422270, 924697803621381};
-	unsigned long long int logtable6[] = {0,576460769483293354,1729382411529111552,2882304191013932373,4035226107937788586,5188148162300712960,6341070354102738261,7493992683343897259,8646915150024222721,9799837754143747415,10952760495702504110,12105683374700525573,13258606391137844573,14411529545014493878,15564452836330506256,16717376265085914474};
-	unsigned long long int logtable7[] = {0,72057594306363393,216172784529702948,360287976900526246,504403171418833353,648518368084624332,792633566897899246,936748767858658161,1080863970966901140,1224979176222628246,1369094383625839545,1513209593176535100,1657324804874714974,1801440018720379233,1945555234713527940,2089670452854161158};
-	unsigned long long int logtable8[] = {0,9007199258935296,27021597801971712,45035996378562560,63050394988707840,81064793632407553,99079192309661699,117093591020470277,135107989764833288,153122388542750732,171136787354222609,189151186199248920,207165585077829663,225179983989964840,243194382935654451,261208781914898495};
+	static const unsigned long long int logtable0_0[] = {0, 0, 443495784957107441, 408967542716309484, 210202761557502709, 586169748105148596, 483367143421258030, 483367143421258030, 272658672494231207, 489550094456689689, 489550094456689689, 154982152445328750, 154982152445328750, 65043238028969363, 65043238028969363, 539027481613361078, 622583452284905181, 759572586635749126, 660371207705242522, 660371207705242522, 253985390270980735, 446061511024831737, 645570292658782688, 645570292658782688, 35466593504830009, 328384990975929281, 328384990975929281, 840155138376129331, 840155138376129331, 936672260909567195, 936672260909567195, 712430320143961608};
+	static const unsigned long long int logtable1_0[] = {0, 24054437449941404, 651381705105933614, 718720183519062944, 253546689982371970, 450311980697035046, 211900181597358425, 761543230352098123, 421132014018166394, 443495784957107441, 918228965153013894, 815353360150571272, 273403381874430950, 599681119542337355, 811752134397187310, 1096475649311993935};
+	static const unsigned long long int logtable2_0[] = {0, 288277297239442841, 289497709739546985, 294099812123855996, 304342014990976339, 322486043632438145, 350796944522549847, 391543091824143748, 446996193910259219, 519431299901810434, 611126806221285649, 724364463162525236, 861429381476625838, 1024610038974018153, 63276782535919071, 285567853176287860};
+	static const unsigned long long int logtable3_0[] = {0, 4503691255436680, 40534870717378714, 112601445241265087, 220707814484637524, 364858378910835840, 545057539789194721, 761309699195240573, 1013619260010888437, 149069121317791972, 473506696824928394, 834014887227713707, 77676594028740779, 510339233358517480, 979085708334582096, 330998922882241584};
+	static const unsigned long long int logtable4_0[] = {0, 70368923135146, 633323529478656, 1759240974382938, 3448129848175812, 5699998741381724, 8514856244721744, 11892710949113582, 15833571445671586, 20337446325706751, 25404344180726727, 31034273602435821, 37227243182735006, 43983261513721926, 51302337187690902, 59184478797132936};
+	static const unsigned long long int logtable5_0[] = {0, 1099511977301, 9895614087178, 27487834385144, 53876189648513, 89060696654644, 133041372180944, 185818233004871, 247391295903928, 317760577655666, 396926095037687, 484887864827638, 581645903803215, 687200228742161, 801550856422270, 924697803621381};
+	//0,576460769483293354ULL SO ON..
+	static const unsigned long long int logtable6[] = {0 ,576460769483293354ULL,1729382411529111552ULL, 2882304191013932373ULL, 4035226107937788586ULL, 5188148162300712960ULL, 6341070354102738261ULL, 7493992683343897259ULL, 8646915150024222721ULL, 9799837754143747415ULL, 10952760495702504110ULL, 12105683374700525573ULL, 13258606391137844573ULL, 14411529545014493878ULL, 15564452836330506256ULL, 16717376265085914474ULL};
+	static const unsigned long long int logtable7[] = {0,72057594306363393,216172784529702948,360287976900526246,504403171418833353,648518368084624332,792633566897899246,936748767858658161,1080863970966901140,1224979176222628246,1369094383625839545,1513209593176535100,1657324804874714974,1801440018720379233,1945555234713527940,2089670452854161158};
+	static const unsigned long long int logtable8[] = {0,9007199258935296,27021597801971712,45035996378562560,63050394988707840,81064793632407553,99079192309661699,117093591020470277,135107989764833288,153122388542750732,171136787354222609,189151186199248920,207165585077829663,225179983989964840,243194382935654451,261208781914898495};
 
 
 	unsigned char A0, A1, A2, A3, A4, A5, A6, A7, A8;
@@ -157,7 +162,7 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	Z5_0 = B4_0 
 		 + SELECT_RANGE(epsZ4_0,59,18) + (SELECT_RANGE(epsZ4_1,17,0)<<42) 
 		 - SELECT_RANGE(P4_0,59,4) - ((unsigned long long)SELECT_BIT(P4_1,0)<<56);
-	Z5_1 = B4_1 + SELECT_RANGE(epsZ4_1,24,18) - SELECT_BIT(Z5_0,60);
+	Z5_1 = B4_1 + SELECT_RANGE(epsZ4_1, 24, 18);
 	Z5_1 = SELECT_RANGE(Z5_0, 63, 60) == 0b1111 ? Z5_1 - 1 : Z5_1 + SELECT_BIT(Z5_0, 60);
 	BIT_RESIZE(Z5_0,60);
 	
@@ -256,21 +261,22 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 double logd(double x)
 {
 
-	unsigned char wE = 11;
-	unsigned char wF = 52;
+	//make them all const
+	static unsigned char wE = 11;
+	static unsigned char wF = 52;
+	static unsigned char g = 5;
+	static unsigned char a0 = 5;
+	static unsigned char log2wF = 6;
+	static unsigned char targetprec = 83;
+	static unsigned char sfinal = 55;
+	static unsigned char pfinal = 28;
+	static unsigned long long int log2 = 0b101100010111001000010111111101111101000111001111011110011;
+	static unsigned short int E0offset = 0b10000001001;
+	static unsigned char pfinal_s = 0b011100;
+	static unsigned char lzc_size = 6;
 	double_uint_converter func_in;
 	unsigned long long int fpX;
 	unsigned char exn;   //at VHDL, fpX has +2bit for exn part 
-	unsigned char g = 5;
-	unsigned char a0 = 5;
-	unsigned char log2wF = 6;
-	unsigned char targetprec = 83;
-	unsigned char sfinal = 55;
-	unsigned char pfinal = 28;
-	unsigned long long int log2 = 0b101100010111001000010111111101111101000111001111011110011;
-	unsigned short int E0offset = 0b10000001001;
-	unsigned char pfinal_s = 0b011100;
-	unsigned char lzc_size = 6;
 	_Bool s, FirstBit, sR, small, doRR, ufl, sticky, round;
 	unsigned long long int Y0, Log_small_normd, Log_g, EFR, Zfinal, Log1p_normal, Z2o2_full, Log_small, Z_small, Z2o2_small, ER, squarerIn, Z2o2_small_s, Z2o2;
 	unsigned short int E, absE, E_small, E_normal, lzo, shiftval, E_normal_H, E_normal_L;
@@ -299,18 +305,18 @@ double logd(double x)
 	BIT_RESIZE(absE,11);
 	
 //#ifndef NO_SUBNORMALS
-//    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inff();	// 0 -> -inf
+//    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inf();	// 0 -> -inf
 //#else
 //    if (E == 0) return -__builtin_inff();	// -0 -> -inf
 //#endif
-//    if (fpX == 0x7FF0000000000000) return __builtin_inff();		//+inf -> inf
-//    if (fpX == 0xFFF0000000000000) return __builtin_nanf("");	//-inf -> NaN
+//    if (fpX == 0x7FF0000000000000) return __builtin_inf();		//+inf -> inf
+//    if (fpX == 0xFFF0000000000000) return __builtin_nan("");	//-inf -> NaN
 //    if (E==2047)
 //    {
 //        func_in.b |= ( 0xFFF << 51 ); //NaN -> NaN
 //        return func_in.f;
 //    }
-//    if (s==1) return __builtin_nanf(""); //negative -> NaN
+//    if (s==1) return __builtin_nan(""); //negative -> NaN
 //    if(fpX == 0x3FF0000000000000) return 0; // +1 -> 0
 //	
 
@@ -446,22 +452,24 @@ double logd(double x)
 //    return ADD_BUILTIN_PREFIX(logd)(x);
 //}
 
+
+//	logf-wise test
+//	take forever
 //int main_test_log()
 //{
 //	_Bool s=0;
-//	unsigned long long int E = 1022 ;
-//	unsigned long int n_ones_pos = 0;
-//	unsigned long int n_ones_neg = 0;
+//	unsigned long long int E = 1023 ;
+//	unsigned long long int n_ones_pos = 0;
+//	unsigned long long int n_ones_neg = 0;
 //	
 //	for(s=0; s<2; s++)
 //	{
 //		#pragma omp parallel for reduction (+ : n_ones_pos,n_ones_neg) schedule(dynamic)
-//		for(E=0; E<2048; E++)
+//		for(E; E<2048; E++)
 //		{
-//			unsigned long long int x=0;
 //			#pragma omp critical
-//			printf("E=%d\n",E);
-//			for(unsigned long int x=0; x < ((unsigned long long) 1 << 52); ++x)
+//			printf("E=%llu\n",E);
+//			for(unsigned long long int x=0; x < ((unsigned long long) 1 << 52); x=x+111)
 //			{
 //				//printf("%d\n", x);
 //				double_uint_converter func_in, func_out, func_golden_libm;
@@ -482,7 +490,7 @@ double logd(double x)
 //                    printf("binary=%x\n", func_out.b);
 //                    printf("log libm=%.60f\n", func_golden_libm.f);
 //                    printf("libm=%x\n", func_golden_libm.b);
-//                    abort();
+//                    //abort();
 //				}
 //				if(abs(func_golden_libm.b - func_out.b) > 1)
 //				{
@@ -498,7 +506,7 @@ double logd(double x)
 //                    printf("binary=%x\n", func_out.b);
 //                    printf("log libm=%.60f\n", func_golden_libm.f);
 //                    printf("libm=%x\n", func_golden_libm.b);
-//                    abort();
+//                    //abort();
 //                }
 //                else if (abs(func_golden_libm.b-func_out.b)==1)
 //                {
@@ -515,6 +523,59 @@ double logd(double x)
 //    return 0;
 //			
 //}
+
+
+//	dummy test.
+//	suggestion needed. 
+int main_test_log() {
+
+	unsigned long long int correct_count = 0;
+	unsigned long long int false_count = 0;
+	unsigned long long int uncorrect_shifted = 0;
+	unsigned long long int i = 0;
+
+
+	double_uint_converter test_for, test_logd, test_log;
+	//for (unsigned long long int i = 0x3ff0001d283bb342; i < 0x7FF0000000000000; i=i+10) //starts input = 1; E=1023
+	for (unsigned long long int exp = 1; exp < 2047; exp++)
+	{
+		for (unsigned long long int m = 1; m < 0xfffffffffffff; m = m << 1)
+		{
+			i = exp << 52 | m;
+			test_for.b = i;
+			test_logd.f = logd(test_for.f);
+			test_log.f = log(test_for.f);
+			unsigned long long int test_logd_shift = test_logd.b >> 3;
+			unsigned long long int test_log_shift = test_log.b >> 3;
+
+
+
+			if ((test_logd.b == test_log.b) | (test_logd.b == test_log.b + 1) | (test_logd.b + 1 == test_log.b)) {
+				correct_count++;
+			}
+			else if (test_log_shift != test_logd_shift) {
+				//printf("false\n");
+				printf("%.60f \n%.60f \n%.60f\n", logd(test_for.f), log(test_for.f), test_for.f);
+				print_binary(test_for.b);
+				print_binary(test_logd.b);
+				print_binary(test_log.b);
+				uncorrect_shifted++;
+				printf("false for more than last 2-bit: %llu\n", uncorrect_shifted);
+				printf("correct count: %llu\n", correct_count);
+			}
+			else if (test_logd.b != test_log.b) {
+				false_count++;
+				printf("false count: %llu\n", false_count);
+				printf("correct count: %llu\n", correct_count);
+			}
+
+
+		}
+	}
+
+	printf("false count: %llu\n", false_count);
+	printf("correct count: %llu\n", correct_count);
+}
 	
 
 int main()
@@ -531,63 +592,14 @@ int main()
 	print_binary(test_out.b);
 	printf("\t\t%.60f\n", test_out.f);
 	printf("\t\t%.60f\n", log(test_in.f));
-		printf("\n\n\n");
+	printf("\n\n\n");
 	
-	//main_test_log();
-	//logf-wise test, couldn't tested. 
-	//func_golden is missing.
+	main_test_log();
 
-	//dummy test.
-	//suggestion needed. 
-	unsigned long int correct_count = 0;
-	unsigned long int false_count = 0;
-	unsigned long int false_count_alot = 0;
-	double_uint_converter test_for,test_logd,test_log;
-	for (unsigned long long int i = 0x3FF0000000000000; i <
-		0x408F400000000000; i++)
-	{	
-		test_for.b = i;
-		test_logd.f = logd(test_for.f);
-		test_log.f = log(test_for.f);
-		unsigned long long int test_logd_shift = test_logd.b >> 3;
-		unsigned long long int test_log_shift = test_log.b >> 3;
-		unsigned long long int count = 0;
-		unsigned long long int percent_count = 0;
-		percent_count++;
-		count++;
-		unsigned int progress = 0x408F400000000000 / 10000;
-		if (count == progress) {
-			percent_count = 0;
-			double percent = 0;
-			percent = percent + 0.01;
-			printf("Up to now: %f%%",percent/100);
-		}
 
-		if ((test_logd.b == test_log.b+1)|(test_logd.b +1 == test_log.b )) {
-			correct_count++;
-		}
-		else if (test_log_shift != test_logd_shift) {
-			//printf("false\n");
-			printf("%.60f \n%.60f \n%.60f\n", logd(test_for.f), log(test_for.f), test_for.f);
-			print_binary(test_for.b);
-			print_binary(test_logd.b);
-			print_binary(test_log.b);
-			false_count_alot++;
-			printf("false for more than last 2-bit: %d\n", false_count_alot);
-			printf("correct count: %d\n", correct_count);
-		} 
-		else if (test_logd.b != test_log.b) {
-			false_count++;
-			printf("false count: %d\n", false_count);
-			printf("correct count: %d\n", correct_count);
-		}
-		else if(test_logd.b == test_log.b){
-			//printf("correct count: %d\n",correct_count);
-			correct_count++;
-		}
 
-	}
 
 	return 0;
 
 }
+

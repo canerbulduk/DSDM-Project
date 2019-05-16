@@ -1,1 +1,11 @@
-﻿
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(411,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (hotbm_logf_double.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  hotbm_logd.c
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(146): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(165): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(180): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned long', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(331): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(332): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(380): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(381): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(578): warning C4716: 'main_test_log': must return a value
+  hotbm_logf_double.vcxproj -> C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\Debug\hotbm_logd.exe

@@ -1,18 +1,18 @@
-#include <stdio.h>
 #include "bambu_macros.h"
-#include <math.h>
+
+
 
 //support subnormals not asked
 #define SUPPORT_SUBNORMALS
 
 
-#ifdef CHECK_LOG_FUNCTION
+//#ifdef CHECK_LOG_FUNCTION
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <mpfr.h>
-#include <gmp.h>
-#endif
+//#include <mpfr.h>
+//#include <gmp.h>
+//#endif
 
 #ifdef CHECK_LOG_FUNCTION
 #define ADD_BUILTIN_PREFIX(fname) local_ ## fname
@@ -49,7 +49,7 @@ void print_binary(unsigned long long int x) {
 }
 //#endif
 
-__attribute__((always_inline))
+
 static inline
 void range_red(unsigned char A, unsigned long long int Y0, unsigned long long int* Zfinal, unsigned long long int* almostLog_H, unsigned long long int* almostLog_L)
 {
@@ -162,7 +162,7 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	Z5_0 = B4_0 
 		 + SELECT_RANGE(epsZ4_0,59,18) + (SELECT_RANGE(epsZ4_1,17,0)<<42) 
 		 - SELECT_RANGE(P4_0,59,4) - ((unsigned long long)SELECT_BIT(P4_1,0)<<56);
-	Z5_1 = B4_1 + SELECT_RANGE(epsZ4_1,24,18) - SELECT_BIT(Z5_0,60);
+	Z5_1 = B4_1 + SELECT_RANGE(epsZ4_1, 24, 18);
 	Z5_1 = SELECT_RANGE(Z5_0, 63, 60) == 0b1111 ? Z5_1 - 1 : Z5_1 + SELECT_BIT(Z5_0, 60);
 	BIT_RESIZE(Z5_0,60);
 	
@@ -452,22 +452,24 @@ double logd(double x)
 //    return ADD_BUILTIN_PREFIX(logd)(x);
 //}
 
+
+//	logf-wise test
+//	take forever
 //int main_test_log()
 //{
 //	_Bool s=0;
-//	unsigned long long int E = 1022 ;
-//	unsigned long int n_ones_pos = 0;
-//	unsigned long int n_ones_neg = 0;
+//	unsigned long long int E = 1023 ;
+//	unsigned long long int n_ones_pos = 0;
+//	unsigned long long int n_ones_neg = 0;
 //	
 //	for(s=0; s<2; s++)
 //	{
 //		#pragma omp parallel for reduction (+ : n_ones_pos,n_ones_neg) schedule(dynamic)
-//		for(E=0; E<2048; E++)
+//		for(E; E<2048; E++)
 //		{
-//			unsigned long long int x=0;
 //			#pragma omp critical
-//			printf("E=%d\n",E);
-//			for(unsigned long int x=0; x < ((unsigned long long) 1 << 52); ++x)
+//			printf("E=%llu\n",E);
+//			for(unsigned long long int x=0; x < ((unsigned long long) 1 << 52); x=x+111)
 //			{
 //				//printf("%d\n", x);
 //				double_uint_converter func_in, func_out, func_golden_libm;
@@ -488,7 +490,7 @@ double logd(double x)
 //                    printf("binary=%x\n", func_out.b);
 //                    printf("log libm=%.60f\n", func_golden_libm.f);
 //                    printf("libm=%x\n", func_golden_libm.b);
-//                    abort();
+//                    //abort();
 //				}
 //				if(abs(func_golden_libm.b - func_out.b) > 1)
 //				{
@@ -504,7 +506,7 @@ double logd(double x)
 //                    printf("binary=%x\n", func_out.b);
 //                    printf("log libm=%.60f\n", func_golden_libm.f);
 //                    printf("libm=%x\n", func_golden_libm.b);
-//                    abort();
+//                    //abort();
 //                }
 //                else if (abs(func_golden_libm.b-func_out.b)==1)
 //                {
@@ -521,8 +523,61 @@ double logd(double x)
 //    return 0;
 //			
 //}
+
+
+//	dummy test.
+//	suggestion needed. 
+int main_test_log() {
+
+	unsigned long long int correct_count = 0;
+	unsigned long long int false_count = 0;
+	unsigned long long int uncorrect_shifted = 0;
+	unsigned long long int i = 0;
+
+
+	double_uint_converter test_for, test_logd, test_log;
+	//for (unsigned long long int i = 0x3ff0001d283bb342; i < 0x7FF0000000000000; i=i+10) //starts input = 1; E=1023
+	for (unsigned long long int exp = 1; exp < 2047; exp++)
+	{
+		for (unsigned long long int m = 1; m < 0xfffffffffffff; m = m << 1)
+		{
+			i = exp << 52 | m;
+			test_for.b = i;
+			test_logd.f = logd(test_for.f);
+			test_log.f = log(test_for.f);
+			unsigned long long int test_logd_shift = test_logd.b >> 3;
+			unsigned long long int test_log_shift = test_log.b >> 3;
+
+
+
+			if ((test_logd.b == test_log.b) | (test_logd.b == test_log.b + 1) | (test_logd.b + 1 == test_log.b)) {
+				correct_count++;
+			}
+			else if (test_log_shift != test_logd_shift) {
+				//printf("false\n");
+				printf("%.60f \n%.60f \n%.60f\n", logd(test_for.f), log(test_for.f), test_for.f);
+				print_binary(test_for.b);
+				print_binary(test_logd.b);
+				print_binary(test_log.b);
+				uncorrect_shifted++;
+				printf("false for more than last 2-bit: %llu\n", uncorrect_shifted);
+				printf("correct count: %llu\n", correct_count);
+			}
+			else if (test_logd.b != test_log.b) {
+				false_count++;
+				printf("false count: %llu\n", false_count);
+				printf("correct count: %llu\n", correct_count);
+			}
+
+
+		}
+	}
+
+	printf("false count: %llu\n", false_count);
+	printf("correct count: %llu\n", correct_count);
+}
 	
-#ifdef CHECK_LOG_FUNCTION
+
 int main()
 {
 	printf("*** main ***\n");
@@ -537,64 +592,14 @@ int main()
 	print_binary(test_out.b);
 	printf("\t\t%.60f\n", test_out.f);
 	printf("\t\t%.60f\n", log(test_in.f));
-		printf("\n\n\n");
+	printf("\n\n\n");
 	
-	//main_test_log();
-	//logf-wise test, couldn't tested. 
-	//func_golden is missing.
+	main_test_log();
 
-	//dummy test.
-	//suggestion needed. 
-	unsigned long long int correct_count = 0;
-	unsigned long long int false_count = 0;
-	unsigned long long int false_count_alot = 0;
-	unsigned long long int percent_count = 0;
-	unsigned long long int count = 0;
-	double_uint_converter test_for,test_logd,test_log;
-	for (unsigned long long int i = 0x10000000000000; i < 0x7FF0000000000000; i++) //starts from E=1,M=0
-	{	
-		test_for.b = i;
-		test_logd.f = logd(test_for.f);
-		test_log.f = log(test_for.f);
-		unsigned long long int test_logd_shift = test_logd.b >> 3;
-		unsigned long long int test_log_shift = test_log.b >> 3;
-		
-		percent_count++;
-		count++;
-		unsigned int progress = 0x408F400000000000 / 10000;
-		if (count == progress) {
-			percent_count = 0;
-			double percent = 0;
-			percent = percent + 0.01;
-			printf("Up to now: %f%%",percent/100);
-		}
 
-		if ((test_logd.b == test_log.b+1)|(test_logd.b +1 == test_log.b )) {
-			correct_count++;
-		}
-		else if (test_log_shift != test_logd_shift) {
-			//printf("false\n");
-			printf("%.60f \n%.60f \n%.60f\n", logd(test_for.f), log(test_for.f), test_for.f);
-			print_binary(test_for.b);
-			print_binary(test_logd.b);
-			print_binary(test_log.b);
-			false_count_alot++;
-			printf("false for more than last 2-bit: %d\n", false_count_alot);
-			printf("correct count: %d\n", correct_count);
-		} 
-		else if (test_logd.b != test_log.b) {
-			false_count++;
-			printf("false count: %d\n", false_count);
-			printf("correct count: %d\n", correct_count);
-		}
-		else if(test_logd.b == test_log.b){
-			//printf("correct count: %d\n",correct_count);
-			correct_count++;
-		}
 
-	}
 
 	return 0;
 
 }
-#endif
+

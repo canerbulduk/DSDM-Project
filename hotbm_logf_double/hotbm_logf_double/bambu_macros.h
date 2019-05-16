@@ -40,8 +40,10 @@
  * Last modified by $Author$
  *
 */
+
 #ifndef BAMBU_MACROS_H
 #define BAMBU_MACROS_H
+
 
 #include <boost/preprocessor/arithmetic/inc.hpp>
 #include <boost/preprocessor/arithmetic/mod.hpp>

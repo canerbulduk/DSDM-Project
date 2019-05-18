@@ -5,14 +5,14 @@
 //support subnormals not asked
 #define SUPPORT_SUBNORMALS
 
-
-//#ifdef CHECK_LOG_FUNCTION
+#ifdef CHECK_LOG_FUNCTION
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-//#include <mpfr.h>
-//#include <gmp.h>
-//#endif
+#include <mpfr.h>
+#include <gmp.h>
+#include <time.h>
+#endif
 
 #ifdef CHECK_LOG_FUNCTION
 #define ADD_BUILTIN_PREFIX(fname) local_ ## fname
@@ -32,8 +32,7 @@ typedef union{
 	double f;
 } double_uint_converter;
 
-
-//#ifdef CHECK_LOG_FUNCTION
+#ifdef CHECK_LOG_FUNCTION
 void print_binary(unsigned long long int x) {
 	for (int c = 63; c >= 0; c--)
 	{
@@ -47,21 +46,20 @@ void print_binary(unsigned long long int x) {
 	printf("\n");
 	return;
 }
-//#endif
+#endif
 
 
 static inline
 void range_red(unsigned char A, unsigned long long int Y0, unsigned long long int* Zfinal, unsigned long long int* almostLog_H, unsigned long long int* almostLog_L)
 {
-	//make them all static const
-	//change long with long long 
+
 	static const unsigned char invtable0[] = { 32,32,31,30,29,28,27,27,26,25,25,24,24,23,23,22,43,42,41,41,40,39,38,38,37,36,36,35,35,34,34,33 };
-	static const unsigned long int logtable0_1[] = { 0,0,266327,541388,825775,1120142,1425216,1425216,1741805,2070812,2070812,2413252,2413252,2770268,2770268,3143156,5910074,6107462,6309607,6309607,6516744,6729125,6947023,6947023,7170733,7400572,7400572,7636886,7636886,7880051,7880051,8130476 };
-	static const unsigned long int logtable1_1[] = { 0,16400,49296,82322,115479,148767,182188,215742,232570,266327,300220,334251,368421,402730,437180,471772 };
-	static const unsigned long int logtable2_1[] = { 0,2048,6146,10246,14348,18452,22558,26666,30776,34888,39002,43118,47236,51356,55479,59603 };
-	static const unsigned long int logtable3_1[] = { 0,256,768,1280,1792,2304,2816,3328,3840,4353,4865,5377,5890,6402,6914,7427 };
-	static const unsigned long int logtable4_1[] = {0,32,96,160,224,288,352,416,480,544,608,672,736,800,864,928};
-	static const unsigned long int logtable5_1[] = { 0,4,12,20,28,36,44,52,60,68,76,84,92,100,108,116 };
+	static const unsigned long long int logtable0_1[] = { 0,0,266327,541388,825775,1120142,1425216,1425216,1741805,2070812,2070812,2413252,2413252,2770268,2770268,3143156,5910074,6107462,6309607,6309607,6516744,6729125,6947023,6947023,7170733,7400572,7400572,7636886,7636886,7880051,7880051,8130476 };
+	static const unsigned long long int logtable1_1[] = { 0,16400,49296,82322,115479,148767,182188,215742,232570,266327,300220,334251,368421,402730,437180,471772 };
+	static const unsigned long long int logtable2_1[] = { 0,2048,6146,10246,14348,18452,22558,26666,30776,34888,39002,43118,47236,51356,55479,59603 };
+	static const unsigned long long int logtable3_1[] = { 0,256,768,1280,1792,2304,2816,3328,3840,4353,4865,5377,5890,6402,6914,7427 };
+	static const unsigned long long int logtable4_1[] = {0,32,96,160,224,288,352,416,480,544,608,672,736,800,864,928};
+	static const unsigned long long int logtable5_1[] = { 0,4,12,20,28,36,44,52,60,68,76,84,92,100,108,116 };
 
 	static const unsigned long long int logtable0_0[] = {0, 0, 443495784957107441, 408967542716309484, 210202761557502709, 586169748105148596, 483367143421258030, 483367143421258030, 272658672494231207, 489550094456689689, 489550094456689689, 154982152445328750, 154982152445328750, 65043238028969363, 65043238028969363, 539027481613361078, 622583452284905181, 759572586635749126, 660371207705242522, 660371207705242522, 253985390270980735, 446061511024831737, 645570292658782688, 645570292658782688, 35466593504830009, 328384990975929281, 328384990975929281, 840155138376129331, 840155138376129331, 936672260909567195, 936672260909567195, 712430320143961608};
 	static const unsigned long long int logtable1_0[] = {0, 24054437449941404, 651381705105933614, 718720183519062944, 253546689982371970, 450311980697035046, 211900181597358425, 761543230352098123, 421132014018166394, 443495784957107441, 918228965153013894, 815353360150571272, 273403381874430950, 599681119542337355, 811752134397187310, 1096475649311993935};
@@ -69,7 +67,7 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	static const unsigned long long int logtable3_0[] = {0, 4503691255436680, 40534870717378714, 112601445241265087, 220707814484637524, 364858378910835840, 545057539789194721, 761309699195240573, 1013619260010888437, 149069121317791972, 473506696824928394, 834014887227713707, 77676594028740779, 510339233358517480, 979085708334582096, 330998922882241584};
 	static const unsigned long long int logtable4_0[] = {0, 70368923135146, 633323529478656, 1759240974382938, 3448129848175812, 5699998741381724, 8514856244721744, 11892710949113582, 15833571445671586, 20337446325706751, 25404344180726727, 31034273602435821, 37227243182735006, 43983261513721926, 51302337187690902, 59184478797132936};
 	static const unsigned long long int logtable5_0[] = {0, 1099511977301, 9895614087178, 27487834385144, 53876189648513, 89060696654644, 133041372180944, 185818233004871, 247391295903928, 317760577655666, 396926095037687, 484887864827638, 581645903803215, 687200228742161, 801550856422270, 924697803621381};
-	//0,576460769483293354ULL SO ON..
+
 	static const unsigned long long int logtable6[] = {0 ,576460769483293354ULL,1729382411529111552ULL, 2882304191013932373ULL, 4035226107937788586ULL, 5188148162300712960ULL, 6341070354102738261ULL, 7493992683343897259ULL, 8646915150024222721ULL, 9799837754143747415ULL, 10952760495702504110ULL, 12105683374700525573ULL, 13258606391137844573ULL, 14411529545014493878ULL, 15564452836330506256ULL, 16717376265085914474ULL};
 	static const unsigned long long int logtable7[] = {0,72057594306363393,216172784529702948,360287976900526246,504403171418833353,648518368084624332,792633566897899246,936748767858658161,1080863970966901140,1224979176222628246,1369094383625839545,1513209593176535100,1657324804874714974,1801440018720379233,1945555234713527940,2089670452854161158};
 	static const unsigned long long int logtable8[] = {0,9007199258935296,27021597801971712,45035996378562560,63050394988707840,81064793632407553,99079192309661699,117093591020470277,135107989764833288,153122388542750732,171136787354222609,189151186199248920,207165585077829663,225179983989964840,243194382935654451,261208781914898495};
@@ -101,9 +99,9 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	P1 = A1 * ZM1;
 	//***********
 	//	epsZ1 = SELECT_BIT(A1,3)==0 ? (SELECT_BIT(A1,2)==0 ? 0 : ((1<<58) | Z1_d)) : ;
-	//	0000 : 0
-	//  0XXX : 01 0000 Z1_d
-	//  else : 1 0000 Z1_d 0
+	//	when A=0000 : 0
+	//  when A=0XXX : 01 0000 Z1_d
+	//  else	    : 1 0000 Z1_d 0
 	//***********
 	epsZ1 = A1 == 0 ? 0 : (((unsigned long long)1 << 58) | Z1_d);
 	epsZ1 = SELECT_BIT(A1, 3) == 0 ? epsZ1 : epsZ1 << 1;
@@ -216,7 +214,7 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 
 	Z = Z9;
 
-	//Sum part is splitted to 2 part , also the tables are splitted to 2 part
+	//Sum part is splitted to 2-part , also the tables are splitted to 2-part
 	//Less significant part of the tables are 60bits and the rest assigned to more significant tables.
 	// 13bits MS part - 60bits LS part
 	// Least significant part never exceed 64 bits. So we don't have any overflow problem.
@@ -249,19 +247,12 @@ void range_red(unsigned char A, unsigned long long int Y0, unsigned long long in
 	*Zfinal = Z;
 	*almostLog_H = SUM_MS;
 	*almostLog_L = SUM_LS;
-
-	//out[0] = Z;
-	//out[1] = SUM_MS;
-	//out[2] = SUM_LS;
-	//return out;
 }
 
 
 
 double logd(double x)
 {
-
-	//make them all const
 	static unsigned char wE = 11;
 	static unsigned char wF = 52;
 	static unsigned char g = 5;
@@ -276,7 +267,6 @@ double logd(double x)
 	static unsigned char lzc_size = 6;
 	double_uint_converter func_in;
 	unsigned long long int fpX;
-	unsigned char exn;   //at VHDL, fpX has +2bit for exn part 
 	_Bool s, FirstBit, sR, small, doRR, ufl, sticky, round;
 	unsigned long long int Y0, Log_small_normd, Log_g, EFR, Zfinal, Log1p_normal, Z2o2_full, Log_small, Z_small, Z2o2_small, ER, squarerIn, Z2o2_small_s, Z2o2;
 	unsigned short int E, absE, E_small, E_normal, lzo, shiftval, E_normal_H, E_normal_L;
@@ -304,21 +294,21 @@ double logd(double x)
 	absE = sR == 1 ? -E : E;
 	BIT_RESIZE(absE,11);
 	
-//#ifndef NO_SUBNORMALS
-//    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inf();	// 0 -> -inf
-//#else
-//    if (E == 0) return -__builtin_inff();	// -0 -> -inf
-//#endif
-//    if (fpX == 0x7FF0000000000000) return __builtin_inf();		//+inf -> inf
-//    if (fpX == 0xFFF0000000000000) return __builtin_nan("");	//-inf -> NaN
-//    if (E==2047)
-//    {
-//        func_in.b |= ( 0xFFF << 51 ); //NaN -> NaN
-//        return func_in.f;
-//    }
-//    if (s==1) return __builtin_nan(""); //negative -> NaN
-//    if(fpX == 0x3FF0000000000000) return 0; // +1 -> 0
-//	
+#ifndef NO_SUBNORMALS
+    if ((fpX & 0x7fffffffffffffff) == 0) return -__builtin_inf();	// 0 -> -inf
+#else
+    if (E == 0) return -__builtin_inff();	// -0 -> -inf
+#endif
+    if (fpX == 0x7FF0000000000000) return __builtin_inf();		//+inf -> inf
+    if (fpX == 0xFFF0000000000000) return __builtin_nan("");	//-inf -> NaN
+    if (E==2047)
+    {
+        func_in.b |= ( 0xFFF << 51 ); //NaN -> NaN
+        return func_in.f;
+    }
+    if (s==1) return __builtin_nan(""); //negative -> NaN
+    if(fpX == 0x3FF0000000000000) return 0; // +1 -> 0
+	
 
 	//absELog2 <= absE * log2;
 	//to calculate AbsELog
@@ -332,8 +322,6 @@ double logd(double x)
 	else if (!FirstBit) { count_leading_zero_macro(52, SELECT_RANGE(Y0, 52, 1), lzo); }
 	BIT_RESIZE(lzo, 6);
 
-
-
     shiftval = lzo - pfinal_s;
     doRR = SELECT_BIT(shiftval,log2wF);
     small = ((E==0) & (doRR==0)) ? 1 : 0;
@@ -343,12 +331,6 @@ double logd(double x)
 	//	rr: range_red
 	unsigned char A = SELECT_RANGE(fpX, 51, 47); //first 4 bit of fraction part
 	range_red(A, Y0, &Zfinal, &almostLog_H, &almostLog_L);
-	
-	//unsigned long long int *out;
-	//out = range_red(A, Y0);
-	//Zfinal = out[0];
-	//almostLog_H = out[1];
-	//almostLog_L = out[2];
 	
 	//lshiftsmall: lshift
 	BIT_RESIZE(shiftval, 7); 
@@ -438,7 +420,6 @@ double logd(double x)
 	ufl = 0;
 
 	EFR = ((ER << 52) | SELECT_RANGE(Log_g, 56, 5)) + round; //SELECT_RANGE(Log_g,(wF+g-1),g))
-	exn = 0;
 
 
 	double_uint_converter res_fp;
@@ -453,93 +434,29 @@ double logd(double x)
 //}
 
 
-//	logf-wise test
-//	take forever
-//int main_test_log()
-//{
-//	_Bool s=0;
-//	unsigned long long int E = 1023 ;
-//	unsigned long long int n_ones_pos = 0;
-//	unsigned long long int n_ones_neg = 0;
-//	
-//	for(s=0; s<2; s++)
-//	{
-//		#pragma omp parallel for reduction (+ : n_ones_pos,n_ones_neg) schedule(dynamic)
-//		for(E; E<2048; E++)
-//		{
-//			#pragma omp critical
-//			printf("E=%llu\n",E);
-//			for(unsigned long long int x=0; x < ((unsigned long long) 1 << 52); x=x+111)
-//			{
-//				//printf("%d\n", x);
-//				double_uint_converter func_in, func_out, func_golden_libm;
-//				func_in.b = ((unsigned long long)s)<<63 | E << 52 | x;
-//				func_out.f = logd(func_in.f);
-//				func_golden_libm.f = log(func_in.f);
-//				if((func_golden_libm.b>>63) != (func_out.b>>63))
-//				{
-//					double_uint_converter func_golden;
-//					func_golden.f = log(func_in.f);
-//					printf("Opposite sign\n");
-//                    printf("s=%d\n",s);
-//                    printf("e=%d\n",E);
-//                    printf("x=%x\n",x);
-//                    printf("log golden=%.60f\n",func_golden.f);
-//                    printf("golden=%x\n", func_golden.b);
-//                    printf("my log=%.60f\n", func_out.f);
-//                    printf("binary=%x\n", func_out.b);
-//                    printf("log libm=%.60f\n", func_golden_libm.f);
-//                    printf("libm=%x\n", func_golden_libm.b);
-//                    //abort();
-//				}
-//				if(abs(func_golden_libm.b - func_out.b) > 1)
-//				{
-//					double_uint_converter func_golden;
-//                    func_golden.f = log(func_in.f);
-//                    printf("NO PASS\n");
-//                    printf("s=%d\n",s);
-//                    printf("e=%d\n",E);
-//                    printf("x=%x\n",x);
-//                    printf("log golden=%.60f\n",func_golden.f);
-//                    printf("golden=%x\n", func_golden.b);
-//                    printf("my log=%.60f\n", func_out.f);
-//                    printf("binary=%x\n", func_out.b);
-//                    printf("log libm=%.60f\n", func_golden_libm.f);
-//                    printf("libm=%x\n", func_golden_libm.b);
-//                    //abort();
-//                }
-//                else if (abs(func_golden_libm.b-func_out.b)==1)
-//                {
-//                    if(func_golden_libm.b>func_out.b)
-//                        n_ones_pos++;
-//                    else
-//                        n_ones_neg++;
-//                }
-//            }
-//        }
-//    }
-//    printf("n_ones_pos=%d\n", n_ones_pos);
-//    printf("n_ones_neg=%d\n", n_ones_neg);
-//    return 0;
-//			
-//}
-
-
 //	dummy test.
 //	suggestion needed. 
+#ifdef CHECK_LOG_FUNCTION
 int main_test_log() {
 
-	unsigned long long int correct_count = 0;
-	unsigned long long int false_count = 0;
-	unsigned long long int uncorrect_shifted = 0;
 	unsigned long long int i = 0;
-
-
+	unsigned long long int correct_count = 0;
+	unsigned long long int wrong_count = 0;
+	unsigned long long int n_ones_pos = 0;
+	unsigned long long int n_ones_neg = 0;
 	double_uint_converter test_for, test_logd, test_log;
+
+	double total_time;
+	clock_t start, end;
+	start = clock();
+
 	//for (unsigned long long int i = 0x3ff0001d283bb342; i < 0x7FF0000000000000; i=i+10) //starts input = 1; E=1023
+
 	for (unsigned long long int exp = 1; exp < 2047; exp++)
 	{
-		for (unsigned long long int m = 1; m < 0xfffffffffffff; m = m << 1)
+		//#pragma omp parallel for
+		//parallel calculation couldn't enabled. 
+		for (unsigned long long int m = 1; m < 0xffff; m++)
 		{
 			i = exp << 52 | m;
 			test_for.b = i;
@@ -547,43 +464,55 @@ int main_test_log() {
 			test_log.f = log(test_for.f);
 			unsigned long long int test_logd_shift = test_logd.b >> 3;
 			unsigned long long int test_log_shift = test_log.b >> 3;
-
-
-
-			if ((test_logd.b == test_log.b) | (test_logd.b == test_log.b + 1) | (test_logd.b + 1 == test_log.b)) {
+			if (test_logd.b == test_log.b) {
 				correct_count++;
 			}
-			else if (test_log_shift != test_logd_shift) {
-				//printf("false\n");
-				printf("%.60f \n%.60f \n%.60f\n", logd(test_for.f), log(test_for.f), test_for.f);
-				print_binary(test_for.b);
+			else if (abs(test_logd.b - test_log.b) == 1)
+			{
+				if (test_logd.b > test_log.b)
+					n_ones_pos++;
+				else
+					n_ones_neg++;
+			}
+			else {
+				wrong_count++;
+				printf("\nInput value:\t\t%.50f", test_for.f);
+				printf("\nCalculated value:\t%.50f\n\t\t\t", test_logd.f);
 				print_binary(test_logd.b);
+				printf("Expected value:\t\t%.50f\n\t\t\t", test_log.f);
 				print_binary(test_log.b);
-				uncorrect_shifted++;
-				printf("false for more than last 2-bit: %llu\n", uncorrect_shifted);
-				printf("correct count: %llu\n", correct_count);
-			}
-			else if (test_logd.b != test_log.b) {
-				false_count++;
-				printf("false count: %llu\n", false_count);
-				printf("correct count: %llu\n", correct_count);
-			}
+				printf("wrong count:%llu", wrong_count);
 
-
+			}
 		}
 	}
 
-	printf("false count: %llu\n", false_count);
-	printf("correct count: %llu\n", correct_count);
-}
-	
+	end = clock();
+	//time count stops 
+	total_time = ((double)(end - start)) / CLK_TCK;
+	//calulate total time
+	printf("\nTime taken to calculate: %f ms\n", total_time * 1000);
+	printf("\nPer calculation time taken to calculate: %f ms\n", (total_time * 1000) / correct_count);
 
+	printf("\nCalculation freq: %f MHz\n", correct_count / (total_time * 1000000));
+
+	printf("wrong_count=%llu\n", wrong_count);
+	printf("correct_count=%llu\n", correct_count);
+	printf("n_ones_pos=%llu\n", n_ones_pos);
+	printf("n_ones_neg=%llu\n", n_ones_neg);
+	return 0;
+
+}
+#endif
+	
+#ifdef CHECK_LOG_FUNCTION
 int main()
 {
+	
 	printf("*** main ***\n");
+
 	double_uint_converter test_in,test_out;
-	test_in.f =
-		0.00000000001111111111222222222200000000000000000000;
+	test_in.f =	0.00000000001111111111222222222200000000000000000000;
 	test_out.f = logd(test_in.f);
 	printf("\nTest Input:\t");
 	print_binary(test_in.b);
@@ -596,10 +525,7 @@ int main()
 	
 	main_test_log();
 
-
-
-
 	return 0;
-
 }
+#endif
 

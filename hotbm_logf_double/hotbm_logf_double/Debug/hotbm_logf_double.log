@@ -7,5 +7,5 @@ C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_lo
 C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(332): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
 C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(380): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
 C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(381): warning C4244: '=': conversion from 'unsigned __int64' to 'unsigned short', possible loss of data
-C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(578): warning C4716: 'main_test_log': must return a value
+C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\hotbm_logf_double\hotbm_logd.c(491): warning C4244: 'function': conversion from 'unsigned __int64' to 'int', possible loss of data
   hotbm_logf_double.vcxproj -> C:\Users\caner\OneDrive\Documents\GitHub\DSDM-Project\hotbm_logf_double\Debug\hotbm_logd.exe

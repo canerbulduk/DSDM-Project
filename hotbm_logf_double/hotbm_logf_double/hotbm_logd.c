@@ -14,11 +14,11 @@
 //#include <gmp.h>
 //#endif
 
-#ifdef CHECK_LOG_FUNCTION
-#define ADD_BUILTIN_PREFIX(fname) local_ ## fname
-#else
-#define ADD_BUILTIN_PREFIX(fname) __builtin_ ## fname
-#endif
+//#ifdef CHECK_LOG_FUNCTION
+//#define ADD_BUILTIN_PREFIX(fname) local_ ## fname
+//#else
+//#define ADD_BUILTIN_PREFIX(fname) __builtin_ ## fname
+//#endif
 
 //#define CE_MACRO64(cond, a, b) ((((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63))&(a))|((~((unsigned long long int) ((((unsigned long long int)(cond))<<63)>>63)))&(b)))
 #define MASK(n)  ((1ULL << (n)) - 1)
@@ -453,93 +453,31 @@ double logd(double x)
 //}
 
 
-//	logf-wise test
-//	take forever
-//int main_test_log()
-//{
-//	_Bool s=0;
-//	unsigned long long int E = 1023 ;
-//	unsigned long long int n_ones_pos = 0;
-//	unsigned long long int n_ones_neg = 0;
-//	
-//	for(s=0; s<2; s++)
-//	{
-//		#pragma omp parallel for reduction (+ : n_ones_pos,n_ones_neg) schedule(dynamic)
-//		for(E; E<2048; E++)
-//		{
-//			#pragma omp critical
-//			printf("E=%llu\n",E);
-//			for(unsigned long long int x=0; x < ((unsigned long long) 1 << 52); x=x+111)
-//			{
-//				//printf("%d\n", x);
-//				double_uint_converter func_in, func_out, func_golden_libm;
-//				func_in.b = ((unsigned long long)s)<<63 | E << 52 | x;
-//				func_out.f = logd(func_in.f);
-//				func_golden_libm.f = log(func_in.f);
-//				if((func_golden_libm.b>>63) != (func_out.b>>63))
-//				{
-//					double_uint_converter func_golden;
-//					func_golden.f = log(func_in.f);
-//					printf("Opposite sign\n");
-//                    printf("s=%d\n",s);
-//                    printf("e=%d\n",E);
-//                    printf("x=%x\n",x);
-//                    printf("log golden=%.60f\n",func_golden.f);
-//                    printf("golden=%x\n", func_golden.b);
-//                    printf("my log=%.60f\n", func_out.f);
-//                    printf("binary=%x\n", func_out.b);
-//                    printf("log libm=%.60f\n", func_golden_libm.f);
-//                    printf("libm=%x\n", func_golden_libm.b);
-//                    //abort();
-//				}
-//				if(abs(func_golden_libm.b - func_out.b) > 1)
-//				{
-//					double_uint_converter func_golden;
-//                    func_golden.f = log(func_in.f);
-//                    printf("NO PASS\n");
-//                    printf("s=%d\n",s);
-//                    printf("e=%d\n",E);
-//                    printf("x=%x\n",x);
-//                    printf("log golden=%.60f\n",func_golden.f);
-//                    printf("golden=%x\n", func_golden.b);
-//                    printf("my log=%.60f\n", func_out.f);
-//                    printf("binary=%x\n", func_out.b);
-//                    printf("log libm=%.60f\n", func_golden_libm.f);
-//                    printf("libm=%x\n", func_golden_libm.b);
-//                    //abort();
-//                }
-//                else if (abs(func_golden_libm.b-func_out.b)==1)
-//                {
-//                    if(func_golden_libm.b>func_out.b)
-//                        n_ones_pos++;
-//                    else
-//                        n_ones_neg++;
-//                }
-//            }
-//        }
-//    }
-//    printf("n_ones_pos=%d\n", n_ones_pos);
-//    printf("n_ones_neg=%d\n", n_ones_neg);
-//    return 0;
-//			
-//}
-
+#include <time.h>
 
 //	dummy test.
 //	suggestion needed. 
+
 int main_test_log() {
 
-	unsigned long long int correct_count = 0;
-	unsigned long long int false_count = 0;
-	unsigned long long int uncorrect_shifted = 0;
 	unsigned long long int i = 0;
-
-
+	unsigned long long int correct_count = 0;
+	unsigned long long int wrong_count = 0;
+	unsigned long long int n_ones_pos = 0;
+	unsigned long long int n_ones_neg = 0;
 	double_uint_converter test_for, test_logd, test_log;
+
+	double total_time;
+	clock_t start, end;
+	start = clock();
+
 	//for (unsigned long long int i = 0x3ff0001d283bb342; i < 0x7FF0000000000000; i=i+10) //starts input = 1; E=1023
+
 	for (unsigned long long int exp = 1; exp < 2047; exp++)
 	{
-		for (unsigned long long int m = 1; m < 0xfffffffffffff; m = m << 1)
+		//#pragma omp parallel for
+		//parallel calculation couldn't enabled. 
+		for (unsigned long long int m = 1; m < 0xffff; m++)
 		{
 			i = exp << 52 | m;
 			test_for.b = i;
@@ -547,39 +485,50 @@ int main_test_log() {
 			test_log.f = log(test_for.f);
 			unsigned long long int test_logd_shift = test_logd.b >> 3;
 			unsigned long long int test_log_shift = test_log.b >> 3;
-
-
-
-			if ((test_logd.b == test_log.b) | (test_logd.b == test_log.b + 1) | (test_logd.b + 1 == test_log.b)) {
+			if (test_logd.b == test_log.b) {
 				correct_count++;
 			}
-			else if (test_log_shift != test_logd_shift) {
-				//printf("false\n");
-				printf("%.60f \n%.60f \n%.60f\n", logd(test_for.f), log(test_for.f), test_for.f);
-				print_binary(test_for.b);
+			else if (abs(test_logd.b - test_log.b) == 1)
+			{
+				if (test_logd.b > test_log.b)
+					n_ones_pos++;
+				else
+					n_ones_neg++;
+			}
+			else {
+				wrong_count++;
+				printf("\nInput value:\t\t%.50f",test_for.f);
+				printf("\nCalculated value:\t%.50f\n\t\t\t",test_logd.f);
 				print_binary(test_logd.b);
+				printf("Expected value:\t\t%.50f\n\t\t\t",test_log.f);
 				print_binary(test_log.b);
-				uncorrect_shifted++;
-				printf("false for more than last 2-bit: %llu\n", uncorrect_shifted);
-				printf("correct count: %llu\n", correct_count);
-			}
-			else if (test_logd.b != test_log.b) {
-				false_count++;
-				printf("false count: %llu\n", false_count);
-				printf("correct count: %llu\n", correct_count);
-			}
+				printf("wrong count:%llu", wrong_count);
 
-
+			}
 		}
 	}
 
-	printf("false count: %llu\n", false_count);
-	printf("correct count: %llu\n", correct_count);
+	end = clock();
+	//time count stops 
+	total_time = ((double)(end - start)) / CLK_TCK;
+	//calulate total time
+	printf("\nTime taken to calculate: %f ms\n", total_time * 1000);
+	printf("\nPer calculation time taken to calculate: %f ms\n", (total_time * 1000) / correct_count);
+
+	printf("\nCalculation freq: %f MHz\n", correct_count / (total_time * 1000000));
+
+	printf("wrong_count=%llu\n", wrong_count);
+	printf("correct_count=%llu\n", correct_count);
+	printf("n_ones_pos=%llu\n", n_ones_pos);
+	printf("n_ones_neg=%llu\n", n_ones_neg);
+	return 0;
+
 }
-	
+
 
 int main()
 {
+	
 	printf("*** main ***\n");
 	double_uint_converter test_in,test_out;
 	test_in.f =
@@ -595,6 +544,7 @@ int main()
 	printf("\n\n\n");
 	
 	main_test_log();
+	
 
 
 

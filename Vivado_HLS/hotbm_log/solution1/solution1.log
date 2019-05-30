@@ -1,0 +1,953 @@
+==============================================================
+File generated on Thu May 30 05:35:10 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+./bambu_macros.h:46:10: fatal error: 'boost/preprocessor/arithmetic/inc.hpp' file not found
+#include <boost/preprocessor/arithmetic/inc.hpp>
+         ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:35:55 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from hotbm_logd.c:1:
+hotbm_logd.c:94:183: error: use of undeclared identifier 'POW2_'
+ Z1_d = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,0),1), 64), ((((unsigned long long)(P0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(53,0),1)),ULL)-1))), ((unsigned long long)(P0))>>(0))));
+                                                                                                                                                                                      ^
+hotbm_logd.c:96:185: error: use of undeclared identifier 'POW2_'
+ A1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,50),1), 64), ((((unsigned long long)(Z1_d))>>(50))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(53,50),1)),ULL)-1))), ((unsigned long long)(Z1_d))>>(50))));
+                                                                                                                                                                                        ^
+hotbm_logd.c:97:183: error: use of undeclared identifier 'POW2_'
+ B1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(49,0),1), 64), ((((unsigned long long)(Z1_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(49,0),1)),ULL)-1))), ((unsigned long long)(Z1_d))>>(0))));
+                                                                                                                                                                                      ^
+hotbm_logd.c:111:185: error: use of undeclared identifier 'POW2_'
+ A2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,56),1), 64), ((((unsigned long long)(Z2_d))>>(56))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,56),1)),ULL)-1))), ((unsigned long long)(Z2_d))>>(56))));
+                                                                                                                                                                                        ^
+hotbm_logd.c:112:183: error: use of undeclared identifier 'POW2_'
+ B2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,0),1), 64), ((((unsigned long long)(Z2_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(55,0),1)),ULL)-1))), ((unsigned long long)(Z2_d))>>(0))));
+                                                                                                                                                                                      ^
+hotbm_logd.c:117:187: error: use of undeclared identifier 'POW2_'
+ P2_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), 64), ((((unsigned long long)(P2_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),ULL)-1))), ((unsigned long long)(P2_0))>>(60))));
+                                                                                                                                                                                          ^
+hotbm_logd.c:118:15: error: use of undeclared identifier 'IIF_'
+ BOOST_PP_CAT(IIF_, BOOST_PP_NOT(0))(EXPAND, EAT)(P2_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((P2_0)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 60),ULL)-1))), P2_0))));
+              ^
+hotbm_logd.c:118:38: error: use of undeclared identifier 'EXPAND'
+ BOOST_PP_CAT(IIF_, BOOST_PP_NOT(0))(EXPAND, EAT)(P2_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((P2_0)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 60),ULL)-1))), P2_0))));
+                                     ^
+hotbm_logd.c:118:171: error: use of undeclared identifier 'POW2_'
+ BOOST_PP_CAT(IIF_, BOOST_PP_NOT(0))(EXPAND, EAT)(P2_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((P2_0)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 60),ULL)-1))), P2_0))));
+                                                                                                                                                                          ^
+hotbm_logd.c:121:188: error: use of undeclared identifier 'POW2_'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),ULL)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),ULL)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                           ^
+hotbm_logd.c:121:459: error: use of undeclared identifier 'POW2_'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),ULL)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),ULL)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+hotbm_logd.c:121:732: error: use of undeclared identifier 'POW2_'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),ULL)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),ULL)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+hotbm_logd.c:122:187: error: use of undeclared identifier 'POW2_'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), 64), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),ULL)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                          ^
+hotbm_logd.c:122:458: error: use of undeclared identifier 'POW2_'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), 64), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),ULL)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+hotbm_logd.c:123:187: error: use of undeclared identifier 'POW2_'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), 64), ((((unsigned long long)(Z3_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),ULL)-1))), ((unsigned long long)(Z3_0))>>(60)))) == 0b1111 ? Z3_1 - 1 : Z3_1 + (((Z3_0)>>(60))&1);
+                                                                                                                                                                                          ^
+hotbm_logd.c:124:15: error: use of undeclared identifier 'IIF_'
+ BOOST_PP_CAT(IIF_, BOOST_PP_NOT(0))(EXPAND, EAT)(Z3_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((Z3_0)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 60),ULL)-1))), Z3_0))));
+              ^
+hotbm_logd.c:124:38: error: use of undeclared identifier 'EXPAND'
+ BOOST_PP_CAT(IIF_, BOOST_PP_NOT(0))(EXPAND, EAT)(Z3_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((Z3_0)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 60),ULL)-1))), Z3_0))));
+                                     ^
+hotbm_logd.c:124:171: error: use of undeclared identifier 'POW2_'
+ BOOST_PP_CAT(IIF_, BOOST_PP_NOT(0))(EXPAND, EAT)(Z3_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((Z3_0)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 60),ULL)-1))), Z3_0))));
+                                                                                                                                                                          ^
+hotbm_logd.c:125:15: error: use of undeclared identifier 'IIF_'
+ BOOST_PP_CAT(IIF_, BOOST_PP_NOT(0))(EXPAND, EAT)(Z3_1=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(9, 64), ((Z3_1)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 9),ULL)-1))), Z3_1))));
+              ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+==============================================================
+File generated on Thu May 30 05:37:04 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from hotbm_logd.c:1:
+hotbm_logd.c:94:211: error: use of undeclared identifier 'ULL'
+ Z1_d = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,0),1), 64), ((((unsigned long long)(P0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(53,0),1)),ULL)-1))), ((unsigned long long)(P0))>>(0))));
+                                                                                                                                                                                                                  ^
+hotbm_logd.c:96:214: error: use of undeclared identifier 'ULL'
+ A1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,50),1), 64), ((((unsigned long long)(Z1_d))>>(50))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(53,50),1)),ULL)-1))), ((unsigned long long)(Z1_d))>>(50))));
+                                                                                                                                                                                                                     ^
+hotbm_logd.c:97:211: error: use of undeclared identifier 'ULL'
+ B1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(49,0),1), 64), ((((unsigned long long)(Z1_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(49,0),1)),ULL)-1))), ((unsigned long long)(Z1_d))>>(0))));
+                                                                                                                                                                                                                  ^
+hotbm_logd.c:111:214: error: use of undeclared identifier 'ULL'
+ A2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,56),1), 64), ((((unsigned long long)(Z2_d))>>(56))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,56),1)),ULL)-1))), ((unsigned long long)(Z2_d))>>(56))));
+                                                                                                                                                                                                                     ^
+hotbm_logd.c:112:211: error: use of undeclared identifier 'ULL'
+ B2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,0),1), 64), ((((unsigned long long)(Z2_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,0),1)),ULL)-1))), ((unsigned long long)(Z2_d))>>(0))));
+                                                                                                                                                                                                                  ^
+hotbm_logd.c:117:216: error: use of undeclared identifier 'ULL'
+ P2_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), 64), ((((unsigned long long)(P2_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),ULL)-1))), ((unsigned long long)(P2_0))>>(60))));
+                                                                                                                                                                                                                       ^
+hotbm_logd.c:118:156: error: use of undeclared identifier 'ULL'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(P2_0)))(P2_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((P2_0)&((unsigned long long)(BOOST_PP_CAT(POW2(60),ULL)-1))), P2_0))));
+                                                                                                                                                           ^
+hotbm_logd.c:121:216: error: use of undeclared identifier 'ULL'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),ULL)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),ULL)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                       ^
+hotbm_logd.c:121:472: error: use of undeclared identifier 'ULL'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),ULL)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),ULL)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+hotbm_logd.c:121:730: error: use of undeclared identifier 'ULL'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),ULL)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),ULL)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+hotbm_logd.c:122:214: error: use of undeclared identifier 'ULL'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), 64), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),ULL)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                                                     ^
+hotbm_logd.c:122:472: error: use of undeclared identifier 'ULL'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),ULL)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), 64), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),ULL)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+hotbm_logd.c:123:216: error: use of undeclared identifier 'ULL'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), 64), ((((unsigned long long)(Z3_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),ULL)-1))), ((unsigned long long)(Z3_0))>>(60)))) == 0b1111 ? Z3_1 - 1 : Z3_1 + (((Z3_0)>>(60))&1);
+                                                                                                                                                                                                                       ^
+hotbm_logd.c:124:156: error: use of undeclared identifier 'ULL'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(Z3_0)))(Z3_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((Z3_0)&((unsigned long long)(BOOST_PP_CAT(POW2(60),ULL)-1))), Z3_0))));
+                                                                                                                                                           ^
+hotbm_logd.c:125:154: error: use of undeclared identifier 'ULL'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(Z3_1)))(Z3_1=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(9, 64), ((Z3_1)&((unsigned long long)(BOOST_PP_CAT(POW2(9),ULL)-1))), Z3_1))));
+                                                                                                                                                         ^
+hotbm_logd.c:130:211: error: use of undeclared identifier 'ULL'
+ A3 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,5),1), 64), ((((unsigned long long)(Z3_d_1))>>(5))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,5),1)),ULL)-1))), ((unsigned long long)(Z3_d_1))>>(5))));
+                                                                                                                                                                                                                  ^
+hotbm_logd.c:131:213: error: use of undeclared identifier 'ULL'
+ B3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(4,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(4,0),1)),ULL)-1))), ((unsigned long long)(Z3_d_1))>>(0))));
+                                                                                                                                                                                                                    ^
+hotbm_logd.c:133:213: error: use of undeclared identifier 'ULL'
+ ZM3 = (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),ULL)-1))), ((unsigned long long)(Z3_d_1))>>(0))))<<54) | ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1), 64), ((((unsigned long long)(Z3_d_0))>>(6))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1)),ULL)-1))), ((unsigned long long)(Z3_d_0))>>(6))));
+                                                                                                                                                                                                                    ^
+hotbm_logd.c:133:476: error: use of undeclared identifier 'ULL'
+ ZM3 = (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),ULL)-1))), ((unsigned long long)(Z3_d_1))>>(0))))<<54) | ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1), 64), ((((unsigned long long)(Z3_d_0))>>(6))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1)),ULL)-1))), ((unsigned long long)(Z3_d_0))>>(6))));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+==============================================================
+File generated on Thu May 30 05:40:00 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from hotbm_logd.c:1:
+hotbm_logd.c:94:95: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ Z1_d = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(P0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(53,0),1)),unsigned long long)-1))), ((unsigned long long)(P0))>>(0))));
+                                                                                              ^
+hotbm_logd.c:96:94: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ A1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,50),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z1_d))>>(50))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(53,50),1)),unsigned long long)-1))), ((unsigned long long)(Z1_d))>>(50))));
+                                                                                             ^
+hotbm_logd.c:97:93: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ B1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(49,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z1_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(49,0),1)),unsigned long long)-1))), ((unsigned long long)(Z1_d))>>(0))));
+                                                                                            ^
+hotbm_logd.c:111:94: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ A2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,56),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z2_d))>>(56))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,56),1)),unsigned long long)-1))), ((unsigned long long)(Z2_d))>>(56))));
+                                                                                             ^
+hotbm_logd.c:112:93: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ B2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z2_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,0),1)),unsigned long long)-1))), ((unsigned long long)(Z2_d))>>(0))));
+                                                                                            ^
+hotbm_logd.c:117:96: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ P2_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), UDATATYPE_BITSIZE), ((((unsigned long long)(P2_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(60))));
+                                                                                               ^
+hotbm_logd.c:118:99: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(P2_0)))(P2_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, UDATATYPE_BITSIZE), ((P2_0)&((unsigned long long)(BOOST_PP_CAT(POW2(60),unsigned long long)-1))), P2_0))));
+                                                                                                  ^
+hotbm_logd.c:121:95: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                              ^
+hotbm_logd.c:121:386: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                 ^
+hotbm_logd.c:121:672: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ^
+hotbm_logd.c:122:94: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), UDATATYPE_BITSIZE), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                             ^
+hotbm_logd.c:122:384: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), UDATATYPE_BITSIZE), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                                                                                                                                                                                                                               ^
+hotbm_logd.c:123:96: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z3_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),unsigned long long)-1))), ((unsigned long long)(Z3_0))>>(60)))) == 0b1111 ? Z3_1 - 1 : Z3_1 + (((Z3_0)>>(60))&1);
+                                                                                               ^
+hotbm_logd.c:124:99: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(Z3_0)))(Z3_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, UDATATYPE_BITSIZE), ((Z3_0)&((unsigned long long)(BOOST_PP_CAT(POW2(60),unsigned long long)-1))), Z3_0))));
+                                                                                                  ^
+hotbm_logd.c:125:98: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(Z3_1)))(Z3_1=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(9, UDATATYPE_BITSIZE), ((Z3_1)&((unsigned long long)(BOOST_PP_CAT(POW2(9),unsigned long long)-1))), Z3_1))));
+                                                                                                 ^
+hotbm_logd.c:130:92: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ A3 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,5),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z3_d_1))>>(5))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,5),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(5))));
+                                                                                           ^
+hotbm_logd.c:131:94: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ B3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(4,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(4,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))));
+                                                                                             ^
+hotbm_logd.c:133:94: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ ZM3 = (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))))<<54) | ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z3_d_0))>>(6))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_0))>>(6))));
+                                                                                             ^
+hotbm_logd.c:133:386: error: use of undeclared identifier 'UDATATYPE_BITSIZE'
+ ZM3 = (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))))<<54) | ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1), UDATATYPE_BITSIZE), ((((unsigned long long)(Z3_d_0))>>(6))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_0))>>(6))));
+                                                                                                                                                                                                                                                                                                                                                                                                 ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+==============================================================
+File generated on Thu May 30 05:41:00 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from hotbm_logd.c:1:
+hotbm_logd.c:94:211: error: expected expression
+ Z1_d = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,0),1), 64), ((((unsigned long long)(P0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(53,0),1)),unsigned long long)-1))), ((unsigned long long)(P0))>>(0))));
+                                                                                                                                                                                                                  ^
+hotbm_logd.c:96:214: error: expected expression
+ A1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,50),1), 64), ((((unsigned long long)(Z1_d))>>(50))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(53,50),1)),unsigned long long)-1))), ((unsigned long long)(Z1_d))>>(50))));
+                                                                                                                                                                                                                     ^
+hotbm_logd.c:97:211: error: expected expression
+ B1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(49,0),1), 64), ((((unsigned long long)(Z1_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(49,0),1)),unsigned long long)-1))), ((unsigned long long)(Z1_d))>>(0))));
+                                                                                                                                                                                                                  ^
+hotbm_logd.c:111:214: error: expected expression
+ A2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,56),1), 64), ((((unsigned long long)(Z2_d))>>(56))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,56),1)),unsigned long long)-1))), ((unsigned long long)(Z2_d))>>(56))));
+                                                                                                                                                                                                                     ^
+hotbm_logd.c:112:211: error: expected expression
+ B2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,0),1), 64), ((((unsigned long long)(Z2_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,0),1)),unsigned long long)-1))), ((unsigned long long)(Z2_d))>>(0))));
+                                                                                                                                                                                                                  ^
+hotbm_logd.c:117:216: error: expected expression
+ P2_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), 64), ((((unsigned long long)(P2_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(60))));
+                                                                                                                                                                                                                       ^
+hotbm_logd.c:118:156: error: expected expression
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(P2_0)))(P2_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((P2_0)&((unsigned long long)(BOOST_PP_CAT(POW2(60),unsigned long long)-1))), P2_0))));
+                                                                                                                                                           ^
+hotbm_logd.c:121:216: error: expected expression
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                       ^
+hotbm_logd.c:121:487: error: expected expression
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+hotbm_logd.c:121:760: error: expected expression
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ^
+hotbm_logd.c:122:214: error: expected expression
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), 64), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                                                     ^
+hotbm_logd.c:122:487: error: expected expression
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), 64), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ^
+hotbm_logd.c:123:216: error: expected expression
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), 64), ((((unsigned long long)(Z3_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),unsigned long long)-1))), ((unsigned long long)(Z3_0))>>(60)))) == 0b1111 ? Z3_1 - 1 : Z3_1 + (((Z3_0)>>(60))&1);
+                                                                                                                                                                                                                       ^
+hotbm_logd.c:124:156: error: expected expression
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(Z3_0)))(Z3_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((Z3_0)&((unsigned long long)(BOOST_PP_CAT(POW2(60),unsigned long long)-1))), Z3_0))));
+                                                                                                                                                           ^
+hotbm_logd.c:125:154: error: expected expression
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(Z3_1)))(Z3_1=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(9, 64), ((Z3_1)&((unsigned long long)(BOOST_PP_CAT(POW2(9),unsigned long long)-1))), Z3_1))));
+                                                                                                                                                         ^
+hotbm_logd.c:130:211: error: expected expression
+ A3 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,5),1), 64), ((((unsigned long long)(Z3_d_1))>>(5))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,5),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(5))));
+                                                                                                                                                                                                                  ^
+hotbm_logd.c:131:213: error: expected expression
+ B3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(4,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(4,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))));
+                                                                                                                                                                                                                    ^
+hotbm_logd.c:133:213: error: expected expression
+ ZM3 = (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))))<<54) | ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1), 64), ((((unsigned long long)(Z3_d_0))>>(6))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_0))>>(6))));
+                                                                                                                                                                                                                    ^
+hotbm_logd.c:133:491: error: expected expression
+ ZM3 = (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))))<<54) | ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1), 64), ((((unsigned long long)(Z3_d_0))>>(6))&((unsigned long long)(BOOST_PP_CAT(POW2(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_0))>>(6))));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+==============================================================
+File generated on Thu May 30 05:43:38 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from hotbm_logd.c:1:
+hotbm_logd.c:94:183: error: use of undeclared identifier 'POW2_'
+ Z1_d = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,0),1), 64), ((((unsigned long long)(P0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(53,0),1)),unsigned long long)-1))), ((unsigned long long)(P0))>>(0))));
+                                                                                                                                                                                      ^
+hotbm_logd.c:96:185: error: use of undeclared identifier 'POW2_'
+ A1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(53,50),1), 64), ((((unsigned long long)(Z1_d))>>(50))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(53,50),1)),unsigned long long)-1))), ((unsigned long long)(Z1_d))>>(50))));
+                                                                                                                                                                                        ^
+hotbm_logd.c:97:183: error: use of undeclared identifier 'POW2_'
+ B1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(49,0),1), 64), ((((unsigned long long)(Z1_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(49,0),1)),unsigned long long)-1))), ((unsigned long long)(Z1_d))>>(0))));
+                                                                                                                                                                                      ^
+hotbm_logd.c:111:185: error: use of undeclared identifier 'POW2_'
+ A2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,56),1), 64), ((((unsigned long long)(Z2_d))>>(56))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,56),1)),unsigned long long)-1))), ((unsigned long long)(Z2_d))>>(56))));
+                                                                                                                                                                                        ^
+hotbm_logd.c:112:183: error: use of undeclared identifier 'POW2_'
+ B2 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,0),1), 64), ((((unsigned long long)(Z2_d))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(55,0),1)),unsigned long long)-1))), ((unsigned long long)(Z2_d))>>(0))));
+                                                                                                                                                                                      ^
+hotbm_logd.c:117:187: error: use of undeclared identifier 'POW2_'
+ P2_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), 64), ((((unsigned long long)(P2_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(60))));
+                                                                                                                                                                                          ^
+hotbm_logd.c:118:160: error: use of undeclared identifier 'POW2_'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(P2_0)))(P2_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((P2_0)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 60),unsigned long long)-1))), P2_0))));
+                                                                                                                                                               ^
+hotbm_logd.c:121:188: error: use of undeclared identifier 'POW2_'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                           ^
+hotbm_logd.c:121:474: error: use of undeclared identifier 'POW2_'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+hotbm_logd.c:121:762: error: use of undeclared identifier 'POW2_'
+ Z3_0 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,0),1), 64), ((((unsigned long long)(epsZ2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_0))>>(0)))) + (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(47,0),1), 64), ((((unsigned long long)(B2))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(47,0),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(0))))<<12) - (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(58,0),1), 64), ((((unsigned long long)(P2_0))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(58,0),1)),unsigned long long)-1))), ((unsigned long long)(P2_0))>>(0))))<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+hotbm_logd.c:122:187: error: use of undeclared identifier 'POW2_'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), 64), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                          ^
+hotbm_logd.c:122:473: error: use of undeclared identifier 'POW2_'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(epsZ2_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(epsZ2_1))>>(0)))) + ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(55,48),1), 64), ((((unsigned long long)(B2))>>(48))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(55,48),1)),unsigned long long)-1))), ((unsigned long long)(B2))>>(48)))) - (((P2_0)>>(59))&1) - ((unsigned long long)P2_1<<1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ^
+hotbm_logd.c:123:187: error: use of undeclared identifier 'POW2_'
+ Z3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(63,60),1), 64), ((((unsigned long long)(Z3_0))>>(60))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(63,60),1)),unsigned long long)-1))), ((unsigned long long)(Z3_0))>>(60)))) == 0b1111 ? Z3_1 - 1 : Z3_1 + (((Z3_0)>>(60))&1);
+                                                                                                                                                                                          ^
+hotbm_logd.c:124:160: error: use of undeclared identifier 'POW2_'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(Z3_0)))(Z3_0=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(60, 64), ((Z3_0)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 60),unsigned long long)-1))), Z3_0))));
+                                                                                                                                                               ^
+hotbm_logd.c:125:159: error: use of undeclared identifier 'POW2_'
+ WHEN(BOOST_PP_NOT(IS_CONSTANT(Z3_1)))(Z3_1=((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(9, 64), ((Z3_1)&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, 9),unsigned long long)-1))), Z3_1))));
+                                                                                                                                                              ^
+hotbm_logd.c:130:184: error: use of undeclared identifier 'POW2_'
+ A3 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,5),1), 64), ((((unsigned long long)(Z3_d_1))>>(5))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(8,5),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(5))));
+                                                                                                                                                                                       ^
+hotbm_logd.c:131:186: error: use of undeclared identifier 'POW2_'
+ B3_1 = ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(4,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(4,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))));
+                                                                                                                                                                                         ^
+hotbm_logd.c:133:186: error: use of undeclared identifier 'POW2_'
+ ZM3 = (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))))<<54) | ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1), 64), ((((unsigned long long)(Z3_d_0))>>(6))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,6),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_0))>>(6))));
+                                                                                                                                                                                         ^
+hotbm_logd.c:133:478: error: use of undeclared identifier 'POW2_'
+ ZM3 = (((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(8,0),1), 64), ((((unsigned long long)(Z3_d_1))>>(0))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(8,0),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_1))>>(0))))<<54) | ((unsigned long long) (BOOST_PP_IF( BOOST_PP_LESS(BOOST_PP_ADD(BOOST_PP_SUB(59,6),1), 64), ((((unsigned long long)(Z3_d_0))>>(6))&((unsigned long long)(BOOST_PP_CAT(BOOST_PP_CAT(POW2_, BOOST_PP_ADD(BOOST_PP_SUB(59,6),1)),unsigned long long)-1))), ((unsigned long long)(Z3_d_0))>>(6))));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+==============================================================
+File generated on Thu May 30 05:45:09 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: 'boost/preprocessor/config/config.hpp' file not found
+# include <boost/preprocessor/config/config.hpp>
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:46:15 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: 'boost/preprocessor/config/config.hpp' file not found
+# include "boost/preprocessor/config/config.hpp"
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:47:53 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: 'boost/preprocessor/config/config.hpp' file not found
+# include "boost/preprocessor/config/config.hpp"
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:48:15 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: '../boost/preprocessor/config/config.hpp' file not found
+# include "../boost/preprocessor/config/config.hpp"
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:48:45 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: '../boost/preprocessor/config/config.hpp' file not found
+# include <../boost/preprocessor/config/config.hpp>
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:49:57 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: 'C:\Users\caner\Desktop\hotbm_log\boost\preprocessor\config' file not found
+# include <C:\Users\caner\Desktop\hotbm_log\boost\preprocessor\config>
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:50:42 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: '\boost\preprocessor\config' file not found
+# include <\boost\preprocessor\config>
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:51:28 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+./bambu_macros.h:47:10: fatal error: 'boost/preprocessor/arithmetic/mod.hpp' file not found
+#include <boost/preprocessor/arithmetic/mod.hpp>
+         ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:53:08 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:47:
+./boost/preprocessor/arithmetic/mod.hpp:17:11: fatal error: 'boost/preprocessor/arithmetic/detail/div_base.hpp' file not found
+# include <boost/preprocessor/arithmetic/detail/div_base.hpp>
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:56:04 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: 'boost\preprocessor\config\config.hpp' file not found
+# include <boost\preprocessor\config\config.hpp>
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 05:56:32 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+./bambu_macros.h:46:10: fatal error: '../boost/preprocessor/arithmetic/inc.hpp' file not found
+#include "../boost/preprocessor/arithmetic/inc.hpp"
+         ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 06:01:30 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: 'boost\preprocessor\config\config.hpp' file not found
+# include <boost\preprocessor\config\config.hpp>
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 06:01:58 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+In file included from ./bambu_macros.h:46:
+./boost/preprocessor/arithmetic/inc.hpp:17:11: fatal error: '.\boost\preprocessor\config\config.hpp' file not found
+# include <.\boost\preprocessor\config\config.hpp>
+          ^
+1 error generated.
+==============================================================
+File generated on Thu May 30 06:07:13 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xa7a12tcsg325-1q'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+hotbm_logd.c:306:30: warning: shift count >= width of type [-Wshift-count-overflow]
+        func_in.b |= ( 0xFFF << 51 );
+                             ^  ~~
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 103.313 ; gain = 17.473
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 103.313 ; gain = 17.473
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 107.578 ; gain = 21.738
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 108.352 ; gain = 22.512
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:250:1) in function 'range_red'... converting 29 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:298:5) in function 'logd'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hotbm_logd.c:315:44) to (hotbm_logd.c:428:2) in function 'logd'... converting 160 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'range_red' (hotbm_logd.c:53)...23 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'logd' (hotbm_logd.c:254)...20 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 130.008 ; gain = 44.168
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 135.477 ; gain = 49.637
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'logd' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 16.496 seconds; current allocated memory: 93.428 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.684 seconds; current allocated memory: 94.731 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.721 seconds; current allocated memory: 96.037 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.126 seconds; current allocated memory: 97.882 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_1' to 'range_red_logtablbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_1' to 'range_red_logtablcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_1' to 'range_red_logtabldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_1' to 'range_red_logtableOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_1' to 'range_red_logtablfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_1' to 'range_red_logtablg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_0' to 'range_red_logtablhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_0' to 'range_red_logtablibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_0' to 'range_red_logtabljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_0' to 'range_red_logtablkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_0' to 'range_red_logtabllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_0' to 'range_red_logtablmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mul_54ns_6ns_60_2_1' to 'logd_mul_54ns_6nsncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mul_4ns_54ns_58_2_1' to 'logd_mul_4ns_54nsocq' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mul_4ns_62s_64_5_1' to 'logd_mul_4ns_62s_pcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mul_4ns_60ns_64_5_1' to 'logd_mul_4ns_60nsqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mul_4ns_57ns_61_2_1' to 'logd_mul_4ns_57nsrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mul_4ns_51ns_55_2_1' to 'logd_mul_4ns_51nssc4' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mul_4ns_45ns_49_2_1' to 'logd_mul_4ns_45nstde' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mac_muladd_4ns_3ns_4ns_7_1_1' to 'logd_mac_muladd_4udo' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mac_muladd_4udo': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_4ns_45nstde': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_4ns_51nssc4': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_4ns_54nsocq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_4ns_57nsrcU': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_4ns_60nsqcK': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_4ns_62s_pcA': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_54ns_6nsncg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'range_red'.
+INFO: [HLS 200-111]  Elapsed time: 2.547 seconds; current allocated memory: 100.966 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'logd/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'logd' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'logd_mul_49ns_11ns_59_2_1' to 'logd_mul_49ns_11nvdy' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mul_mul_9ns_11ns_20_1_1' to 'logd_mul_mul_9ns_wdI' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_49ns_11nvdy': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_mul_9ns_wdI': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'logd'.
+INFO: [HLS 200-111]  Elapsed time: 4.269 seconds; current allocated memory: 104.845 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'logd_mul_54ns_6nsncg_MulnS_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'logd_mul_4ns_54nsocq_MulnS_1'
+INFO: [RTMG 210-282] Generating pipelined core: 'logd_mul_4ns_62s_pcA_MulnS_2'
+INFO: [RTMG 210-282] Generating pipelined core: 'logd_mul_4ns_60nsqcK_MulnS_3'
+INFO: [RTMG 210-282] Generating pipelined core: 'logd_mul_4ns_57nsrcU_MulnS_4'
+INFO: [RTMG 210-282] Generating pipelined core: 'logd_mul_4ns_51nssc4_MulnS_5'
+INFO: [RTMG 210-282] Generating pipelined core: 'logd_mul_4ns_45nstde_MulnS_6'
+INFO: [RTMG 210-279] Implementing memory 'range_red_invtable0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablcud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabldEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtableOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablhbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabljbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablkbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabllbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable7_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable8_rom' using distributed ROMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'logd_mul_49ns_11nvdy_MulnS_7'
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:17 ; elapsed = 00:00:40 . Memory (MB): peak = 170.977 ; gain = 85.137
+INFO: [SYSC 207-301] Generating SystemC RTL for logd.
+INFO: [VHDL 208-304] Generating VHDL RTL for logd.
+INFO: [VLOG 209-307] Generating Verilog RTL for logd.
+INFO: [HLS 200-112] Total elapsed time: 39.979 seconds; peak allocated memory: 104.845 MB.
+==============================================================
+File generated on Thu May 30 06:09:16 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx690tffg1761-2'
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_bind -effort=medium
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_schedule -effort=medium
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_schedule -relax_ii_for_timing=0
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+hotbm_logd.c:306:30: warning: shift count >= width of type [-Wshift-count-overflow]
+        func_in.b |= ( 0xFFF << 51 );
+                             ^  ~~
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 106.051 ; gain = 20.035
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 106.051 ; gain = 20.035
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 109.063 ; gain = 23.047
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 109.813 ; gain = 23.797
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:250:1) in function 'range_red'... converting 29 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:298:5) in function 'logd'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hotbm_logd.c:315:44) to (hotbm_logd.c:428:2) in function 'logd'... converting 160 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'range_red' (hotbm_logd.c:53)...23 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'logd' (hotbm_logd.c:254)...20 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 133.414 ; gain = 47.398
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 137.117 ; gain = 51.102
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'logd' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 13.98 seconds; current allocated memory: 94.113 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.725 seconds; current allocated memory: 95.294 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.602 seconds; current allocated memory: 96.522 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.023 seconds; current allocated memory: 98.261 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_1' to 'range_red_logtablbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_1' to 'range_red_logtablcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_1' to 'range_red_logtabldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_1' to 'range_red_logtableOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_1' to 'range_red_logtablfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_1' to 'range_red_logtablg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_0' to 'range_red_logtablhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_0' to 'range_red_logtablibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_0' to 'range_red_logtabljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_0' to 'range_red_logtablkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_0' to 'range_red_logtabllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_0' to 'range_red_logtablmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mac_muladd_4ns_3ns_4ns_7_1_1' to 'logd_mac_muladd_4ncg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mac_muladd_4ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'range_red'.
+INFO: [HLS 200-111]  Elapsed time: 2.767 seconds; current allocated memory: 101.010 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'logd/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'logd' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'logd_mul_mul_9ns_11ns_20_1_1' to 'logd_mul_mul_9ns_ocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_mul_9ns_ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'logd'.
+INFO: [HLS 200-111]  Elapsed time: 3.564 seconds; current allocated memory: 104.758 MB.
+INFO: [RTMG 210-279] Implementing memory 'range_red_invtable0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablcud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabldEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtableOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablhbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabljbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablkbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabllbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable7_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable8_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:16 ; elapsed = 00:00:35 . Memory (MB): peak = 171.324 ; gain = 85.309
+INFO: [SYSC 207-301] Generating SystemC RTL for logd.
+INFO: [VHDL 208-304] Generating VHDL RTL for logd.
+INFO: [VLOG 209-307] Generating Verilog RTL for logd.
+INFO: [HLS 200-112] Total elapsed time: 34.811 seconds; peak allocated memory: 104.758 MB.
+==============================================================
+File generated on Thu May 30 06:13:15 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx690tffg1761-2'
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_bind -effort=medium
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+hotbm_logd.c:306:30: warning: shift count >= width of type [-Wshift-count-overflow]
+        func_in.b |= ( 0xFFF << 51 );
+                             ^  ~~
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 105.527 ; gain = 18.707
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 105.527 ; gain = 18.707
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 109.219 ; gain = 22.398
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 110.098 ; gain = 23.277
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:250:1) in function 'range_red'... converting 29 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:298:5) in function 'logd'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hotbm_logd.c:315:44) to (hotbm_logd.c:428:2) in function 'logd'... converting 160 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'range_red' (hotbm_logd.c:53)...23 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'logd' (hotbm_logd.c:254)...20 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 132.102 ; gain = 45.281
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 137.480 ; gain = 50.660
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'logd' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 14.515 seconds; current allocated memory: 94.096 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.445 seconds; current allocated memory: 95.277 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.353 seconds; current allocated memory: 96.505 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.988 seconds; current allocated memory: 98.245 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_1' to 'range_red_logtablbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_1' to 'range_red_logtablcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_1' to 'range_red_logtabldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_1' to 'range_red_logtableOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_1' to 'range_red_logtablfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_1' to 'range_red_logtablg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_0' to 'range_red_logtablhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_0' to 'range_red_logtablibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_0' to 'range_red_logtabljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_0' to 'range_red_logtablkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_0' to 'range_red_logtabllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_0' to 'range_red_logtablmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mac_muladd_4ns_3ns_4ns_7_1_1' to 'logd_mac_muladd_4ncg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mac_muladd_4ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'range_red'.
+INFO: [HLS 200-111]  Elapsed time: 2.944 seconds; current allocated memory: 101.009 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'logd/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'logd' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'logd_mul_mul_9ns_11ns_20_1_1' to 'logd_mul_mul_9ns_ocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_mul_9ns_ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'logd'.
+INFO: [HLS 200-111]  Elapsed time: 4.012 seconds; current allocated memory: 104.756 MB.
+INFO: [RTMG 210-279] Implementing memory 'range_red_invtable0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablcud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabldEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtableOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablhbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabljbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablkbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabllbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable7_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable8_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:18 ; elapsed = 00:00:38 . Memory (MB): peak = 171.742 ; gain = 84.922
+INFO: [SYSC 207-301] Generating SystemC RTL for logd.
+INFO: [VHDL 208-304] Generating VHDL RTL for logd.
+INFO: [VLOG 209-307] Generating Verilog RTL for logd.
+INFO: [HLS 200-112] Total elapsed time: 38.565 seconds; peak allocated memory: 104.756 MB.

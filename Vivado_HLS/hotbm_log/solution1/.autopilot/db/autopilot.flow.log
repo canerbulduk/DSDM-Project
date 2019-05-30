@@ -1,0 +1,664 @@
+INFO-FLOW: Workspace C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1 opened at Thu May 30 06:13:15 +0200 2019
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 91050 } {LUT 364200 } {FF 728400 } {DSP48E 1260} {BRAM 1590}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7.gen 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.182 sec.
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.279 sec.
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.284 sec.
+Command     ap_source done; 0.284 sec.
+Execute     set_part xc7vx690tffg1761-2 
+Execute       add_library xilinx/virtex7/virtex7:xc7vx690t:ffg1761:-2 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7vx690t 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 108300} {LUT 433200 } {FF 866400 } {DSP48E 3600} {BRAM 2940}  
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/virtex7/virtex7_fpv6 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         import_lib C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7_fpv6 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute                 source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute                 source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7_hp.hlp 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO: [HLS 200-10] Setting target device to 'xc7vx690tffg1761-2'
+Execute       get_default_platform 
+Command     set_part done; 0.134 sec.
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 108300} {LUT 433200 } {FF 866400 } {DSP48E 3600} {BRAM 2940}  
+Execute     config_chip_info -quiet -speed medium 
+Execute     config_compile -no_signed_zeros=0 
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+Execute     config_compile -unsafe_math_optimizations=0 
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+Execute     config_sdx -optimization_level=none 
+Execute       get_config_export -vivado_synth_design_args 
+Execute       get_config_export -vivado_impl_strategy 
+Execute       get_config_export -vivado_synth_strategy 
+Execute       get_config_export -vivado_phys_opt 
+Execute       get_config_bind -effort 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -optimization_level' config_bind -effort=medium 
+INFO: [HLS 200-435] Setting 'config_sdx -optimization_level' configuration: config_bind -effort=medium
+Execute       config_bind -effort=medium 
+Execute       get_config_schedule -effort 
+Execute     config_sdx -target=none 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' config_sdx -optimization_level=none 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+Execute       config_sdx -optimization_level=none 
+Execute         get_config_export -vivado_synth_design_args 
+Execute         get_config_export -vivado_impl_strategy 
+Execute         get_config_export -vivado_synth_strategy 
+Execute         get_config_export -vivado_phys_opt 
+Execute         get_config_bind -effort 
+Execute         get_config_schedule -effort 
+Execute       get_config_compile -pipeline_loops 
+Execute       get_config_compile -name_max_length 
+Execute       get_config_schedule -relax_ii_for_timing 
+Execute       get_config_schedule -enable_dsp_full_reg 
+Execute       get_config_rtl -register_reset_num 
+Execute       get_config_rtl -auto_prefix 
+Execute       get_config_rtl -enable_maxiConservative 
+Execute       get_config_interface -m_axi_addr64 
+Execute       send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' set_clock_uncertainty default 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+Execute       set_clock_uncertainty default 
+Execute         get_clock_period -default -name=default 
+Execute         config_clock -quiet -name default -uncertainty 1.25 -unit % 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+Execute     config_schedule -effort=medium 
+Execute     config_schedule -relax_ii_for_timing=0 
+Command   open_solution done; 0.61 sec.
+Execute   set_part xc7vx690tffg1761-2 
+Execute     add_library xilinx/virtex7/virtex7:xc7vx690t:ffg1761:-2 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7vx690t 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 108300} {LUT 433200 } {FF 866400 } {DSP48E 3600} {BRAM 2940}  
+Execute       config_chip_info -quiet -speed medium 
+Execute     add_library xilinx/virtex7/virtex7_fpv6 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       import_lib C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7_fpv6 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7_hp.hlp 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     get_default_platform 
+Command   set_part done; 0.171 sec.
+Execute   create_clock -period 10 -name default 
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   config_compile -no_signed_zeros=0 -unsafe_math_optimizations=0 
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+Execute   config_sdx -optimization_level none -target none 
+Execute     get_config_export -vivado_synth_design_args 
+Execute     get_config_export -vivado_impl_strategy 
+Execute     get_config_export -vivado_synth_strategy 
+Execute     get_config_export -vivado_phys_opt 
+Execute     get_config_bind -effort 
+Execute     get_config_schedule -effort 
+Execute     get_config_compile -pipeline_loops 
+Execute     get_config_compile -name_max_length 
+Execute     get_config_schedule -relax_ii_for_timing 
+Execute     get_config_schedule -enable_dsp_full_reg 
+Execute     get_config_rtl -register_reset_num 
+Execute     get_config_rtl -auto_prefix 
+Execute     get_config_rtl -enable_maxiConservative 
+Execute     get_config_interface -m_axi_addr64 
+Execute     send_msg_by_id INFO @200-435@%s%s 'config_sdx -target' set_clock_uncertainty default 
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+Execute     set_clock_uncertainty default 
+Execute   config_schedule -effort medium -relax_ii_for_timing=0 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     config_compile -blackbox  
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling hotbm_logd.c as C
+Execute       get_default_platform 
+Execute       is_encrypted hotbm_logd.c 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.3/msys" -hls  -fno-exceptions  -D__llvm__  -E "hotbm_logd.c"   -IC:/Users/caner/Desktop/hotbm_log/Boost-Preprocessor-master  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -D__cdecl=  -o "C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c" 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.3/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.3/msys -hls -fno-exceptions -D__llvm__ -E hotbm_logd.c -IC:/Users/caner/Desktop/hotbm_log/Boost-Preprocessor-master -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.3/common/technology/autopilot -I C:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -D__cdecl= -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c
+Command       clang done; 2.48 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c std=gnu89 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c  -fno-limit-debug-info -gcc-toolchain "C:/Xilinx/Vivado/2018.3/msys" -hls  -IC:/Users/caner/Desktop/hotbm_log/Boost-Preprocessor-master  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89   -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -D__cdecl=  "C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c"  -o "C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.3/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.3/msys -hls -IC:/Users/caner/Desktop/hotbm_log/Boost-Preprocessor-master -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.3/common/technology/autopilot -I C:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -D__cdecl= C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/useless.bc
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+hotbm_logd.c:306:30: warning: shift count >= width of type [-Wshift-count-overflow]
+        func_in.b |= ( 0xFFF << 51 );
+                             ^  ~~
+1 warning generated.
+Command       clang done; 1.067 sec.
+INFO-FLOW: Done: GCC PP time: 3.6 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c std=gnu89 -directive=C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c std=gnu89 -directive=C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/all.directive.json -quiet -fix-errors C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/xilinx-dataflow-lawyer.hotbm_logd.pp.0.c.diag.yml C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c -- -std=gnu99 -fhls -ferror-limit=0 -fstrict-dataflow > C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/xilinx-dataflow-lawyer.hotbm_logd.pp.0.c.out.log 2> C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/xilinx-dataflow-lawyer.hotbm_logd.pp.0.c.err.log 
+Command       ap_eval done; 0.181 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c std=gnu89 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/tidy-3.1.hotbm_logd.pp.0.c.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0 > C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/tidy-3.1.hotbm_logd.pp.0.c.out.log 2> C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/tidy-3.1.hotbm_logd.pp.0.c.err.log 
+Command         ap_eval done; 0.161 sec.
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pp.0.c -- -std=gnu89 -fhls -ferror-limit=0 > C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/xilinx-legacy-rewriter.hotbm_logd.pp.0.c.out.log 2> C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/xilinx-legacy-rewriter.hotbm_logd.pp.0.c.err.log 
+Command       tidy_31 done; 0.327 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 0.6 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pragma.1.c std=gnu89 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pragma.1.c -- -std=gnu89 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.102 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pragma.2.c  -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.3/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pragma.2.c"  -IC:/Users/caner/Desktop/hotbm_log/Boost-Preprocessor-master  -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -std=gnu89  -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "C:/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "C:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.bc" 
+INFO-FLOW: exec C:/Xilinx/Vivado/2018.3/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain C:/Xilinx/Vivado/2018.3/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.pragma.2.c -IC:/Users/caner/Desktop/hotbm_log/Boost-Preprocessor-master -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -std=gnu89 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vivado/2018.3/common/technology/autopilot -I C:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.bc
+Command       clang done; 1.077 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/hotbm_logd.g.bc -hls-opt -except-internalize logd -LC:/Xilinx/Vivado/2018.3/win64/lib -lhlsm -lhlsmc++ -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 1.368 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 105.527 ; gain = 18.707
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 105.527 ; gain = 18.707
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.pp.bc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LC:/Xilinx/Vivado/2018.3/win64/lib -lfloatconversion -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 0.739 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -lower-blackbox -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top logd -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g.0.bc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+Command         transform done; 0.183 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 109.219 ; gain = 22.398
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g.1.bc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+Command         transform done; 0.169 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 110.098 ; gain = 23.277
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.g.1.bc to C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.o.1.bc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+Command         transform done; 0.872 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:250:1) in function 'range_red'... converting 29 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:298:5) in function 'logd'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hotbm_logd.c:315:44) to (hotbm_logd.c:428:2) in function 'logd'... converting 160 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'range_red' (hotbm_logd.c:53)...23 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'logd' (hotbm_logd.c:254)...20 expression(s) balanced.
+Command         transform done; 0.526 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:12 . Memory (MB): peak = 132.102 ; gain = 45.281
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -cdfg-build C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.o.2.bc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Command         transform done; 2.342 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 137.480 ; gain = 50.660
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 4.977 sec.
+Command     elaborate done; 11.955 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'logd' ...
+Execute       ap_set_top_model logd 
+Execute       get_model_list logd -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model logd 
+Execute       preproc_iomode -model range_red 
+Execute       get_model_list logd -filter all-wo-channel 
+INFO-FLOW: Model list for configure: range_red logd
+INFO-FLOW: Configuring Module : range_red ...
+Execute       set_default_model range_red 
+Execute       apply_spec_resource_limit range_red 
+INFO-FLOW: Configuring Module : logd ...
+Execute       set_default_model logd 
+Execute       apply_spec_resource_limit logd 
+INFO-FLOW: Model list for preprocess: range_red logd
+INFO-FLOW: Preprocessing Module: range_red ...
+Execute       set_default_model range_red 
+Execute       cdfg_preprocess -model range_red 
+Execute       rtl_gen_preprocess range_red 
+INFO-FLOW: Preprocessing Module: logd ...
+Execute       set_default_model logd 
+Execute       cdfg_preprocess -model logd 
+Execute       rtl_gen_preprocess logd 
+INFO-FLOW: Model list for synthesis: range_red logd
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model range_red 
+Execute       schedule -model range_red 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.36 sec.
+INFO: [HLS 200-111]  Elapsed time: 14.515 seconds; current allocated memory: 94.096 MB.
+Execute       report -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.verbose.sched.rpt -verbose -f 
+Command       report done; 0.162 sec.
+Execute       db_write -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.sched.adb -f 
+Command       db_write done; 0.134 sec.
+INFO-FLOW: Finish scheduling range_red.
+Execute       set_default_model range_red 
+Execute       bind -model range_red 
+BIND OPTION: effort=medium
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=range_red
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.133 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.445 seconds; current allocated memory: 95.277 MB.
+Execute       report -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.verbose.bind.rpt -verbose -f 
+Command       report done; 0.644 sec.
+Execute       db_write -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.bind.adb -f 
+Command       db_write done; 0.211 sec.
+INFO-FLOW: Finish binding range_red.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model logd 
+Execute       schedule -model logd 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.45 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.353 seconds; current allocated memory: 96.505 MB.
+Execute       report -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.verbose.sched.rpt -verbose -f 
+Command       report done; 0.36 sec.
+Execute       db_write -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.sched.adb -f 
+Command       db_write done; 0.247 sec.
+INFO-FLOW: Finish scheduling logd.
+Execute       set_default_model logd 
+Execute       bind -model logd 
+BIND OPTION: effort=medium
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=logd
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.339 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.988 seconds; current allocated memory: 98.245 MB.
+Execute       report -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.verbose.bind.rpt -verbose -f 
+Command       report done; 1.084 sec.
+Execute       db_write -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.bind.adb -f 
+Command       db_write done; 0.596 sec.
+INFO-FLOW: Finish binding logd.
+Execute       get_model_list logd -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess range_red 
+Execute       rtl_gen_preprocess logd 
+INFO-FLOW: Model list for RTL generation: range_red logd
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model range_red -vendor xilinx -mg_file C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_1' to 'range_red_logtablbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_1' to 'range_red_logtablcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_1' to 'range_red_logtabldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_1' to 'range_red_logtableOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_1' to 'range_red_logtablfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_1' to 'range_red_logtablg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_0' to 'range_red_logtablhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_0' to 'range_red_logtablibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_0' to 'range_red_logtabljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_0' to 'range_red_logtablkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_0' to 'range_red_logtabllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_0' to 'range_red_logtablmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mac_muladd_4ns_3ns_4ns_7_1_1' to 'logd_mac_muladd_4ncg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mac_muladd_4ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'range_red'.
+Command       create_rtl_model done; 0.996 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.944 seconds; current allocated memory: 101.009 MB.
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.rtl_wrap.cfg.tcl 
+Execute       gen_rtl range_red -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/systemc/range_red -synmodules range_red logd 
+Execute       gen_rtl range_red -style xilinx -f -lang vhdl -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/vhdl/range_red 
+Execute       gen_rtl range_red -style xilinx -f -lang vlog -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/verilog/range_red 
+Execute       gen_tb_info range_red -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red -p C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db 
+Command       gen_tb_info done; 0.178 sec.
+Execute       report -model range_red -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/report/range_red_csynth.rpt -f 
+Command       report done; 0.213 sec.
+Execute       report -model range_red -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/report/range_red_csynth.xml -f -x 
+Command       report done; 0.133 sec.
+Execute       report -model range_red -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.verbose.rpt -verbose -f 
+Command       report done; 0.899 sec.
+Execute       db_write -model range_red -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.adb -f 
+Command       db_write done; 0.725 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model logd -vendor xilinx -mg_file C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'logd/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'logd' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'logd_mul_mul_9ns_11ns_20_1_1' to 'logd_mul_mul_9ns_ocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_mul_9ns_ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'logd'.
+Command       create_rtl_model done; 0.502 sec.
+INFO: [HLS 200-111]  Elapsed time: 4.012 seconds; current allocated memory: 104.756 MB.
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.rtl_wrap.cfg.tcl 
+Execute       gen_rtl logd -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/systemc/logd -synmodules range_red logd 
+Execute       gen_rtl logd -istop -style xilinx -f -lang vhdl -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/vhdl/logd 
+Command       gen_rtl done; 0.37 sec.
+Execute       gen_rtl logd -istop -style xilinx -f -lang vlog -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/verilog/logd 
+Command       gen_rtl done; 0.198 sec.
+Execute       export_constraint_db -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.constraint.tcl -f -tool general 
+Execute       report -model logd -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.design.xml -verbose -f -dv 
+Command       report done; 0.627 sec.
+Execute       report -model logd -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.sdaccel.xml -verbose -f -sdaccel 
+Command       report done; 0.808 sec.
+Execute       gen_tb_info logd -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd -p C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db 
+Execute       report -model logd -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/report/logd_csynth.rpt -f 
+Command       report done; 0.309 sec.
+Execute       report -model logd -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/syn/report/logd_csynth.xml -f -x 
+Command       report done; 0.269 sec.
+Execute       report -model logd -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.verbose.rpt -verbose -f 
+Command       report done; 2.3 sec.
+Execute       db_write -model logd -o C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.adb -f 
+Command       db_write done; 0.957 sec.
+Execute       sc_get_clocks logd 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain logd 
+INFO-FLOW: Model list for RTL component generation: range_red logd
+INFO-FLOW: Handling components in module [range_red] ... 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.compgen.tcl 
+INFO-FLOW: Found component logd_mac_muladd_4ncg.
+INFO-FLOW: Append model logd_mac_muladd_4ncg
+INFO-FLOW: Found component range_red_invtable0.
+INFO-FLOW: Append model range_red_invtable0
+INFO-FLOW: Found component range_red_logtablbkb.
+INFO-FLOW: Append model range_red_logtablbkb
+INFO-FLOW: Found component range_red_logtablcud.
+INFO-FLOW: Append model range_red_logtablcud
+INFO-FLOW: Found component range_red_logtabldEe.
+INFO-FLOW: Append model range_red_logtabldEe
+INFO-FLOW: Found component range_red_logtableOg.
+INFO-FLOW: Append model range_red_logtableOg
+INFO-FLOW: Found component range_red_logtablfYi.
+INFO-FLOW: Append model range_red_logtablfYi
+INFO-FLOW: Found component range_red_logtablg8j.
+INFO-FLOW: Append model range_red_logtablg8j
+INFO-FLOW: Found component range_red_logtablhbi.
+INFO-FLOW: Append model range_red_logtablhbi
+INFO-FLOW: Found component range_red_logtablibs.
+INFO-FLOW: Append model range_red_logtablibs
+INFO-FLOW: Found component range_red_logtabljbC.
+INFO-FLOW: Append model range_red_logtabljbC
+INFO-FLOW: Found component range_red_logtablkbM.
+INFO-FLOW: Append model range_red_logtablkbM
+INFO-FLOW: Found component range_red_logtabllbW.
+INFO-FLOW: Append model range_red_logtabllbW
+INFO-FLOW: Found component range_red_logtablmb6.
+INFO-FLOW: Append model range_red_logtablmb6
+INFO-FLOW: Found component range_red_logtable6.
+INFO-FLOW: Append model range_red_logtable6
+INFO-FLOW: Found component range_red_logtable7.
+INFO-FLOW: Append model range_red_logtable7
+INFO-FLOW: Found component range_red_logtable8.
+INFO-FLOW: Append model range_red_logtable8
+INFO-FLOW: Handling components in module [logd] ... 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.compgen.tcl 
+INFO-FLOW: Found component logd_mul_mul_9ns_ocq.
+INFO-FLOW: Append model logd_mul_mul_9ns_ocq
+INFO-FLOW: Append model range_red
+INFO-FLOW: Append model logd
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: logd_mac_muladd_4ncg range_red_invtable0 range_red_logtablbkb range_red_logtablcud range_red_logtabldEe range_red_logtableOg range_red_logtablfYi range_red_logtablg8j range_red_logtablhbi range_red_logtablibs range_red_logtabljbC range_red_logtablkbM range_red_logtabllbW range_red_logtablmb6 range_red_logtable6 range_red_logtable7 range_red_logtable8 logd_mul_mul_9ns_ocq range_red logd
+INFO-FLOW: To file: write model logd_mac_muladd_4ncg
+INFO-FLOW: To file: write model range_red_invtable0
+INFO-FLOW: To file: write model range_red_logtablbkb
+INFO-FLOW: To file: write model range_red_logtablcud
+INFO-FLOW: To file: write model range_red_logtabldEe
+INFO-FLOW: To file: write model range_red_logtableOg
+INFO-FLOW: To file: write model range_red_logtablfYi
+INFO-FLOW: To file: write model range_red_logtablg8j
+INFO-FLOW: To file: write model range_red_logtablhbi
+INFO-FLOW: To file: write model range_red_logtablibs
+INFO-FLOW: To file: write model range_red_logtabljbC
+INFO-FLOW: To file: write model range_red_logtablkbM
+INFO-FLOW: To file: write model range_red_logtabllbW
+INFO-FLOW: To file: write model range_red_logtablmb6
+INFO-FLOW: To file: write model range_red_logtable6
+INFO-FLOW: To file: write model range_red_logtable7
+INFO-FLOW: To file: write model range_red_logtable8
+INFO-FLOW: To file: write model logd_mul_mul_9ns_ocq
+INFO-FLOW: To file: write model range_red
+INFO-FLOW: To file: write model logd
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7.gen 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.241 sec.
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.334 sec.
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.341 sec.
+Command       ap_source done; 0.341 sec.
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'range_red_invtable0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablcud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabldEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtableOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablhbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabljbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablkbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabllbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable7_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable8_rom' using distributed ROMs.
+Command       ap_source done; 1.702 sec.
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.compgen.tcl 
+Command       ap_source done; 0.116 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7.gen 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.265 sec.
+Execute             source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.365 sec.
+Execute           source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.37 sec.
+Command       ap_source done; 0.371 sec.
+Execute       source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/virtex7/virtex7_fpv6.gen 
+Execute         source C:/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=logd xml_exists=0
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.rtl_wrap.cfg.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.tbgen.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.compgen.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.compgen.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/range_red.compgen.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.compgen.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.constraint.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=6
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=2
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=0 #modelList=20 #gSsdmPorts=6
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.tbgen.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.tbgen.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_export -xo 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/logd.constraint.tcl 
+Execute       sc_get_clocks logd 
+Execute       source C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist: C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:18 ; elapsed = 00:00:38 . Memory (MB): peak = 171.742 ; gain = 84.922
+INFO: [SYSC 207-301] Generating SystemC RTL for logd.
+INFO: [VHDL 208-304] Generating VHDL RTL for logd.
+INFO: [VLOG 209-307] Generating Verilog RTL for logd.
+Command     autosyn done; 24.368 sec.
+Execute     get_part 
+Execute     get_config_export -sdx_tcl 
+Command   csynth_design done; 36.363 sec.
+Command ap_source done; 37.246 sec.
+Execute cleanup_all 

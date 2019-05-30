@@ -1,0 +1,883 @@
+
+*** Running vivado
+    with args -log fp_log_11_52.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source fp_log_11_52.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source fp_log_11_52.tcl -notrace
+Command: synth_design -top fp_log_11_52 -part xc7vx690tffg1761-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
+INFO: [Common 17-86] Your Synthesis license expires in 7 day(s)
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 21520 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 372.867 ; gain = 100.195
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'fp_log_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:393]
+	Parameter wE bound to: 11 - type: integer 
+	Parameter wF bound to: 52 - type: integer 
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'lzoc' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:104' bound to instance 'lzoc1' of component 'lzoc' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:483]
+INFO: [Synth 8-638] synthesizing module 'lzoc' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 6 - type: integer 
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'lzoc' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:104' bound to instance 'lzoc0' of component 'lzoc' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'lzoc__parameterized1' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 5 - type: integer 
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'lzoc' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:104' bound to instance 'lzoc0' of component 'lzoc' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'lzoc__parameterized3' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 4 - type: integer 
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'lzoc' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:104' bound to instance 'lzoc0' of component 'lzoc' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'lzoc__parameterized5' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 3 - type: integer 
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'lzoc' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:104' bound to instance 'lzoc0' of component 'lzoc' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'lzoc__parameterized7' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 2 - type: integer 
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lzoc' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:104' bound to instance 'lzoc0' of component 'lzoc' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'lzoc__parameterized9' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+	Parameter w bound to: 52 - type: integer 
+	Parameter n bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lzoc__parameterized9' (1#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'lzoc__parameterized7' (1#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'lzoc__parameterized5' (1#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'lzoc__parameterized3' (1#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'lzoc__parameterized1' (1#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+INFO: [Synth 8-256] done synthesizing module 'lzoc' (1#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:112]
+INFO: [Synth 8-3491] module 'range_red' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:627' bound to instance 'rr' of component 'range_red' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:495]
+INFO: [Synth 8-638] synthesizing module 'range_red' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:634]
+INFO: [Synth 8-3491] module 'invtable0_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:907' bound to instance 'it0' of component 'invtable0_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:759]
+INFO: [Synth 8-638] synthesizing module 'invtable0_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:912]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:915]
+INFO: [Synth 8-256] done synthesizing module 'invtable0_11_52' (2#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:912]
+INFO: [Synth 8-3491] module 'logtable0_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:957' bound to instance 'lt0' of component 'logtable0_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:760]
+INFO: [Synth 8-638] synthesizing module 'logtable0_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:962]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:965]
+INFO: [Synth 8-256] done synthesizing module 'logtable0_11_52' (3#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:962]
+INFO: [Synth 8-3491] module 'logtable1_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1007' bound to instance 'lt1' of component 'logtable1_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:769]
+INFO: [Synth 8-638] synthesizing module 'logtable1_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1012]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1015]
+INFO: [Synth 8-256] done synthesizing module 'logtable1_11_52' (4#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1012]
+INFO: [Synth 8-3491] module 'logtable2_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1041' bound to instance 'lt2' of component 'logtable2_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:786]
+INFO: [Synth 8-638] synthesizing module 'logtable2_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1046]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1049]
+INFO: [Synth 8-256] done synthesizing module 'logtable2_11_52' (5#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1046]
+INFO: [Synth 8-3491] module 'logtable3_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1075' bound to instance 'lt3' of component 'logtable3_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:803]
+INFO: [Synth 8-638] synthesizing module 'logtable3_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1080]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1083]
+INFO: [Synth 8-256] done synthesizing module 'logtable3_11_52' (6#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1080]
+INFO: [Synth 8-3491] module 'logtable4_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1109' bound to instance 'lt4' of component 'logtable4_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:819]
+INFO: [Synth 8-638] synthesizing module 'logtable4_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1114]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1117]
+INFO: [Synth 8-256] done synthesizing module 'logtable4_11_52' (7#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1114]
+INFO: [Synth 8-3491] module 'logtable5_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1143' bound to instance 'lt5' of component 'logtable5_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:835]
+INFO: [Synth 8-638] synthesizing module 'logtable5_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1148]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1151]
+INFO: [Synth 8-256] done synthesizing module 'logtable5_11_52' (8#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1148]
+INFO: [Synth 8-3491] module 'logtable6_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1177' bound to instance 'lt6' of component 'logtable6_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:851]
+INFO: [Synth 8-638] synthesizing module 'logtable6_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1182]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1185]
+INFO: [Synth 8-256] done synthesizing module 'logtable6_11_52' (9#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1182]
+INFO: [Synth 8-3491] module 'logtable7_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1211' bound to instance 'lt7' of component 'logtable7_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:867]
+INFO: [Synth 8-638] synthesizing module 'logtable7_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1216]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1219]
+INFO: [Synth 8-256] done synthesizing module 'logtable7_11_52' (10#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1216]
+INFO: [Synth 8-3491] module 'logtable8_11_52' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1245' bound to instance 'lt8' of component 'logtable8_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:883]
+INFO: [Synth 8-638] synthesizing module 'logtable8_11_52' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1250]
+INFO: [Synth 8-226] default block is never used [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1253]
+INFO: [Synth 8-256] done synthesizing module 'logtable8_11_52' (11#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:1250]
+INFO: [Synth 8-256] done synthesizing module 'range_red' (12#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:634]
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'lshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:181' bound to instance 'lshiftsmall' of component 'lshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:503]
+INFO: [Synth 8-638] synthesizing module 'lshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 6 - type: integer 
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'lshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:181' bound to instance 'shift0' of component 'lshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'lshift__parameterized1' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 5 - type: integer 
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'lshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:181' bound to instance 'shift0' of component 'lshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'lshift__parameterized3' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 4 - type: integer 
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'lshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:181' bound to instance 'shift0' of component 'lshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'lshift__parameterized5' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 3 - type: integer 
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'lshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:181' bound to instance 'shift0' of component 'lshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'lshift__parameterized7' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 2 - type: integer 
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:181' bound to instance 'shift0' of component 'lshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'lshift__parameterized9' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+	Parameter w bound to: 26 - type: integer 
+	Parameter n bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lshift__parameterized9' (13#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+INFO: [Synth 8-256] done synthesizing module 'lshift__parameterized7' (13#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+INFO: [Synth 8-256] done synthesizing module 'lshift__parameterized5' (13#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+INFO: [Synth 8-256] done synthesizing module 'lshift__parameterized3' (13#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+INFO: [Synth 8-256] done synthesizing module 'lshift__parameterized1' (13#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+INFO: [Synth 8-256] done synthesizing module 'lshift' (13#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:189]
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'lzc_norm' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:325' bound to instance 'lzc_norm_0' of component 'lzc_norm' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:541]
+INFO: [Synth 8-638] synthesizing module 'lzc_norm' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 6 - type: integer 
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'lzc_norm' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:325' bound to instance 'lzc_norm0' of component 'lzc_norm' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:357]
+INFO: [Synth 8-638] synthesizing module 'lzc_norm__parameterized1' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 5 - type: integer 
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'lzc_norm' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:325' bound to instance 'lzc_norm0' of component 'lzc_norm' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:357]
+INFO: [Synth 8-638] synthesizing module 'lzc_norm__parameterized3' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 4 - type: integer 
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'lzc_norm' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:325' bound to instance 'lzc_norm0' of component 'lzc_norm' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:357]
+INFO: [Synth 8-638] synthesizing module 'lzc_norm__parameterized5' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 3 - type: integer 
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'lzc_norm' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:325' bound to instance 'lzc_norm0' of component 'lzc_norm' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:357]
+INFO: [Synth 8-638] synthesizing module 'lzc_norm__parameterized7' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 2 - type: integer 
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'lzc_norm' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:325' bound to instance 'lzc_norm0' of component 'lzc_norm' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:357]
+INFO: [Synth 8-638] synthesizing module 'lzc_norm__parameterized9' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+	Parameter w bound to: 94 - type: integer 
+	Parameter n bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lzc_norm__parameterized9' (14#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+INFO: [Synth 8-256] done synthesizing module 'lzc_norm__parameterized7' (14#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+INFO: [Synth 8-256] done synthesizing module 'lzc_norm__parameterized5' (14#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+INFO: [Synth 8-256] done synthesizing module 'lzc_norm__parameterized3' (14#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+INFO: [Synth 8-256] done synthesizing module 'lzc_norm__parameterized1' (14#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+INFO: [Synth 8-256] done synthesizing module 'lzc_norm' (14#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:333]
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 6 - type: integer 
+INFO: [Synth 8-3491] module 'rshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:254' bound to instance 'rshiftsmall' of component 'rshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:546]
+INFO: [Synth 8-638] synthesizing module 'rshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 6 - type: integer 
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'rshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:254' bound to instance 'shift0' of component 'rshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'rshift__parameterized1' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 5 - type: integer 
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'rshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:254' bound to instance 'shift0' of component 'rshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'rshift__parameterized3' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 4 - type: integer 
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'rshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:254' bound to instance 'shift0' of component 'rshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'rshift__parameterized5' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 3 - type: integer 
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 2 - type: integer 
+INFO: [Synth 8-3491] module 'rshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:254' bound to instance 'shift0' of component 'rshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'rshift__parameterized7' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 2 - type: integer 
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'rshift' declared at 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:254' bound to instance 'shift0' of component 'rshift' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:285]
+INFO: [Synth 8-638] synthesizing module 'rshift__parameterized9' [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+	Parameter w bound to: 28 - type: integer 
+	Parameter n bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rshift__parameterized9' (15#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+INFO: [Synth 8-256] done synthesizing module 'rshift__parameterized7' (15#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+INFO: [Synth 8-256] done synthesizing module 'rshift__parameterized5' (15#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+INFO: [Synth 8-256] done synthesizing module 'rshift__parameterized3' (15#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+INFO: [Synth 8-256] done synthesizing module 'rshift__parameterized1' (15#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+INFO: [Synth 8-256] done synthesizing module 'rshift' (15#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:262]
+INFO: [Synth 8-256] done synthesizing module 'fp_log_11_52' (16#1) [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:393]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[50]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[49]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[48]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[47]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[46]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[45]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[44]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[43]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[42]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[41]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[40]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[39]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[38]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[37]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[36]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[35]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[34]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[33]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[32]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[31]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[30]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[29]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[28]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[27]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[26]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[25]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[24]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[23]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[22]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[21]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[20]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[19]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[18]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[17]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[16]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[15]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[14]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[13]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[12]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[11]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[10]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[9]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[8]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[7]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[6]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[5]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[4]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[3]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[2]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[1]
+WARNING: [Synth 8-3331] design lzoc__parameterized9 has unconnected port i[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 430.141 ; gain = 157.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 430.141 ; gain = 157.469
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx690tffg1761-2
+INFO: [Device 21-403] Loading part xc7vx690tffg1761-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 430.141 ; gain = 157.469
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:761]
+INFO: [Synth 8-5544] ROM "z0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "z0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "z0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "z0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "z0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:558]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:538]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:527]
+INFO: [Synth 8-5544] ROM "E0_sub" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 511.199 ; gain = 238.527
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     94 Bit       Adders := 1     
+	   9 Input     83 Bit       Adders := 1     
+	   2 Input     83 Bit       Adders := 1     
+	   4 Input     70 Bit       Adders := 1     
+	   4 Input     69 Bit       Adders := 1     
+	   4 Input     67 Bit       Adders := 1     
+	   4 Input     64 Bit       Adders := 1     
+	   2 Input     63 Bit       Adders := 1     
+	   4 Input     61 Bit       Adders := 1     
+	   4 Input     60 Bit       Adders := 1     
+	   3 Input     59 Bit       Adders := 1     
+	   4 Input     58 Bit       Adders := 1     
+	   4 Input     55 Bit       Adders := 1     
+	   3 Input     55 Bit       Adders := 1     
+	   2 Input     54 Bit       Adders := 2     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
++---Multipliers : 
+	                11x57  Multipliers := 1     
+	                 4x63  Multipliers := 1     
+	                 4x60  Multipliers := 1     
+	                 4x57  Multipliers := 1     
+	                 4x54  Multipliers := 1     
+	                 4x51  Multipliers := 1     
+	                 4x45  Multipliers := 1     
+	                 4x39  Multipliers := 1     
+	                 4x33  Multipliers := 1     
++---Muxes : 
+	   2 Input     94 Bit        Muxes := 7     
+	   2 Input     85 Bit        Muxes := 5     
+	   2 Input     81 Bit        Muxes := 1     
+	   2 Input     69 Bit        Muxes := 1     
+	   2 Input     60 Bit        Muxes := 2     
+	   2 Input     59 Bit        Muxes := 1     
+	   2 Input     57 Bit        Muxes := 3     
+	   2 Input     54 Bit        Muxes := 1     
+	   2 Input     52 Bit        Muxes := 5     
+	   2 Input     28 Bit        Muxes := 6     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 7     
+	   2 Input     11 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module fp_log_11_52 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     94 Bit       Adders := 1     
+	   2 Input     83 Bit       Adders := 1     
+	   2 Input     63 Bit       Adders := 1     
+	   3 Input     59 Bit       Adders := 1     
+	   3 Input     55 Bit       Adders := 1     
+	   2 Input     54 Bit       Adders := 1     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
++---Multipliers : 
+	                11x57  Multipliers := 1     
++---Muxes : 
+	   2 Input     94 Bit        Muxes := 1     
+	   2 Input     59 Bit        Muxes := 1     
+	   2 Input     57 Bit        Muxes := 3     
+	   2 Input     54 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+Module lzoc__parameterized7 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     52 Bit        Muxes := 1     
+Module lzoc__parameterized5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     52 Bit        Muxes := 1     
+Module lzoc__parameterized3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     52 Bit        Muxes := 1     
+Module lzoc__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     52 Bit        Muxes := 1     
+Module lzoc 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     52 Bit        Muxes := 1     
+Module range_red 
+Detailed RTL Component Info : 
++---Adders : 
+	   9 Input     83 Bit       Adders := 1     
+	   4 Input     70 Bit       Adders := 1     
+	   4 Input     69 Bit       Adders := 1     
+	   4 Input     67 Bit       Adders := 1     
+	   4 Input     64 Bit       Adders := 1     
+	   4 Input     61 Bit       Adders := 1     
+	   4 Input     60 Bit       Adders := 1     
+	   4 Input     58 Bit       Adders := 1     
+	   4 Input     55 Bit       Adders := 1     
+	   2 Input     54 Bit       Adders := 1     
++---Multipliers : 
+	                 4x63  Multipliers := 1     
+	                 4x60  Multipliers := 1     
+	                 4x57  Multipliers := 1     
+	                 4x54  Multipliers := 1     
+	                 4x51  Multipliers := 1     
+	                 4x45  Multipliers := 1     
+	                 4x39  Multipliers := 1     
+	                 4x33  Multipliers := 1     
++---Muxes : 
+	   2 Input     85 Bit        Muxes := 5     
+	   2 Input     81 Bit        Muxes := 1     
+	   2 Input     69 Bit        Muxes := 1     
+	   2 Input     60 Bit        Muxes := 2     
+Module lshift__parameterized9 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module lshift__parameterized7 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module lshift__parameterized5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module lshift__parameterized3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module lshift__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module lshift 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+Module lzc_norm__parameterized9 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     94 Bit        Muxes := 1     
+Module lzc_norm__parameterized7 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     94 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module lzc_norm__parameterized5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     94 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module lzc_norm__parameterized3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     94 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module lzc_norm__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     94 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module lzc_norm 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     94 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module rshift__parameterized9 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     28 Bit        Muxes := 1     
+Module rshift__parameterized7 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     28 Bit        Muxes := 1     
+Module rshift__parameterized5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     28 Bit        Muxes := 1     
+Module rshift__parameterized3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     28 Bit        Muxes := 1     
+Module rshift__parameterized1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     28 Bit        Muxes := 1     
+Module rshift 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     28 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 3600 (col length:200)
+BRAMs: 2940 (col length: RAMB18 200 RAMB36 100)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:771]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:788]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:805]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:821]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:837]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:853]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:869]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:885]
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+INFO: [Synth 8-5544] ROM "recursive.lzc_norm0/recursive.lzc_norm0/recursive.lzc_norm0/recursive.lzc_norm0/z0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "recursive.lzc_norm0/recursive.lzc_norm0/recursive.lzc_norm0/z0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "recursive.lzc_norm0/recursive.lzc_norm0/z0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "recursive.lzc_norm0/z0" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "z0" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/fp_log_it-1.0/fp_log_11_52_double_precision.vhd:481]
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (A:0x19ef3)*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++----------------+------------+---------------+----------------+
+|Module Name     | RTL Object | Depth x Width | Implemented As | 
++----------------+------------+---------------+----------------+
+|invtable0_11_52 | y          | 32x6          | LUT            | 
+|logtable0_11_52 | y          | 32x83         | LUT            | 
+|range_red       | it0/y      | 32x6          | LUT            | 
+|range_red       | lt0/y      | 32x83         | LUT            | 
++----------------+------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping  Report (see note below)
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|range_red    | A*B            | 20     | 7      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 7      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 18     | 7      | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 21     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 10     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 13     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 24     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 12     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 23     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | A*B            | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red    | (PCIN>>17)+A*B | 17     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fp_log_11_52 | A*B            | 18     | 11     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fp_log_11_52 | (PCIN>>17)+A*B | 11     | 11     | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fp_log_11_52 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fp_log_11_52 | (PCIN>>17)+A*B | 18     | 11     | -      | -      | 37     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fp_log_11_52 | A*B            | 24     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fp_log_11_52 | (A:0x19ef3)*B  | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fp_log_11_52 | (PCIN>>17)+A*B | 18     | 12     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   379|
+|2     |DSP48E1 |    34|
+|3     |LUT1    |    46|
+|4     |LUT2    |   494|
+|5     |LUT3    |   369|
+|6     |LUT4    |   916|
+|7     |LUT5    |   702|
+|8     |LUT6    |   640|
+|9     |IBUF    |    66|
+|10    |OBUF    |    66|
++------+--------+------+
+
+Report Instance Areas: 
++------+----------------------+---------------------+------+
+|      |Instance              |Module               |Cells |
++------+----------------------+---------------------+------+
+|1     |top                   |                     |  3712|
+|2     |  lzoc1               |lzoc                 |   435|
+|3     |    \recursive.lzoc0  |lzoc__parameterized1 |   420|
+|4     |  rr                  |range_red            |  2434|
+|5     |    lt1               |logtable1_11_52      |    78|
+|6     |    lt2               |logtable2_11_52      |    67|
+|7     |    lt3               |logtable3_11_52      |    60|
+|8     |    lt4               |logtable4_11_52      |    51|
+|9     |    lt5               |logtable5_11_52      |    40|
+|10    |    lt6               |logtable6_11_52      |    29|
+|11    |    lt7               |logtable7_11_52      |     9|
+|12    |    lt8               |logtable8_11_52      |     8|
++------+----------------------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 51 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 901.789 ; gain = 629.117
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 413 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 913.445 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+151 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:57 . Memory (MB): peak = 913.453 ; gain = 654.191
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 913.453 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/caner/project_1/project_1.runs/synth_1/fp_log_11_52.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file fp_log_11_52_utilization_synth.rpt -pb fp_log_11_52_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu May 30 06:23:52 2019...

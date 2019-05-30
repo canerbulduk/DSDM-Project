@@ -5,9 +5,9 @@
 <ModuleName>logd</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_range_red_fu_446</InstName>
+<InstName>grp_range_red_fu_448</InstName>
 <ModuleName>range_red</ModuleName>
-<ID>446</ID>
+<ID>448</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -183,7 +183,7 @@
 <BRAM_18K>4</BRAM_18K>
 <DSP48E>11</DSP48E>
 <FF>3787</FF>
-<LUT>9625</LUT>
+<LUT>9689</LUT>
 </Resources>
 </AreaEstimates>
 <InterfaceSummary>

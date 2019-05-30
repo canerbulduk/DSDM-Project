@@ -1,0 +1,114 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu May 30 20:54:10 2019
+| Host         : DESKTOP-65QNE4G running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file logd_control_sets_placed.rpt
+| Design       : logd
+| Device       : xc7vx690t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    45 |
+| Unused register locations in slices containing registers |   162 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      1 |            6 |
+|      4 |            2 |
+|      5 |            1 |
+|      7 |            1 |
+|     11 |            2 |
+|    16+ |           33 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              16 |           12 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              30 |           19 |
+| Yes          | No                    | No                     |            2488 |          698 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             160 |           56 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+----------------------------------------+--------------------------------------------------------------------------------+------------------+----------------+
+|    Clock Signal   |              Enable Signal             |                                Set/Reset Signal                                | Slice Load Count | Bel Load Count |
++-------------------+----------------------------------------+--------------------------------------------------------------------------------+------------------+----------------+
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state17 | grp_range_red_fu_448/logtable7_U/range_red_logtable7_rom_U/q0[37]_i_1__3_n_0   |                1 |              1 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state8  | grp_range_red_fu_448/logtable2_1_U/range_red_logtabldEe_rom_U/q0[7]_i_1__6_n_0 |                1 |              1 |
+|  ap_clk_IBUF_BUFG | ap_CS_fsm_state3                       | Z2o2_small_reg_3864[30]_i_1_n_0                                                |                1 |              1 |
+|  ap_clk_IBUF_BUFG | tmp_138_reg_37090                      |                                                                                |                1 |              1 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state17 | grp_range_red_fu_448/logtable6_U/range_red_logtable6_rom_U/q0[43]_i_1__2_n_0   |                1 |              1 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state17 | grp_range_red_fu_448/logtable8_U/range_red_logtable8_rom_U/q0[31]_i_1__4_n_0   |                1 |              1 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/p_46_in           |                                                                                |                4 |              4 |
+|  ap_clk_IBUF_BUFG | ap_CS_fsm_state6                       | newSel4_reg_4010                                                               |                2 |              4 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/invtable0_ce0     |                                                                                |                2 |              5 |
+|  ap_clk_IBUF_BUFG | ap_CS_fsm_state7                       |                                                                                |                3 |              7 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state5  | grp_range_red_fu_448/tmp_14_reg_2529[10]_i_1_n_0                               |                4 |             11 |
+|  ap_clk_IBUF_BUFG | p_0_reg_420                            | p_0_reg_420[62]_i_1_n_0                                                        |                3 |             11 |
+|  ap_clk_IBUF_BUFG |                                        |                                                                                |               12 |             16 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state4  |                                                                                |                8 |             17 |
+|  ap_clk_IBUF_BUFG | tmp_332_reg_40350                      | tmp_332_reg_4035[23]_i_1_n_0                                                   |                8 |             24 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state13 |                                                                                |               13 |             26 |
+|  ap_clk_IBUF_BUFG |                                        | ap_rst_IBUF                                                                    |               19 |             30 |
+|  ap_clk_IBUF_BUFG | tmp_332_reg_40350                      |                                                                                |               14 |             33 |
+|  ap_clk_IBUF_BUFG | tmp_201_reg_39260                      |                                                                                |                9 |             34 |
+|  ap_clk_IBUF_BUFG | tmp_200_reg_39210                      |                                                                                |                9 |             34 |
+|  ap_clk_IBUF_BUFG | ap_CS_fsm_state5                       |                                                                                |               12 |             46 |
+|  ap_clk_IBUF_BUFG | ap_NS_fsm148_out                       |                                                                                |               26 |             49 |
+|  ap_clk_IBUF_BUFG | p_0_reg_420                            | p_0_reg_420[50]_i_1_n_0                                                        |               17 |             51 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state9  | grp_range_red_fu_448/tmp_35_reg_2644[3]_i_1_n_0                                |               17 |             54 |
+|  ap_clk_IBUF_BUFG | ap_CS_fsm_state6                       |                                                                                |               17 |             55 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state3  |                                                                                |               20 |             56 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state11 |                                                                                |               17 |             57 |
+|  ap_clk_IBUF_BUFG | Log_normal_L_1_reg_39150               |                                                                                |               25 |             60 |
+|  ap_clk_IBUF_BUFG | tmp_194_reg_38910                      |                                                                                |               14 |             61 |
+|  ap_clk_IBUF_BUFG | tmp_196_reg_38960                      |                                                                                |               16 |             61 |
+|  ap_clk_IBUF_BUFG | ap_CS_fsm_state4                       |                                                                                |               18 |             61 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state15 |                                                                                |               17 |             62 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state5  |                                                                                |               18 |             63 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state6  |                                                                                |               17 |             68 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state7  |                                                                                |               19 |             69 |
+|  ap_clk_IBUF_BUFG | ap_CS_fsm_state3                       |                                                                                |               26 |             88 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state14 |                                                                                |               26 |            100 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state16 |                                                                                |               28 |            104 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state12 |                                                                                |               32 |            116 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state10 |                                                                                |               31 |            117 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state9  |                                                                                |               42 |            152 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state18 |                                                                                |               41 |            157 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/D[1]              |                                                                                |               59 |            176 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state8  |                                                                                |               34 |            191 |
+|  ap_clk_IBUF_BUFG | grp_range_red_fu_448/ap_CS_fsm_state17 |                                                                                |               80 |            358 |
++-------------------+----------------------------------------+--------------------------------------------------------------------------------+------------------+----------------+
+
+

@@ -1,0 +1,1693 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu May 30 19:24:19 2019
+# Process ID: 12324
+# Current directory: C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1
+# Command line: vivado.exe -log bd_0_hls_inst_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source bd_0_hls_inst_0.tcl
+# Log file: C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/bd_0_hls_inst_0.vds
+# Journal file: C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source bd_0_hls_inst_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.cache/ip 
+Command: synth_design -top bd_0_hls_inst_0 -part xc7vx690tffg1761-2 -directive sdx_optimization_effort_high -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
+INFO: [Common 17-86] Your Synthesis license expires in 7 day(s)
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 596 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 406.559 ; gain = 101.891
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'bd_0_hls_inst_0' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/synth/bd_0_hls_inst_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'logd' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 8'b00000001 
+	Parameter ap_ST_fsm_state2 bound to: 8'b00000010 
+	Parameter ap_ST_fsm_state3 bound to: 8'b00000100 
+	Parameter ap_ST_fsm_state4 bound to: 8'b00001000 
+	Parameter ap_ST_fsm_state5 bound to: 8'b00010000 
+	Parameter ap_ST_fsm_state6 bound to: 8'b00100000 
+	Parameter ap_ST_fsm_state7 bound to: 8'b01000000 
+	Parameter ap_ST_fsm_state8 bound to: 8'b10000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:45]
+INFO: [Synth 8-6157] synthesizing module 'range_red' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 19'b0000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 19'b0000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 19'b0000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 19'b0000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 19'b0000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 19'b0000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 19'b0000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 19'b0000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 19'b0000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 19'b0000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 19'b0000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 19'b0000000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 19'b0000001000000000000 
+	Parameter ap_ST_fsm_state14 bound to: 19'b0000010000000000000 
+	Parameter ap_ST_fsm_state15 bound to: 19'b0000100000000000000 
+	Parameter ap_ST_fsm_state16 bound to: 19'b0001000000000000000 
+	Parameter ap_ST_fsm_state17 bound to: 19'b0010000000000000000 
+	Parameter ap_ST_fsm_state18 bound to: 19'b0100000000000000000 
+	Parameter ap_ST_fsm_state19 bound to: 19'b1000000000000000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:60]
+INFO: [Synth 8-6157] synthesizing module 'range_red_invtable0' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_invtable0.v:42]
+	Parameter DataWidth bound to: 6 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_invtable0_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_invtable0.v:9]
+	Parameter DWIDTH bound to: 6 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_invtable0.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_invtable0_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_invtable0.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_invtable0_rom' (1#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_invtable0.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_invtable0' (2#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_invtable0.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablbkb' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablbkb.v:42]
+	Parameter DataWidth bound to: 23 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablbkb_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablbkb.v:9]
+	Parameter DWIDTH bound to: 23 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablbkb.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtablbkb_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablbkb.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablbkb_rom' (3#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablbkb.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablbkb' (4#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablbkb.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablcud' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablcud.v:42]
+	Parameter DataWidth bound to: 19 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablcud_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablcud.v:9]
+	Parameter DWIDTH bound to: 19 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablcud.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtablcud_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablcud.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablcud_rom' (5#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablcud.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablcud' (6#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablcud.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtabldEe' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabldEe.v:42]
+	Parameter DataWidth bound to: 16 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtabldEe_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabldEe.v:9]
+	Parameter DWIDTH bound to: 16 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabldEe.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtabldEe_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabldEe.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtabldEe_rom' (7#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabldEe.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtabldEe' (8#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabldEe.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtableOg' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtableOg.v:42]
+	Parameter DataWidth bound to: 13 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtableOg_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtableOg.v:9]
+	Parameter DWIDTH bound to: 13 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtableOg.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtableOg_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtableOg.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtableOg_rom' (9#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtableOg.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtableOg' (10#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtableOg.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablfYi' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablfYi.v:42]
+	Parameter DataWidth bound to: 10 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablfYi_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablfYi.v:9]
+	Parameter DWIDTH bound to: 10 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablfYi.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtablfYi_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablfYi.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablfYi_rom' (11#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablfYi.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablfYi' (12#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablfYi.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablg8j' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablg8j.v:42]
+	Parameter DataWidth bound to: 7 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablg8j_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablg8j.v:9]
+	Parameter DWIDTH bound to: 7 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablg8j.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtablg8j_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablg8j.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablg8j_rom' (13#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablg8j.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablg8j' (14#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablg8j.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablhbi' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablhbi.v:42]
+	Parameter DataWidth bound to: 60 - type: integer 
+	Parameter AddressRange bound to: 32 - type: integer 
+	Parameter AddressWidth bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablhbi_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablhbi.v:9]
+	Parameter DWIDTH bound to: 60 - type: integer 
+	Parameter AWIDTH bound to: 5 - type: integer 
+	Parameter MEM_SIZE bound to: 32 - type: integer 
+INFO: [Synth 8-3876] $readmem data file './range_red_logtablhbi_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablhbi.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablhbi_rom' (15#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablhbi.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablhbi' (16#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablhbi.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablibs' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablibs.v:42]
+	Parameter DataWidth bound to: 60 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablibs_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablibs.v:9]
+	Parameter DWIDTH bound to: 60 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablibs.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtablibs_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablibs.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablibs_rom' (17#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablibs.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablibs' (18#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablibs.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtabljbC' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabljbC.v:42]
+	Parameter DataWidth bound to: 60 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtabljbC_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabljbC.v:9]
+	Parameter DWIDTH bound to: 60 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabljbC.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtabljbC_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabljbC.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtabljbC_rom' (19#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabljbC.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtabljbC' (20#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabljbC.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablkbM' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablkbM.v:42]
+	Parameter DataWidth bound to: 60 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablkbM_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablkbM.v:9]
+	Parameter DWIDTH bound to: 60 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablkbM.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtablkbM_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablkbM.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablkbM_rom' (21#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablkbM.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablkbM' (22#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablkbM.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtabllbW' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabllbW.v:42]
+	Parameter DataWidth bound to: 56 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtabllbW_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabllbW.v:9]
+	Parameter DWIDTH bound to: 56 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabllbW.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtabllbW_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabllbW.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtabllbW_rom' (23#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabllbW.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtabllbW' (24#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtabllbW.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablmb6' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablmb6.v:42]
+	Parameter DataWidth bound to: 50 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtablmb6_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablmb6.v:9]
+	Parameter DWIDTH bound to: 50 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablmb6.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtablmb6_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablmb6.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablmb6_rom' (25#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablmb6.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtablmb6' (26#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtablmb6.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtable6' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable6.v:42]
+	Parameter DataWidth bound to: 64 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtable6_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable6.v:9]
+	Parameter DWIDTH bound to: 64 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-3876] $readmem data file './range_red_logtable6_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable6.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtable6_rom' (27#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable6.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtable6' (28#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable6.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtable7' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable7.v:42]
+	Parameter DataWidth bound to: 61 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtable7_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable7.v:9]
+	Parameter DWIDTH bound to: 61 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable7.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtable7_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable7.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtable7_rom' (29#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable7.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtable7' (30#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable7.v:42]
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtable8' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable8.v:42]
+	Parameter DataWidth bound to: 58 - type: integer 
+	Parameter AddressRange bound to: 16 - type: integer 
+	Parameter AddressWidth bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'range_red_logtable8_rom' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable8.v:9]
+	Parameter DWIDTH bound to: 58 - type: integer 
+	Parameter AWIDTH bound to: 4 - type: integer 
+	Parameter MEM_SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "distributed" *) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable8.v:21]
+INFO: [Synth 8-3876] $readmem data file './range_red_logtable8_rom.dat' is read successfully [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable8.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtable8_rom' (31#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable8.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'range_red_logtable8' (32#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red_logtable8.v:42]
+INFO: [Synth 8-6157] synthesizing module 'logd_mac_muladd_4ncg' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd_mac_muladd_4ncg.v:33]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 4 - type: integer 
+	Parameter din1_WIDTH bound to: 3 - type: integer 
+	Parameter din2_WIDTH bound to: 4 - type: integer 
+	Parameter dout_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'logd_mac_muladd_4ncg_DSP48_0' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd_mac_muladd_4ncg.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'logd_mac_muladd_4ncg_DSP48_0' (33#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd_mac_muladd_4ncg.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'logd_mac_muladd_4ncg' (34#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd_mac_muladd_4ncg.v:33]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1148]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1288]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1304]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1318]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1398]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1402]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1406]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1410]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1412]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1416]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1418]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1420]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1422]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1424]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1426]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1428]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1434]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1550]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1636]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1678]
+INFO: [Synth 8-6155] done synthesizing module 'range_red' (35#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:10]
+INFO: [Synth 8-6157] synthesizing module 'logd_mul_mul_9ns_ocq' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd_mul_mul_9ns_ocq.v:13]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 9 - type: integer 
+	Parameter din1_WIDTH bound to: 11 - type: integer 
+	Parameter dout_WIDTH bound to: 20 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'logd_mul_mul_9ns_ocq_DSP48_1' [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd_mul_mul_9ns_ocq.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'logd_mul_mul_9ns_ocq_DSP48_1' (36#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd_mul_mul_9ns_ocq.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'logd_mul_mul_9ns_ocq' (37#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd_mul_mul_9ns_ocq.v:13]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:899]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:901]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:907]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:925]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:937]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:939]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:947]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:955]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:961]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:973]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:991]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:993]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1021]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1037]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1039]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1045]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1047]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1051]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1053]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1055]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1057]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1059]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1079]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1081]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1083]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1085]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1087]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1089]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1091]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1093]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1095]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1137]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1139]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1141]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1143]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1145]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1147]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1149]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1151]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1153]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1155]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1171]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1177]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1187]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1193]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1199]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1201]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1271]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1273]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1285]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1337]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1353]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1357]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1361]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1375]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1379]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1381]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1387]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1391]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1399]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1403]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1405]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1409]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1511]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1517]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1519]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1521]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1525]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1527]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1529]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1537]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1543]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1547]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1551]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1555]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1559]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1569]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1617]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1625]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1629]
+INFO: [Common 17-14] Message 'Synth 8-589' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'logd' (38#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'bd_0_hls_inst_0' (39#1) [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/synth/bd_0_hls_inst_0.v:58]
+WARNING: [Synth 8-3331] design range_red_logtable8 has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtable7 has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtable6 has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtablmb6 has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtabllbW has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtablkbM has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtabljbC has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtablibs has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtablhbi has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtablg8j has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtablfYi has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtableOg has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtabldEe has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtablcud has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_logtablbkb has unconnected port reset
+WARNING: [Synth 8-3331] design range_red_invtable0 has unconnected port reset
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 467.840 ; gain = 163.172
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 467.840 ; gain = 163.172
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 467.840 ; gain = 163.172
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7vx690tffg1761-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/constraints/logd_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ip/bd_0_hls_inst_0/constraints/logd_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1050.133 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1051.023 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.296 . Memory (MB): peak = 1052.613 ; gain = 2.480
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1052.613 ; gain = 747.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7vx690tffg1761-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1052.613 ; gain = 747.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1052.613 ; gain = 747.945
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5544] ROM "ram" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "ram". This will be implemented in logic
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1148]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "tmp_5_fu_580_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_10_fu_677_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "tmp_24_fu_856_p2" won't be mapped to RAM because address size (62) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_52_fu_1223_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_85_fu_1741_p2" won't be mapped to RAM because address size (62) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "tmp_77_fu_1618_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_100_fu_2009_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_109_fu_2163_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_57_fu_1339_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "tmp_71_fu_1501_p2" won't be mapped to RAM because address size (63) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "tmp_32_fu_1004_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_91_fu_1825_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1206]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1214]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1222]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1232]
+WARNING: [Synth 8-3936] Found unconnected internal register 'Log_normal_H_reg_3970_reg' and it is trimmed from '64' to '33' bits. [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:717]
+WARNING: [Synth 8-3936] Found unconnected internal register 'almostLog_L_reg_3822_reg' and it is trimmed from '64' to '61' bits. [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:754]
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_223_reg_3784_reg' and it is trimmed from '26' to '25' bits. [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:678]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5545] ROM "tmp_128_fu_659_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "tmp_125_fu_645_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_124_fu_639_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_123_fu_633_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_122_fu_627_p2" won't be mapped to RAM because address size (63) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "p_result_2_1_fu_1305_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_result_4_1_fu_799_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_1_fu_715_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_3_1_fu_971_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_152_fu_1185_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "p_result_2_fu_1151_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_result_4_fu_757_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_fu_699_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_3_fu_917_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "p_result_1_3_fu_3212_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_result_2_3_fu_3186_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_result_4_3_fu_2708_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_3_fu_2670_p2" won't be mapped to RAM because address size (34) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_3_3_fu_2842_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_262_fu_2756_p2" won't be mapped to RAM because address size (34) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "tmp_276_fu_2906_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_275_fu_2900_p2" won't be mapped to RAM because address size (34) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "p_result_1_2_fu_2599_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_result_2_2_fu_2477_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_result_3_2_fu_2208_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_209_fu_2146_p2" won't be mapped to RAM because address size (60) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "p_result_5_2_fu_2080_p2" won't be mapped to RAM because address size (60) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_4_2_fu_2130_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_214_fu_2242_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "p_result_1_fu_1513_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_result_1_1_fu_1574_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:969]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:1323]
+INFO: [Synth 8-5545] ROM "tmp_128_fu_659_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "tmp_125_fu_645_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_124_fu_639_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_123_fu_633_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_122_fu_627_p2" won't be mapped to RAM because address size (63) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "p_result_2_1_fu_1305_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_result_4_1_fu_799_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_1_fu_715_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_3_1_fu_971_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_152_fu_1185_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "p_result_2_fu_1151_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_result_4_fu_757_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_fu_699_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_3_fu_917_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "p_result_1_3_fu_3212_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_result_2_3_fu_3186_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_result_4_3_fu_2708_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_3_fu_2670_p2" won't be mapped to RAM because address size (34) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_3_3_fu_2842_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_262_fu_2756_p2" won't be mapped to RAM because address size (34) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "tmp_276_fu_2906_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_275_fu_2900_p2" won't be mapped to RAM because address size (34) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "p_result_1_2_fu_2599_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_result_2_2_fu_2477_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "p_result_3_2_fu_2208_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_209_fu_2146_p2" won't be mapped to RAM because address size (60) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "p_result_5_2_fu_2080_p2" won't be mapped to RAM because address size (60) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_4_2_fu_2130_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_214_fu_2242_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "p_result_1_fu_1513_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_result_1_1_fu_1574_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "E0_sub_fu_3441_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ap_NS_fsm" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_in4_v_cast_fu_1099_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_in79_v_fu_977_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_in78_v_fu_985_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Z2o2_small_fu_1835_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "newSel1_fu_2164_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "newSel242_cast_cast_fu_2178_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tmp_232_fu_2306_p3" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_0_in" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:45 . Memory (MB): peak = 1052.613 ; gain = 747.945
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 5     
+	   4 Input     64 Bit       Adders := 1     
+	   3 Input     64 Bit       Adders := 2     
+	   2 Input     63 Bit       Adders := 2     
+	   2 Input     62 Bit       Adders := 2     
+	   3 Input     62 Bit       Adders := 1     
+	   4 Input     62 Bit       Adders := 2     
+	   2 Input     61 Bit       Adders := 9     
+	   3 Input     61 Bit       Adders := 6     
+	   4 Input     61 Bit       Adders := 1     
+	   3 Input     60 Bit       Adders := 1     
+	   4 Input     60 Bit       Adders := 1     
+	   2 Input     60 Bit       Adders := 5     
+	   2 Input     59 Bit       Adders := 2     
+	   3 Input     59 Bit       Adders := 1     
+	   3 Input     58 Bit       Adders := 1     
+	   4 Input     58 Bit       Adders := 1     
+	   2 Input     57 Bit       Adders := 1     
+	   5 Input     56 Bit       Adders := 1     
+	   2 Input     56 Bit       Adders := 1     
+	   3 Input     55 Bit       Adders := 1     
+	   2 Input     54 Bit       Adders := 3     
+	   2 Input     48 Bit       Adders := 1     
+	   3 Input     35 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   3 Input     24 Bit       Adders := 1     
+	   2 Input     23 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   4 Input     11 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 3     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
+	   5 Input      9 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 3     
+	   3 Input      5 Bit       Adders := 1     
+	   3 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
+	   2 Input      6 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 21    
++---Registers : 
+	               64 Bit    Registers := 6     
+	               61 Bit    Registers := 8     
+	               60 Bit    Registers := 11    
+	               59 Bit    Registers := 1     
+	               58 Bit    Registers := 2     
+	               57 Bit    Registers := 3     
+	               56 Bit    Registers := 5     
+	               55 Bit    Registers := 2     
+	               54 Bit    Registers := 3     
+	               52 Bit    Registers := 1     
+	               50 Bit    Registers := 2     
+	               49 Bit    Registers := 2     
+	               44 Bit    Registers := 1     
+	               43 Bit    Registers := 1     
+	               42 Bit    Registers := 1     
+	               41 Bit    Registers := 1     
+	               39 Bit    Registers := 1     
+	               36 Bit    Registers := 1     
+	               33 Bit    Registers := 3     
+	               29 Bit    Registers := 1     
+	               28 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               25 Bit    Registers := 2     
+	               24 Bit    Registers := 1     
+	               23 Bit    Registers := 2     
+	               19 Bit    Registers := 2     
+	               18 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	               12 Bit    Registers := 3     
+	               11 Bit    Registers := 5     
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 5     
+	                8 Bit    Registers := 7     
+	                7 Bit    Registers := 8     
+	                6 Bit    Registers := 4     
+	                5 Bit    Registers := 14    
+	                4 Bit    Registers := 20    
+	                3 Bit    Registers := 5     
+	                1 Bit    Registers := 38    
++---Multipliers : 
+	                 4x54  Multipliers := 1     
+	                 4x51  Multipliers := 1     
+	                 4x45  Multipliers := 1     
+	                 4x39  Multipliers := 1     
+	                 4x33  Multipliers := 1     
++---ROMs : 
+	                              ROMs := 1     
++---Muxes : 
+	  17 Input     64 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     62 Bit        Muxes := 1     
+	   2 Input     60 Bit        Muxes := 2     
+	   2 Input     59 Bit        Muxes := 1     
+	   2 Input     57 Bit        Muxes := 1     
+	   2 Input     56 Bit        Muxes := 2     
+	   2 Input     54 Bit        Muxes := 2     
+	   2 Input     39 Bit        Muxes := 1     
+	   2 Input     33 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 1     
+	  20 Input     19 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 5     
+	   2 Input     11 Bit        Muxes := 3     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 22    
+	   3 Input      8 Bit        Muxes := 1     
+	   9 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 16    
+	   6 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 44    
+	   6 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module range_red_invtable0_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 1     
+Module range_red_logtablbkb_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               23 Bit    Registers := 1     
+Module range_red_logtablcud_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               19 Bit    Registers := 1     
+Module range_red_logtabldEe_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module range_red_logtableOg_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               13 Bit    Registers := 1     
+Module range_red_logtablfYi_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 1     
+Module range_red_logtablg8j_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+Module range_red_logtablhbi_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               60 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module range_red_logtablibs_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               60 Bit    Registers := 1     
+Module range_red_logtabljbC_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               60 Bit    Registers := 1     
+Module range_red_logtablkbM_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               60 Bit    Registers := 1     
+Module range_red_logtabllbW_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               56 Bit    Registers := 1     
+Module range_red_logtablmb6_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               50 Bit    Registers := 1     
+Module range_red_logtable6_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
++---Muxes : 
+	  17 Input     64 Bit        Muxes := 1     
+Module range_red_logtable7_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               61 Bit    Registers := 1     
+Module range_red_logtable8_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               58 Bit    Registers := 1     
+Module range_red 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 3     
+	   4 Input     64 Bit       Adders := 1     
+	   2 Input     63 Bit       Adders := 2     
+	   2 Input     62 Bit       Adders := 2     
+	   3 Input     62 Bit       Adders := 1     
+	   4 Input     62 Bit       Adders := 2     
+	   2 Input     61 Bit       Adders := 6     
+	   3 Input     61 Bit       Adders := 5     
+	   4 Input     61 Bit       Adders := 1     
+	   3 Input     60 Bit       Adders := 1     
+	   4 Input     60 Bit       Adders := 1     
+	   2 Input     60 Bit       Adders := 4     
+	   2 Input     59 Bit       Adders := 1     
+	   3 Input     58 Bit       Adders := 1     
+	   4 Input     58 Bit       Adders := 1     
+	   2 Input     57 Bit       Adders := 1     
+	   5 Input     56 Bit       Adders := 1     
+	   2 Input     56 Bit       Adders := 1     
+	   2 Input     54 Bit       Adders := 2     
+	   2 Input     48 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   3 Input     24 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   4 Input     11 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
+	   5 Input      9 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   3 Input      5 Bit       Adders := 1     
+	   3 Input      4 Bit       Adders := 1     
++---Registers : 
+	               61 Bit    Registers := 4     
+	               60 Bit    Registers := 4     
+	               59 Bit    Registers := 1     
+	               58 Bit    Registers := 1     
+	               57 Bit    Registers := 2     
+	               56 Bit    Registers := 4     
+	               55 Bit    Registers := 1     
+	               54 Bit    Registers := 2     
+	               50 Bit    Registers := 1     
+	               49 Bit    Registers := 2     
+	               44 Bit    Registers := 1     
+	               43 Bit    Registers := 1     
+	               42 Bit    Registers := 1     
+	               41 Bit    Registers := 1     
+	               39 Bit    Registers := 1     
+	               36 Bit    Registers := 1     
+	               33 Bit    Registers := 2     
+	               29 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               19 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                9 Bit    Registers := 5     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 4     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 13    
+	                4 Bit    Registers := 14    
+	                3 Bit    Registers := 4     
+	                1 Bit    Registers := 7     
++---Multipliers : 
+	                 4x54  Multipliers := 1     
+	                 4x51  Multipliers := 1     
+	                 4x45  Multipliers := 1     
+	                 4x39  Multipliers := 1     
+	                 4x33  Multipliers := 1     
++---Muxes : 
+	   2 Input     60 Bit        Muxes := 2     
+	   2 Input     54 Bit        Muxes := 1     
+	   2 Input     39 Bit        Muxes := 1     
+	   2 Input     29 Bit        Muxes := 1     
+	  20 Input     19 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 13    
+Module logd 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 2     
+	   3 Input     64 Bit       Adders := 2     
+	   2 Input     61 Bit       Adders := 3     
+	   3 Input     61 Bit       Adders := 1     
+	   2 Input     60 Bit       Adders := 1     
+	   2 Input     59 Bit       Adders := 1     
+	   3 Input     59 Bit       Adders := 1     
+	   3 Input     55 Bit       Adders := 1     
+	   2 Input     54 Bit       Adders := 1     
+	   3 Input     35 Bit       Adders := 1     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input     23 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 2     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 3     
++---XORs : 
+	   2 Input     64 Bit         XORs := 1     
+	   2 Input      6 Bit         XORs := 3     
+	   2 Input      1 Bit         XORs := 21    
++---Registers : 
+	               64 Bit    Registers := 5     
+	               61 Bit    Registers := 3     
+	               60 Bit    Registers := 3     
+	               57 Bit    Registers := 1     
+	               55 Bit    Registers := 1     
+	               54 Bit    Registers := 1     
+	               52 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
+	               28 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               25 Bit    Registers := 2     
+	               23 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	               12 Bit    Registers := 3     
+	               11 Bit    Registers := 4     
+	                8 Bit    Registers := 6     
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 31    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     62 Bit        Muxes := 1     
+	   2 Input     59 Bit        Muxes := 1     
+	   2 Input     57 Bit        Muxes := 1     
+	   2 Input     56 Bit        Muxes := 2     
+	   2 Input     54 Bit        Muxes := 1     
+	   2 Input     33 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 5     
+	   2 Input     11 Bit        Muxes := 2     
+	   3 Input      8 Bit        Muxes := 1     
+	   9 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 21    
+	   2 Input      7 Bit        Muxes := 1     
+	   6 Input      6 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 16    
+	   6 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 31    
+	   6 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 3600 (col length:200)
+BRAMs: 2940 (col length: RAMB18 200 RAMB36 100)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "tmp_5_fu_580_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "tmp_24_fu_856_p2" won't be mapped to RAM because address size (62) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "tmp_10_fu_677_p2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "tmp_52_fu_1223_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_85_fu_1741_p2" won't be mapped to RAM because address size (62) is larger than maximum supported(25)
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5542] Attribute ram_style/rom_style = distributed specified for ROM  "p_0_out". This will be implemented in logic
+INFO: [Synth 8-5587] ROM size for "p_0_out" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5545] ROM "tmp_71_fu_1501_p2" won't be mapped to RAM because address size (63) is larger than maximum supported(25)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1662]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1242]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 3 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1252]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1262]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/range_red.v:1272]
+WARNING: [Synth 8-6014] Unused sequential element p_0_out was removed. 
+WARNING: [Synth 8-6014] Unused sequential element p_0_out was removed. 
+DSP Report: Generating DSP P0_fu_536_p2, operation Mode is: A*B''.
+DSP Report: register B is absorbed into DSP P0_fu_536_p2.
+DSP Report: register B is absorbed into DSP P0_fu_536_p2.
+DSP Report: operator P0_fu_536_p2 is absorbed into DSP P0_fu_536_p2.
+DSP Report: operator P0_fu_536_p2 is absorbed into DSP P0_fu_536_p2.
+DSP Report: Generating DSP P0_fu_536_p2, operation Mode is: A*B''.
+DSP Report: register B is absorbed into DSP P0_fu_536_p2.
+DSP Report: register B is absorbed into DSP P0_fu_536_p2.
+DSP Report: operator P0_fu_536_p2 is absorbed into DSP P0_fu_536_p2.
+DSP Report: operator P0_fu_536_p2 is absorbed into DSP P0_fu_536_p2.
+DSP Report: Generating DSP P0_fu_536_p2, operation Mode is: (PCIN>>17)+A*B''.
+DSP Report: register B is absorbed into DSP P0_fu_536_p2.
+DSP Report: register B is absorbed into DSP P0_fu_536_p2.
+DSP Report: operator P0_fu_536_p2 is absorbed into DSP P0_fu_536_p2.
+DSP Report: operator P0_fu_536_p2 is absorbed into DSP P0_fu_536_p2.
+DSP Report: Generating DSP tmp_1_reg_2514_reg, operation Mode is: (A2*B2)'.
+DSP Report: register B is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: register A is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: register tmp_1_reg_2514_reg is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: operator tmp_1_fu_574_p2 is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: operator tmp_1_fu_574_p2 is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: Generating DSP tmp_1_fu_574_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP tmp_1_fu_574_p2.
+DSP Report: register A is absorbed into DSP tmp_1_fu_574_p2.
+DSP Report: operator tmp_1_fu_574_p2 is absorbed into DSP tmp_1_fu_574_p2.
+DSP Report: operator tmp_1_fu_574_p2 is absorbed into DSP tmp_1_fu_574_p2.
+DSP Report: Generating DSP tmp_1_reg_2514_reg, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: register A is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: register tmp_1_reg_2514_reg is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: operator tmp_1_fu_574_p2 is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: operator tmp_1_fu_574_p2 is absorbed into DSP tmp_1_reg_2514_reg.
+DSP Report: Generating DSP P2_0_fu_761_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: register A is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: operator P2_0_fu_761_p2 is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: operator P2_0_fu_761_p2 is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: Generating DSP P2_0_fu_761_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: register A is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: operator P2_0_fu_761_p2 is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: operator P2_0_fu_761_p2 is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: Generating DSP P2_0_fu_761_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: register A is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: operator P2_0_fu_761_p2 is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: operator P2_0_fu_761_p2 is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: Generating DSP P2_0_fu_761_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: register A is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: operator P2_0_fu_761_p2 is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: operator P2_0_fu_761_p2 is absorbed into DSP P2_0_fu_761_p2.
+DSP Report: Generating DSP P3_0_fu_969_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: register A is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: operator P3_0_fu_969_p2 is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: operator P3_0_fu_969_p2 is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: Generating DSP P3_0_fu_969_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: register A is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: operator P3_0_fu_969_p2 is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: operator P3_0_fu_969_p2 is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: Generating DSP P3_0_fu_969_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: register A is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: operator P3_0_fu_969_p2 is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: operator P3_0_fu_969_p2 is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: Generating DSP P3_0_fu_969_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: register A is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: operator P3_0_fu_969_p2 is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: operator P3_0_fu_969_p2 is absorbed into DSP P3_0_fu_969_p2.
+DSP Report: Generating DSP logd_mac_muladd_4ncg_U1/logd_mac_muladd_4ncg_DSP48_0_U/p, operation Mode is: C'+A2*B2.
+DSP Report: register B is absorbed into DSP logd_mac_muladd_4ncg_U1/logd_mac_muladd_4ncg_DSP48_0_U/p.
+DSP Report: register A is absorbed into DSP logd_mac_muladd_4ncg_U1/logd_mac_muladd_4ncg_DSP48_0_U/p.
+DSP Report: register C is absorbed into DSP logd_mac_muladd_4ncg_U1/logd_mac_muladd_4ncg_DSP48_0_U/p.
+DSP Report: operator logd_mac_muladd_4ncg_U1/logd_mac_muladd_4ncg_DSP48_0_U/p is absorbed into DSP logd_mac_muladd_4ncg_U1/logd_mac_muladd_4ncg_DSP48_0_U/p.
+DSP Report: operator logd_mac_muladd_4ncg_U1/logd_mac_muladd_4ncg_DSP48_0_U/m is absorbed into DSP logd_mac_muladd_4ncg_U1/logd_mac_muladd_4ncg_DSP48_0_U/p.
+DSP Report: Generating DSP P4_0_fu_1306_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: register A is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: operator P4_0_fu_1306_p2 is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: operator P4_0_fu_1306_p2 is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: Generating DSP P4_0_fu_1306_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: register A is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: operator P4_0_fu_1306_p2 is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: operator P4_0_fu_1306_p2 is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: Generating DSP P4_0_fu_1306_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: register A is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: operator P4_0_fu_1306_p2 is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: operator P4_0_fu_1306_p2 is absorbed into DSP P4_0_fu_1306_p2.
+DSP Report: Generating DSP p_0_out, operation Mode is: (A*B)'.
+DSP Report: register p_0_out is absorbed into DSP p_0_out.
+DSP Report: operator P5_fu_1593_p2 is absorbed into DSP p_0_out.
+DSP Report: operator P5_fu_1593_p2 is absorbed into DSP p_0_out.
+DSP Report: Generating DSP P5_fu_1593_p2, operation Mode is: A2*B.
+DSP Report: register A is absorbed into DSP P5_fu_1593_p2.
+DSP Report: operator P5_fu_1593_p2 is absorbed into DSP P5_fu_1593_p2.
+DSP Report: operator P5_fu_1593_p2 is absorbed into DSP P5_fu_1593_p2.
+DSP Report: Generating DSP p_0_out, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register A is absorbed into DSP p_0_out.
+DSP Report: register p_0_out is absorbed into DSP p_0_out.
+DSP Report: operator P5_fu_1593_p2 is absorbed into DSP p_0_out.
+DSP Report: operator P5_fu_1593_p2 is absorbed into DSP p_0_out.
+DSP Report: Generating DSP P6_fu_1819_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P6_fu_1819_p2.
+DSP Report: register A is absorbed into DSP P6_fu_1819_p2.
+DSP Report: operator P6_fu_1819_p2 is absorbed into DSP P6_fu_1819_p2.
+DSP Report: operator P6_fu_1819_p2 is absorbed into DSP P6_fu_1819_p2.
+DSP Report: Generating DSP P6_fu_1819_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P6_fu_1819_p2.
+DSP Report: register A is absorbed into DSP P6_fu_1819_p2.
+DSP Report: operator P6_fu_1819_p2 is absorbed into DSP P6_fu_1819_p2.
+DSP Report: operator P6_fu_1819_p2 is absorbed into DSP P6_fu_1819_p2.
+DSP Report: Generating DSP P6_fu_1819_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP P6_fu_1819_p2.
+DSP Report: register A is absorbed into DSP P6_fu_1819_p2.
+DSP Report: operator P6_fu_1819_p2 is absorbed into DSP P6_fu_1819_p2.
+DSP Report: operator P6_fu_1819_p2 is absorbed into DSP P6_fu_1819_p2.
+DSP Report: Generating DSP P7_fu_1949_p2, operation Mode is: A*B.
+DSP Report: operator P7_fu_1949_p2 is absorbed into DSP P7_fu_1949_p2.
+DSP Report: operator P7_fu_1949_p2 is absorbed into DSP P7_fu_1949_p2.
+DSP Report: Generating DSP p_0_out, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register p_0_out is absorbed into DSP p_0_out.
+DSP Report: operator P7_fu_1949_p2 is absorbed into DSP p_0_out.
+DSP Report: operator P7_fu_1949_p2 is absorbed into DSP p_0_out.
+DSP Report: Generating DSP P8_fu_2157_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP P8_fu_2157_p2.
+DSP Report: register A is absorbed into DSP P8_fu_2157_p2.
+DSP Report: operator P8_fu_2157_p2 is absorbed into DSP P8_fu_2157_p2.
+DSP Report: operator P8_fu_2157_p2 is absorbed into DSP P8_fu_2157_p2.
+DSP Report: Generating DSP P8_fu_2157_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP P8_fu_2157_p2.
+DSP Report: register A is absorbed into DSP P8_fu_2157_p2.
+DSP Report: operator P8_fu_2157_p2 is absorbed into DSP P8_fu_2157_p2.
+DSP Report: operator P8_fu_2157_p2 is absorbed into DSP P8_fu_2157_p2.
+WARNING: [Synth 8-3936] Found unconnected internal register 'tmp_201_reg_3926_reg' and it is trimmed from '64' to '34' bits. [c:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.srcs/sources_1/bd/bd_0/ipshared/7f8e/hdl/verilog/logd.v:815]
+INFO: [Synth 8-5545] ROM "tmp_262_fu_2756_p2" won't be mapped to RAM because address size (34) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_128_fu_659_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "tmp_125_fu_645_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_124_fu_639_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_123_fu_633_p2" won't be mapped to RAM because address size (64) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "tmp_122_fu_627_p2" won't be mapped to RAM because address size (63) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "p_result_5_1_fu_715_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_4_1_fu_799_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_result_3_1_fu_971_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_152_fu_1185_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_fu_699_p2" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_4_fu_757_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_result_3_fu_917_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_3_fu_2670_p2" won't be mapped to RAM because address size (34) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_4_3_fu_2708_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_result_3_3_fu_2842_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_276_fu_2906_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "p_result_5_2_fu_2080_p2" won't be mapped to RAM because address size (60) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_4_2_fu_2130_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "tmp_209_fu_2146_p2" won't be mapped to RAM because address size (60) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "p_result_3_2_fu_2208_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tmp_214_fu_2242_p2" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP Z2o2_full_fu_1752_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: register A is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: operator Z2o2_full_fu_1752_p2 is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: operator Z2o2_full_fu_1752_p2 is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: Generating DSP Z2o2_full_fu_1752_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: register A is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: operator Z2o2_full_fu_1752_p2 is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: operator Z2o2_full_fu_1752_p2 is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: Generating DSP Z2o2_full_fu_1752_p2, operation Mode is: A2*B2.
+DSP Report: register B is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: register A is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: operator Z2o2_full_fu_1752_p2 is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: operator Z2o2_full_fu_1752_p2 is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: Generating DSP Z2o2_full_fu_1752_p2, operation Mode is: (PCIN>>17)+A2*B2.
+DSP Report: register B is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: register A is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: operator Z2o2_full_fu_1752_p2 is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: operator Z2o2_full_fu_1752_p2 is absorbed into DSP Z2o2_full_fu_1752_p2.
+DSP Report: Generating DSP tmp_129_fu_1849_p2, operation Mode is: (A:0x390b)*B2.
+DSP Report: register B is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: operator tmp_129_fu_1849_p2 is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: operator tmp_129_fu_1849_p2 is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: Generating DSP tmp_129_fu_1849_p2, operation Mode is: (A:0x19ef3)*B2.
+DSP Report: register B is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: operator tmp_129_fu_1849_p2 is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: operator tmp_129_fu_1849_p2 is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: Generating DSP tmp_129_fu_1849_p2, operation Mode is: (PCIN>>17)+(A:0x1f7d1)*B2.
+DSP Report: register B is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: operator tmp_129_fu_1849_p2 is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: operator tmp_129_fu_1849_p2 is absorbed into DSP tmp_129_fu_1849_p2.
+DSP Report: Generating DSP logd_mul_mul_9ns_ocq_U21/logd_mul_mul_9ns_ocq_DSP48_1_U/p, operation Mode is: A2*(B:0xb1).
+DSP Report: register absE_reg_3687_reg is absorbed into DSP logd_mul_mul_9ns_ocq_U21/logd_mul_mul_9ns_ocq_DSP48_1_U/p.
+DSP Report: operator logd_mul_mul_9ns_ocq_U21/logd_mul_mul_9ns_ocq_DSP48_1_U/p is absorbed into DSP logd_mul_mul_9ns_ocq_U21/logd_mul_mul_9ns_ocq_DSP48_1_U/p.
+WARNING: [Synth 8-3331] design range_red_logtable6 has unconnected port reset
+INFO: [Synth 8-3886] merging instance 'inst/Y0_reg_3673_reg[52]' (FDE) to 'inst/FirstBit_reg_3668_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/tmp_67_cast_reg_2597_reg[0]' (FDE) to 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[45]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/tmp_67_cast_reg_2597_reg[1]' (FDE) to 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[46]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[0]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[1]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[2]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[3]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[4]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[5]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[16]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[6]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[7]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[18]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[8]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[9]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[10]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[11]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[12]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[13]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[14]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[15]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[16]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[17]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[18]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[19]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[20]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[21]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[22]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[33]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[23]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[34]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[24]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[35]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[25]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[36]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[26]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[37]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[27]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[38]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[28]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[39]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[29]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[40]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[30]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[41]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[31]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[42]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[32]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[43]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[33]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[44]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[34]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[45]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[35]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[46]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[36]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[47]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[37]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[48]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[38]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[49]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[39]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[50]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[40]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[51]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[41]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[52]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[42]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[53]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[43]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[54]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[44]' (FDE) to 'inst/grp_range_red_fu_448/tmp_34_reg_2592_reg[55]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[47]' (FDE) to 'inst/grp_range_red_fu_448/tmp_67_cast_reg_2597_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/phitmp1_cast_reg_2587_reg[48]' (FDE) to 'inst/grp_range_red_fu_448/tmp_67_cast_reg_2597_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[0]' (FDE) to 'inst/grp_range_red_fu_448/tmp_46_reg_2602_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[1]' (FDE) to 'inst/grp_range_red_fu_448/tmp_46_reg_2602_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[2]' (FDE) to 'inst/grp_range_red_fu_448/tmp_46_reg_2602_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[3]' (FDE) to 'inst/grp_range_red_fu_448/tmp_46_reg_2602_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[4]' (FDE) to 'inst/grp_range_red_fu_448/tmp_46_reg_2602_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[5]' (FDE) to 'inst/grp_range_red_fu_448/A3_reg_2565_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[6]' (FDE) to 'inst/grp_range_red_fu_448/A3_reg_2565_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[7]' (FDE) to 'inst/grp_range_red_fu_448/A3_reg_2565_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z3_1_2_reg_2560_reg[8]' (FDE) to 'inst/grp_range_red_fu_448/A3_reg_2565_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[0]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[1]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[2]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[3]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[4]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[5]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[6]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[7]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[8]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[9]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[10]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[11]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[11]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[12]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[12]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[13]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[13]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[14]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[14]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[15]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[15]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[16]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[16]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[17]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[17]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[18]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[18]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[19]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[19]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[20]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[20]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[21]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[21]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[22]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[22]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[23]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[23]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[24]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[24]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[25]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[25]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[26]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[27]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[27]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[28]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[28]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[29]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[29]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[30]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[30]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[31]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[32]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[32]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[33]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[33]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[34]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[34]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[35]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[35]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[36]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[36]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[37]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[37]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[38]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[38]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[39]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[39]'
+INFO: [Synth 8-3886] merging instance 'inst/grp_range_red_fu_448/Z1_d_reg_2491_reg[40]' (FDE) to 'inst/grp_range_red_fu_448/tmp_12_reg_2509_reg[40]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\tmp_35_reg_2644_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\tmp_35_reg_2644_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\tmp_35_reg_2644_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\tmp_35_reg_2644_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\tmp_35_reg_2644_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\tmp_35_reg_2644_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/logtable6_U/\range_red_logtable6_rom_U/q0_reg[58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\logtable4_1_U/range_red_logtablfYi_rom_U/q0_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\logtable3_1_U/range_red_logtableOg_rom_U/q0_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\almostLog_H_reg_3817_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Z2o2_small_reg_3864_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Z2o2_small_reg_3864_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Z2o2_small_reg_3864_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/grp_range_red_fu_448/\logtable4_1_load_reg_2925_reg[2] )
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[47]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[46]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[45]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[44]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[43]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[42]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[41]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[40]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[39]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[38]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[37]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[36]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[35]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[34]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[33]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[32]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[31]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[30]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[29]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[28]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[27]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[26]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[25]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[24]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[23]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[22]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[21]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[20]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[19]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[18]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (tmp_1_reg_2514_reg[17]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[47]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[46]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[45]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[44]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[43]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[42]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[41]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[40]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[39]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[38]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[37]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[36]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[35]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[34]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[33]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[32]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[31]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[30]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[29]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[28]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[27]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[26]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[25]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[24]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[23]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[22]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[21]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[20]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[19]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[18]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[17]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[3]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[2]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[1]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[0]) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[47]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[46]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[45]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[44]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[43]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[42]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[41]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[40]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[39]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[38]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[37]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[36]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[35]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[34]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[33]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[32]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[31]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[30]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[29]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[28]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[27]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[26]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[25]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[24]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[23]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[22]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[21]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[20]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[19]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[18]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[17]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[3]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[2]__0) is unused and will be removed from module range_red.
+WARNING: [Synth 8-3332] Sequential element (p_0_out[1]__0) is unused and will be removed from module range_red.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\sel_tmp47_reg_3995_reg[0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:01:44 . Memory (MB): peak = 1052.613 ; gain = 747.945
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-------------------------+-------------------------------------------------+---------------+----------------+
+|Module Name              | RTL Object                                      | Depth x Width | Implemented As | 
++-------------------------+-------------------------------------------------+---------------+----------------+
+|range_red_invtable0_rom  | p_0_out                                         | 32x6          | LUT            | 
+|range_red_logtablbkb_rom | p_0_out                                         | 32x23         | LUT            | 
+|range_red_logtablcud_rom | p_0_out                                         | 16x19         | LUT            | 
+|range_red_logtabldEe_rom | p_0_out                                         | 16x16         | LUT            | 
+|range_red_logtableOg_rom | p_0_out                                         | 16x13         | LUT            | 
+|range_red_logtablfYi_rom | p_0_out                                         | 16x10         | LUT            | 
+|range_red_logtablg8j_rom | p_0_out                                         | 16x7          | LUT            | 
+|range_red_logtablibs_rom | p_0_out                                         | 16x60         | LUT            | 
+|range_red_logtabljbC_rom | p_0_out                                         | 16x60         | LUT            | 
+|range_red_logtablkbM_rom | p_0_out                                         | 16x60         | LUT            | 
+|range_red_logtabllbW_rom | p_0_out                                         | 16x56         | LUT            | 
+|range_red_logtablmb6_rom | p_0_out                                         | 16x50         | LUT            | 
+|range_red_logtable7_rom  | p_0_out                                         | 16x61         | LUT            | 
+|range_red_logtable8_rom  | p_0_out                                         | 16x58         | LUT            | 
+|range_red                | p_0_out                                         | 32x6          | LUT            | 
+|range_red                | logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg | 32x60         | Block RAM      | 
+|range_red                | p_0_out                                         | 32x23         | LUT            | 
++-------------------------+-------------------------------------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping               | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|range_red   | A*B''                     | 20     | 7      | -      | -      | 20     | 0    | 2    | -    | -    | -     | 0    | 0    | 
+|range_red   | A*B''                     | 18     | 7      | -      | -      | 48     | 0    | 2    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A*B''          | 18     | 7      | -      | -      | 37     | 0    | 2    | -    | -    | -     | 0    | 0    | 
+|range_red   | (A2*B2)'                  | 21     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|range_red   | A2*B2                     | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B2          | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 1    | 
+|range_red   | A2*B2                     | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B2          | 11     | 5      | -      | -      | 13     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | A2*B2                     | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B2          | 18     | 5      | -      | -      | 47     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | A2*B2                     | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B2          | 10     | 5      | -      | -      | 13     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | A2*B2                     | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B2          | 18     | 5      | -      | -      | 47     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | C'+A2*B2                  | 5      | 4      | 5      | -      | 7      | 1    | 1    | 1    | -    | -     | 0    | 0    | 
+|range_red   | A2*B2                     | 24     | 5      | -      | -      | 27     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | A2*B2                     | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B2          | 18     | 5      | -      | -      | 44     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (A*B)'                    | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|range_red   | A2*B                      | 18     | 5      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B           | 18     | 5      | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|range_red   | A2*B2                     | 12     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | A2*B2                     | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B2          | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | A*B                       | 18     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A*B            | 23     | 5      | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|range_red   | A2*B2                     | 18     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|range_red   | (PCIN>>17)+A2*B2          | 17     | 5      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|logd        | A2*B2                     | 18     | 11     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|logd        | (PCIN>>17)+A2*B2          | 11     | 11     | -      | -      | 20     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|logd        | A2*B2                     | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|logd        | (PCIN>>17)+A2*B2          | 18     | 11     | -      | -      | 37     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|logd        | (A:0x390b)*B2             | 12     | 15     | -      | -      | 25     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|logd        | (A:0x19ef3)*B2            | 18     | 12     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|logd        | (PCIN>>17)+(A:0x1f7d1)*B2 | 18     | 12     | -      | -      | 42     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|logd        | A2*(B:0xb1)               | 11     | 8      | -      | -      | 19     | 1    | 0    | -    | -    | -     | 0    | 0    | 
++------------+---------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance inst/grp_range_red_fu_448/i_2/logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/grp_range_red_fu_448/i_2/logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/grp_range_red_fu_448/i_2/logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/grp_range_red_fu_448/i_2/logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:43 ; elapsed = 00:01:58 . Memory (MB): peak = 1109.332 ; gain = 804.664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:47 ; elapsed = 00:02:02 . Memory (MB): peak = 1148.082 ; gain = 843.414
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance inst/grp_range_red_fu_448/logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/grp_range_red_fu_448/logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/grp_range_red_fu_448/logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance inst/grp_range_red_fu_448/logtable0_0_U/range_red_logtablhbi_rom_U/q0_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:53 ; elapsed = 00:02:08 . Memory (MB): peak = 1207.160 ; gain = 902.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:55 ; elapsed = 00:02:11 . Memory (MB): peak = 1207.160 ; gain = 902.492
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:56 ; elapsed = 00:02:11 . Memory (MB): peak = 1207.160 ; gain = 902.492
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:57 ; elapsed = 00:02:12 . Memory (MB): peak = 1207.160 ; gain = 902.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:57 ; elapsed = 00:02:12 . Memory (MB): peak = 1207.160 ; gain = 902.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:57 ; elapsed = 00:02:12 . Memory (MB): peak = 1207.160 ; gain = 902.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:57 ; elapsed = 00:02:12 . Memory (MB): peak = 1207.160 ; gain = 902.492
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |CARRY4     |   743|
+|2     |DSP48E1_10 |     3|
+|3     |DSP48E1_11 |     1|
+|4     |DSP48E1_12 |     1|
+|5     |DSP48E1_2  |    21|
+|6     |DSP48E1_3  |     2|
+|7     |DSP48E1_5  |     3|
+|8     |DSP48E1_6  |     1|
+|9     |DSP48E1_7  |     1|
+|10    |DSP48E1_8  |     1|
+|11    |DSP48E1_9  |     2|
+|12    |LUT1       |   230|
+|13    |LUT2       |  1421|
+|14    |LUT3       |   598|
+|15    |LUT4       |   856|
+|16    |LUT5       |   556|
+|17    |LUT6       |  1171|
+|18    |MUXF7      |     3|
+|19    |RAMB18E1   |     1|
+|20    |RAMB18E1_1 |     1|
+|21    |FDRE       |  2683|
+|22    |FDSE       |     2|
++------+-----------+------+
+
+Report Instance Areas: 
++------+---------------------------------------+-----------------------------+------+
+|      |Instance                               |Module                       |Cells |
++------+---------------------------------------+-----------------------------+------+
+|1     |top                                    |                             |  8301|
+|2     |  inst                                 |logd                         |  8301|
+|3     |    grp_range_red_fu_448               |range_red                    |  5399|
+|4     |      logd_mac_muladd_4ncg_U1          |logd_mac_muladd_4ncg         |   181|
+|5     |        logd_mac_muladd_4ncg_DSP48_0_U |logd_mac_muladd_4ncg_DSP48_0 |   181|
+|6     |      logtable0_0_U                    |range_red_logtablhbi         |   149|
+|7     |        range_red_logtablhbi_rom_U     |range_red_logtablhbi_rom     |   149|
+|8     |      logtable0_1_U                    |range_red_logtablbkb         |    45|
+|9     |        range_red_logtablbkb_rom_U     |range_red_logtablbkb_rom     |    45|
+|10    |      logtable1_0_U                    |range_red_logtablibs         |   124|
+|11    |        range_red_logtablibs_rom_U     |range_red_logtablibs_rom     |   124|
+|12    |      logtable1_1_U                    |range_red_logtablcud         |    37|
+|13    |        range_red_logtablcud_rom_U     |range_red_logtablcud_rom     |    37|
+|14    |      logtable2_0_U                    |range_red_logtabljbC         |   192|
+|15    |        range_red_logtabljbC_rom_U     |range_red_logtabljbC_rom     |   192|
+|16    |      logtable2_1_U                    |range_red_logtabldEe         |    26|
+|17    |        range_red_logtabldEe_rom_U     |range_red_logtabldEe_rom     |    26|
+|18    |      logtable3_0_U                    |range_red_logtablkbM         |   111|
+|19    |        range_red_logtablkbM_rom_U     |range_red_logtablkbM_rom     |   111|
+|20    |      logtable3_1_U                    |range_red_logtableOg         |    22|
+|21    |        range_red_logtableOg_rom_U     |range_red_logtableOg_rom     |    22|
+|22    |      logtable4_0_U                    |range_red_logtabllbW         |   149|
+|23    |        range_red_logtabllbW_rom_U     |range_red_logtabllbW_rom     |   149|
+|24    |      logtable4_1_U                    |range_red_logtablfYi         |     8|
+|25    |        range_red_logtablfYi_rom_U     |range_red_logtablfYi_rom     |     8|
+|26    |      logtable5_0_U                    |range_red_logtablmb6         |    81|
+|27    |        range_red_logtablmb6_rom_U     |range_red_logtablmb6_rom     |    81|
+|28    |      logtable5_1_U                    |range_red_logtablg8j         |     8|
+|29    |        range_red_logtablg8j_rom_U     |range_red_logtablg8j_rom     |     8|
+|30    |      logtable6_U                      |range_red_logtable6          |   154|
+|31    |        range_red_logtable6_rom_U      |range_red_logtable6_rom      |   154|
+|32    |      logtable7_U                      |range_red_logtable7          |    98|
+|33    |        range_red_logtable7_rom_U      |range_red_logtable7_rom      |    98|
+|34    |      logtable8_U                      |range_red_logtable8          |   133|
+|35    |        range_red_logtable8_rom_U      |range_red_logtable8_rom      |   133|
+|36    |    logd_mul_mul_9ns_ocq_U21           |logd_mul_mul_9ns_ocq         |    35|
+|37    |      logd_mul_mul_9ns_ocq_DSP48_1_U   |logd_mul_mul_9ns_ocq_DSP48_1 |    35|
++------+---------------------------------------+-----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:57 ; elapsed = 00:02:12 . Memory (MB): peak = 1207.160 ; gain = 902.492
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 108 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:31 ; elapsed = 00:01:50 . Memory (MB): peak = 1207.160 ; gain = 317.719
+Synthesis Optimization Complete : Time (s): cpu = 00:01:57 ; elapsed = 00:02:12 . Memory (MB): peak = 1207.160 ; gain = 902.492
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 784 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1215.406 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+419 Infos, 224 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:04 ; elapsed = 00:02:20 . Memory (MB): peak = 1215.406 ; gain = 922.207
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1215.406 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/bd_0_hls_inst_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP bd_0_hls_inst_0, cache-ID = 17f44501a3a86f7b
+INFO: [Coretcl 2-1174] Renamed 36 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1215.406 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/impl/verilog/project.runs/bd_0_hls_inst_0_synth_1/bd_0_hls_inst_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file bd_0_hls_inst_0_utilization_synth.rpt -pb bd_0_hls_inst_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu May 30 19:26:58 2019...

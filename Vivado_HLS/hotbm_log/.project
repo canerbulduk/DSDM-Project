@@ -29,72 +29,42 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/hotbm_log/.apc/.src</location>
+			<location>C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/hotbm_log/.apc/.tb</location>
-		</link>
-		<link>
-			<name>.reference/config.hpp</name>
-			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/boost/preprocessor/config/config.hpp</location>
-		</link>
-		<link>
-			<name>.reference/empty.hpp</name>
-			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/boost/preprocessor/empty.hpp</location>
-		</link>
-		<link>
-			<name>.reference/equal.hpp</name>
-			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/boost/preprocessor/comparison/equal.hpp</location>
-		</link>
-		<link>
-			<name>.reference/greater.hpp</name>
-			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/boost/preprocessor/comparison/greater.hpp</location>
-		</link>
-		<link>
-			<name>.reference/inc.hpp</name>
-			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/boost/preprocessor/arithmetic/inc.hpp</location>
-		</link>
-		<link>
-			<name>.reference/mod.hpp</name>
-			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/boost/preprocessor/arithmetic/mod.hpp</location>
+			<location>C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/.tcls</location>
+			<location>C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/bambu_macros.h</name>
 			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/bambu_macros.h</location>
+			<location>C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/bambu_macros.h</location>
 		</link>
 		<link>
 			<name>source/hotbm_logd.c</name>
 			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/hotbm_logd.c</location>
+			<location>C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_logd.c</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/solution1.directive</location>
+			<location>C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/directives.tcl</location>
+			<location>C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/script.tcl</location>
+			<location>C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

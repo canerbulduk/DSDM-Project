@@ -898,7 +898,7 @@ double logd(double x)
     if (fpX == 0xFFF0000000000000) return __builtin_nan("");
     if (E==2047)
     {
-        func_in.b |= ( 0xFFF << 51 );
+        func_in.b |= ( 0xFFFULL << 51 );
         return func_in.f;
     }
     if (s==1) return __builtin_nan("");

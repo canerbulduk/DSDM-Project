@@ -951,3 +951,246 @@ INFO: [SYSC 207-301] Generating SystemC RTL for logd.
 INFO: [VHDL 208-304] Generating VHDL RTL for logd.
 INFO: [VLOG 209-307] Generating Verilog RTL for logd.
 INFO: [HLS 200-112] Total elapsed time: 38.565 seconds; peak allocated memory: 104.756 MB.
+==============================================================
+File generated on Thu May 30 19:16:45 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx690tffg1761-2'
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+WARNING: [HLS 200-40] In file included from hotbm_logd.c:1:
+hotbm_logd.c:306:30: warning: shift count >= width of type [-Wshift-count-overflow]
+        func_in.b |= ( 0xFFF << 51 );
+                             ^  ~~
+1 warning generated.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 105.516 ; gain = 19.047
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 105.516 ; gain = 19.047
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 109.086 ; gain = 22.617
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:13 . Memory (MB): peak = 109.902 ; gain = 23.434
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:250:1) in function 'range_red'... converting 29 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:298:5) in function 'logd'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hotbm_logd.c:315:44) to (hotbm_logd.c:428:2) in function 'logd'... converting 160 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'range_red' (hotbm_logd.c:53)...23 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'logd' (hotbm_logd.c:254)...20 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:14 . Memory (MB): peak = 132.258 ; gain = 45.789
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 137.117 ; gain = 50.648
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'logd' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 15.864 seconds; current allocated memory: 94.096 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.811 seconds; current allocated memory: 95.308 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.816 seconds; current allocated memory: 96.561 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 1.29 seconds; current allocated memory: 98.285 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_1' to 'range_red_logtablbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_1' to 'range_red_logtablcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_1' to 'range_red_logtabldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_1' to 'range_red_logtableOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_1' to 'range_red_logtablfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_1' to 'range_red_logtablg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_0' to 'range_red_logtablhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_0' to 'range_red_logtablibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_0' to 'range_red_logtabljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_0' to 'range_red_logtablkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_0' to 'range_red_logtabllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_0' to 'range_red_logtablmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mac_muladd_4ns_3ns_4ns_7_1_1' to 'logd_mac_muladd_4ncg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mac_muladd_4ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'range_red'.
+INFO: [HLS 200-111]  Elapsed time: 2.27 seconds; current allocated memory: 101.049 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'logd/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'logd' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'logd_mul_mul_9ns_11ns_20_1_1' to 'logd_mul_mul_9ns_ocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_mul_9ns_ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'logd'.
+INFO: [HLS 200-111]  Elapsed time: 4.509 seconds; current allocated memory: 104.813 MB.
+INFO: [RTMG 210-279] Implementing memory 'range_red_invtable0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablcud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabldEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtableOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablhbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabljbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablkbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabllbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable7_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable8_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:19 ; elapsed = 00:00:49 . Memory (MB): peak = 171.605 ; gain = 85.137
+INFO: [SYSC 207-301] Generating SystemC RTL for logd.
+INFO: [VHDL 208-304] Generating VHDL RTL for logd.
+INFO: [VLOG 209-307] Generating Verilog RTL for logd.
+INFO: [HLS 200-112] Total elapsed time: 48.854 seconds; peak allocated memory: 104.813 MB.
+==============================================================
+File generated on Thu May 30 19:18:20 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx690tffg1761-2'
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [HLS 200-10] Analyzing design file 'hotbm_logd.c' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 105.664 ; gain = 19.270
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 105.664 ; gain = 19.270
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 109.164 ; gain = 22.770
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 109.980 ; gain = 23.586
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:250:1) in function 'range_red'... converting 29 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (hotbm_logd.c:298:5) in function 'logd'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (hotbm_logd.c:315:44) to (hotbm_logd.c:428:2) in function 'logd'... converting 160 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'range_red' (hotbm_logd.c:53)...23 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'logd' (hotbm_logd.c:254)...20 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 132.563 ; gain = 46.168
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:04 ; elapsed = 00:00:12 . Memory (MB): peak = 137.234 ; gain = 50.840
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'logd' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 12.526 seconds; current allocated memory: 94.094 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.502 seconds; current allocated memory: 95.291 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.033 seconds; current allocated memory: 96.550 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.867 seconds; current allocated memory: 98.279 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'range_red' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_1' to 'range_red_logtablbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_1' to 'range_red_logtablcud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_1' to 'range_red_logtabldEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_1' to 'range_red_logtableOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_1' to 'range_red_logtablfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_1' to 'range_red_logtablg8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable0_0' to 'range_red_logtablhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable1_0' to 'range_red_logtablibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable2_0' to 'range_red_logtabljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable3_0' to 'range_red_logtablkbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable4_0' to 'range_red_logtabllbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'range_red_logtable5_0' to 'range_red_logtablmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'logd_mac_muladd_4ns_3ns_4ns_7_1_1' to 'logd_mac_muladd_4ncg' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mac_muladd_4ncg': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'range_red'.
+INFO: [HLS 200-111]  Elapsed time: 1.512 seconds; current allocated memory: 101.058 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'logd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'logd/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'logd' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'logd_mul_mul_9ns_11ns_20_1_1' to 'logd_mul_mul_9ns_ocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'logd_mul_mul_9ns_ocq': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'logd'.
+INFO: [HLS 200-111]  Elapsed time: 3.511 seconds; current allocated memory: 104.799 MB.
+INFO: [RTMG 210-279] Implementing memory 'range_red_invtable0_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablbkb_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablcud_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabldEe_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtableOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablfYi_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablg8j_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablhbi_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablibs_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabljbC_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablkbM_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtabllbW_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtablmb6_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable6_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable7_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'range_red_logtable8_rom' using distributed ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 171.766 ; gain = 85.371
+INFO: [SYSC 207-301] Generating SystemC RTL for logd.
+INFO: [VHDL 208-304] Generating VHDL RTL for logd.
+INFO: [VLOG 209-307] Generating Verilog RTL for logd.
+INFO: [HLS 200-112] Total elapsed time: 31.197 seconds; peak allocated memory: 104.799 MB.
+==============================================================
+File generated on Thu May 30 19:23:23 +0200 2019
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.25ns.
+INFO: [HLS 200-10] Setting target device to 'xc7vx690tffg1761-2'
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: config_sdx -optimization_level=none
+INFO: [HLS 200-435] Setting 'config_sdx -target' configuration: set_clock_uncertainty default
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [IMPL 213-8] Starting RTL evaluation using Vivado ...

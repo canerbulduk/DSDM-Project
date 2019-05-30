@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'range_red'
 ================================================================
-* Date:           Thu May 30 06:13:29 2019
+* Date:           Thu May 30 19:18:32 2019
 
 * Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
 * Project:        hotbm_log
@@ -638,7 +638,7 @@ The critical path consists of the following:
  <State 16>: 8.17ns
 The critical path consists of the following:
 	'select' operation ('epsZ6_1', hotbm_logd.c:188) [251]  (0.827 ns)
-	'add' operation ('Z7_0', hotbm_logd.c:189) [262]  (1.77 ns)
+	'add' operation ('Z7_0_cast_cast', hotbm_logd.c:189) [264]  (1.77 ns)
 	'mul' operation ('P7', hotbm_logd.c:200) [271]  (5.58 ns)
 
  <State 17>: 5.7ns

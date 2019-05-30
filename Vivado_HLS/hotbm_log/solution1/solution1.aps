@@ -11,10 +11,12 @@
         <config_sdx optimization_level="none" target="none"/>
         <config_schedule effort="medium" relax_ii_for_timing="0"/>
         <config_bind effort="medium"/>
+        <config_export format="ip_catalog" rtl="verilog"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf boardInfo="Virtex-7 VC709 Evaluation Platform (xc7vx690tffg1761-2) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/virtex7/virtex7</Platform>
+            <Platform>xilinx/virtex7/virtex7_fpv6</Platform>
             <customLibs/>
         </UIAutosynConf>
         <UIIPPackagerConf AskAgain="true" DescriptionButton="false" LibraryButton="false" RTLLanguage="verilog" UseNetList="none" VendorButton="false" VersionButton="false" evaluateRTL="false" setup="false">
@@ -43,8 +45,8 @@
             </RTLs>
         </UIAutoSimConf>
     </UIConfigurations>
-    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" rtl="verilog" rtlButton="false" rtlCombo="verilog">
-        <Format formatName="ip_catalog"/>
+    <ExportDesign askAgain="true" evaluate="true" flow="true" flowChoice="impl" formatName="ip_catalog" rtl="vlog" rtlButton="true" rtlCombo="verilog">
+        <Format formatName="ip_catalog" description="" vendor="" library="" ipname="" version="1.0" driver_input_dir="" display_name="" taxonomy=""/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
         <Format formatName="syn_dcp"/>
@@ -68,7 +70,7 @@
     </targetInfo>
     <libraryList>
         <library name="DefaultPlatform" value="xilinx/virtex7/virtex7"/>
-        <library value="xilinx/virtex7/virtex7_fpv6" name="DefaultPlatform"/>
+        <library name="DefaultPlatform" value="xilinx/virtex7/virtex7_fpv6"/>
     </libraryList>
     <clockList>
         <clock name="default" default="false" uncertainty="12.5%" period="10"/>

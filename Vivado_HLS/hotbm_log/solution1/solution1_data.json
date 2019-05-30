@@ -104,7 +104,7 @@
       "impl\/verilog\/logd.v"
     ],
     "Misc": ["impl\/misc\/logo.png"],
-    "DesignXml": "C:\/Users\/caner\/Desktop\/hotbm_log\/hotbm_log\/solution1\/.autopilot\/db\/logd.design.xml"
+    "DesignXml": "C:\/Users\/caner\/OneDrive\/Documents\/GitHub\/DSDM-Project\/Vivado_HLS\/hotbm_log\/solution1\/.autopilot\/db\/logd.design.xml"
   },
   "SubcoreInfo": {
     "HasXpmMemory": false,
@@ -207,7 +207,7 @@
       "ModuleName": "logd",
       "Instances": [{
           "ModuleName": "range_red",
-          "InstanceName": "grp_range_red_fu_446"
+          "InstanceName": "grp_range_red_fu_448"
         }]
     },
     "Metrics": {
@@ -252,7 +252,7 @@
           "BRAM_18K": "4",
           "DSP48E": "11",
           "FF": "3787",
-          "LUT": "9625"
+          "LUT": "9689"
         }
       }
     }
@@ -267,7 +267,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2019-05-30 06:13:52 +0200",
+    "Time": "2019-05-30 19:18:50 +0200",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.3"
   }

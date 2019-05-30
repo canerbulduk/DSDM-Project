@@ -42,7 +42,7 @@ set SCTraceOption all
 set TargetInfo xc7vx690t:ffg1761:-2
 set SourceFiles {sc {} c ../../hotbm_logd.c}
 set SourceFlags {sc {} c -IC:/Users/caner/Desktop/hotbm_log/Boost-Preprocessor-master}
-set DirectiveFile C:/Users/caner/Desktop/hotbm_log/hotbm_log/solution1/solution1.directive
+set DirectiveFile C:/Users/caner/OneDrive/Documents/GitHub/DSDM-Project/Vivado_HLS/hotbm_log/solution1/solution1.directive
 set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

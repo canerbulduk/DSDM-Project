@@ -1,0 +1,20 @@
+
+
+Implementation tool: Xilinx Vivado v.2018.3
+Project:             hotbm_log
+Solution:            solution1
+Device target:       xc7vx690tffg1761-2
+Report date:         Thu May 30 19:34:23 +0200 2019
+
+#=== Post-Implementation Resource usage ===
+SLICE:         1299
+LUT:           4170
+FF:            2687
+DSP:             36
+BRAM:             2
+SRL:              0
+#=== Final timing ===
+CP required:    10.000
+CP achieved post-synthesis:    7.304
+CP achieved post-implementation:    8.259
+Timing met
